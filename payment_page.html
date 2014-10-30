@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Bookndo</title>
+      <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+      <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+      <!-- Loading Bootstrap -->
+      <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="bootstrap/css/theme.css" rel="stylesheet">
+      <link href="css/jquery.timepicker.css" rel="stylesheet">
+      <link href="css/bookndo01.css" rel="stylesheet">
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- HEADER -->
+      <nav class="navbar nav navbar-default"  role="navigation">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <i class="glyphicon glyphicon-align-justify">
+            </i>
+            </button>
+            <a class="navbar-brand hidden-md hidden-lg" href="index.html">
+            <img src="images/Bookndo_brand.png">
+            </a>
+         </div>
+         <div class="container">
+         <div class="row">
+            <a href="index.html">
+            <img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top">
+            </a>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <div class="col-md-offset-5">
+                  <ul class="nav navbar-nav">
+                     <li class="active">
+                        <a href="index.html" title="Home">
+                        HOME
+                        </a>
+                     </li>
+                     <li class="first">
+                        <a href="about_us.html" title="About Us">
+                        ABOUT US
+                        </a>
+                     </li>
+                     <li class="last">
+                        <a href="contact.html" title="Contact">
+                        CONTACT
+                        </a>
+                     </li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        EN 
+                        <span class="caret">
+                        </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                           <li>
+                              <a href="#">
+                              EN
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#">
+                              FIN
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="signup.html">
+                        SIGN UP
+                        </a>
+                     </li>
+                     <li class="dropdown">
+                        <a href="#" data-toggle="modal" data-target="#myModal">
+                        LOG IN 
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- /.navbar-collapse -->
+      </nav>
+      <div id="content-main">
+         <div id="searchAct">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-offset-2">
+                     <div class="col-md-5">
+                        <div class="input-group">
+                           <input type="text" class="form-control" placeholder="Search for activities, location etc">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           Find
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <button type="button" class="btn btn-warning">
+                        Suggest me a Sport
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- CONTENT -->
+      <div id="container" >
+         <!-- Modal -->
+         <div class="content">
+            <h3 class="text-warning caps-all">
+               Your Reservation
+            </h3>
+            <div class="row well">
+               <div class="col-md-8 col-md-offset-2">
+                  <!-- form 1 company name details-->
+                  <form name="form1" id="form10" method="POST" action="welcome.php" data-toggle="validator" role="form">
+                     <div>
+                        <div class="form-group">
+                           <div class="input-group input-group-sm " for="name">
+                              <span class="input-group-addon ">
+                              First Name
+                              </span>
+                              <input type="text" id="name" name="FirstName" aria-describedby="name-format" maxlength="20" class="form-control tooltip-hide" placeholder="First Name" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Your first name">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="input-group input-group-sm" for="name">
+                              <span class="input-group-addon">
+                              Last Name 
+                              </span>
+                              <input type="text" id="name" name="firstName"aria-describedby="name-format" maxlength="20" class="form-control tooltip-hide" placeholder="Last Name  " data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Your last name">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="input-group input-group-sm">
+                              <span class="input-group-addon">
+                              Email 
+                              </span>
+                              <input type="email" name="email" class="form-control tooltip-hide" required placeholder="example@example.com" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Email">
+                              <br />
+                           </div>
+                           <div class="help-block with-errors">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="input-group input-group-sm" for="name">
+                              <span class="input-group-addon">
+                              Street Address 
+                              </span>
+                              <input type="text" id="name" name="streetAddress" aria-describedby="name-format" maxlength="30" class="form-control tooltip-hide" placeholder="Address" data-toggle="tooltip" data-placement="top" data-trigger="focus" required title="Street address for your service">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="input-group input-group-sm">
+                              <span class="input-group-addon">
+                              Phone Number 
+                              </span>
+                              <input type="text" name="phoneNumber" pattern="^[\+]\([0-9]){3,+}$" maxlength="13" class="form-control tooltip-hide" placeholder="+358 123 456 789" data-toggle="tooltip" data-placement="top" data-trigger="focus" required title="Phone number">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <p>
+                              Billing address: As above / add new address for billing purposes
+                           </p>
+                        </div>
+                     </div>
+                     <!-- end of form 1 company details information -->
+                     <hr>
+                    <div data-toggle="validator" role="form" class="form-horizontal"> 
+<div class="panel panel-success">
+   <div class="panel-heading">
+      Billing information
+   </div>
+   <div class="panel-body">
+      <div data-toggle="validator" required role="form" class="form-horizontal">
+         <!-- Text input-->
+         <div class="table-responsive">
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>Credit card type</th>
+                  <th>Credit card number</th>
+                  <th>Cardholder's name</th>
+                  <th>Expiry date</th>
+                  <th></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>
+                     <form class="form-horizontal">
+                        <fieldset>
+                           <!-- Select Basic -->
+                           <div class="form-group">
+                              <div class="">
+                                 <select id="selectbasic" required name="selectbasic" class="form-control">
+                                    <option value="1">--</option>
+                                    <option value="2">American Express</option>
+                                    <option value="3">Visa</option>
+                                    <option value="4">MasterCard</option>
+                                    <option value="5">Diner's Club</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </td>
+                  <td>
+                     <form class="form-horizontal">
+                        <fieldset>
+                           <!-- Text input-->
+                           <div class="form-group">
+                              <div class="">
+                                 <input id="textinput" required name="textinput" type="text" placeholder="1234 5678 9101 1121" class="form-control input-md">
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </td>
+                  <td>
+                     <form class="form-horizontal">
+                        <fieldset>
+                           <!-- Text input-->
+                           <div class="form-group">
+                              <div class="">
+                                 <input id="textinput" required name="textinput" type="text" placeholder="Cardholder's name" class="form-control input-md">
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </td>
+                  <td>
+                     <div class="form-inline" role="form">
+         
+                           <!-- Select Basic -->
+                           <div class="form-group">
+                              <div class="">
+                                 <select id="selectbasic" required name="selectbasic" class="form-control">
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                 </select>
+                              </div>
+                           </div>
+  
+                     </div>
+                  </td>
+                  <!-- Select Basic -->
+                  <td>
+                     <div class="form-inline" role="form">
+                   
+                           <!-- Select Basic -->
+                           <div class="form-group">
+                              <div class="">
+                                 <select id="selectbasic" required name="selectbasic" class="form-control">
+                                    <option value="1">2001</option>
+                                    <option value="2">2002</option>
+                                    <option value="3">2003</option>
+                                    <option value="4">2004</option>
+                                    <option value="5">2005</option>
+                                    <option value="6">2006</option>
+                                    <option value="7">2007</option>
+                                    <option value="8">2008</option>
+                                    <option value="9">2009</option>
+                                    <option value="10">2010</option>
+                                    <option value="11">2011</option>
+                                    <option value="12">2012</option>
+                                    <option value="13">2013</option>
+                                    <option value="14">2014</option>
+                                    <option value="15">2015</option>
+                                    <option value="16">2016</option>
+                                    <option value="17">2017</option>
+                                    <option value="18">2018</option>
+                                    <option value="19">2019</option>
+                                    <option value="20">2020</option>
+                                    <option value="21">2021</option>
+                                    <option value="22">2022</option>
+                                 </select>
+                              </div>
+                           </div>
+                  
+                     </div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         </div>
+      </div>
+   </div>
+   <!-- end of panel body -->
+</div>
+</div>
+<!-- end of panel -->
+<div class="col-md-8">
+   <button id="submit1" name="submit" class="btn btn-primary">
+   Submit
+   </button>
+   <button id="reset" type="reset" class="btn btn-danger">
+   Clear
+   </button>
+</div>
+</form>
+<!-- put here form tag as last -->
+</div>
+</div>
+<!-- end of row well -->
+</div>
+</div>
+      <!--open up a modal -->
+      <!-- Opens sign up as a modal -->
+      <div id="container" >
+         <!-- Modal -->
+         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">
+                     <span aria-hidden="true">
+                     <i class="glyphicon glyphicon-remove">
+                     </i>
+                     </span>
+                     <span class="sr-only">
+                     Close
+                     </span>
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        SIGN IN
+                     </h4>
+                  </div>
+                  <div class="modal-body">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <form action="user_profile.html" class="form-horizontal" role="form">
+                              <div class="form-group">
+                                 <label for="inputEmail1" class="col-lg-2 control-label">
+                                 Email
+                                 </label>
+                                 <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label for="inputPassword1" class="col-lg-2 control-label">
+                                 Password
+                                 </label>
+                                 <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <div class="col-lg-offset-2 col-lg-10">
+                                    <label>
+                                    <input type="checkbox" value="remember-me">
+                                    Remember me
+                                    </label>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <div class="col-lg-offset-2 col-lg-10">
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block">
+                                    Sign in
+                                    </button>
+                                    <br />
+                                    <a data-toggle="modal" role="button" href="#forgotPasswordModal">
+                                    Forgot password ?
+                                    </a>
+                                    <br />
+                                    <br />
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                        <!-- /.col-md-12 -->
+                     </div>
+                     <!-- /.row -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end of modal -->
+      <div class="footer">
+         <div class="row">
+            <small>&copy; 2014. Bookndo &nbsp;<a href="terms_and_conditions.html">Terms and conditions</a></small>
+         </div>
+         <div class="row">
+            <small>
+            <a href="service_provider_page.html">Sign up as a service provider</a>
+            </small>
+         </div>
+      </div>
+      <!-- Load JS here for greater good =============================-->
+      <script src="js/jquery-1.8.3.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.timepicker.js"></script>
+      <script src="js/bookndo01.js"></script>
+      <script src="js/validator.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/clone-form-td.js"></script>
+   </body>
+</html>

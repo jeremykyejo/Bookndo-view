@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Bookndo</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Loading Bootstrap -->
+      <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+      <!-- Loading Flat UI -->
+      <link href="css/flat-ui.css" rel="stylesheet">
+      <link href="css/bookndo01.css" rel="stylesheet">
+      <link href="css/map.css" rel="stylesheet">
+      <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+      <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+               <!-- HEADER -->
+          <nav class="navbar navbar-default"  role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+              </button>
+              <a class="navbar-brand hidden-md hidden-lg" href="#">Bookndo</a>
+                </div>
+
+          <div class="container">
+
+          <div class="row">
+            <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 
+ <div class="col-md-offset-5">
+ <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html" title="Home">HOME</a></li>
+              <li class="first"><a href="about_us.html" title="About Us">ABOUT US</a></li>
+              <li class="last"><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+
+         
+
+            
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">EN <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">EN</a></li>
+                    <li><a href="#">FIN</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown btn-group">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle btn-select">Account <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="user_profile.html"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                  <li><a href="logout.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+              </li>
+
+            </ul>
+
+        </div>
+            </div>
+            </div>
+
+          
+       
+        
+        <!-- /.navbar-collapse -->
+        </nav>
+        
+      <div class="container">
+         <div class="row well">
+        <div class="col-md-2">
+          <ul class="nav nav-list">
+            <li><a href="user_profile.html"><i class="glyphicon glyphicon-user"></i> Account</a></li>
+            <li><a href="purchase.html"><i class="glyphicon glyphicon-calendar"></i> Purchase History</a></li>
+            <li class="active"><a href="settings.html"><i class="glyphicon glyphicon-wrench"></i> Settings</a></li>
+            <li><a href="faq.html"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
+            <li><a href="feedback.html"><i class="glyphicon glyphicon-pencil"></i> Feedback</a></li>
+          </ul>
+        </div>
+            <!-- put tab content here -->
+            <div class="col-md-10 well">
+               <label class="radio">
+               <input type="radio" name="group1" value="1" data-toggle="radio">
+               Radio is off
+               </label>
+               <label class="radio">
+               <input type="radio" name="group1" value="2" data-toggle="radio" checked>
+               Radio is on
+               </label>
+            </div>
+            <!-- tab content ends here -->
+         </div>
+      </div>
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <br/><br/>
+               <form class="form-horizontal">
+                  <fieldset>
+                     <!-- Text input-->
+                     <div class="form-group">
+                        <label class="col-md-2 control-label" for="body">Body :</label>  
+                        <div class="col-md-8">
+                           <input id="body" name="body" type="text" placeholder="Message Body" class="form-control input-md">
+                        </div>
+                     </div>
+                     <!-- Textarea -->
+                     <div class="form-group">
+                        <label class="col-md-2 control-label" for="message">Message :</label>
+                        <div class="col-md-8">                     
+                           <textarea class="form-control" id="message" name="message"></textarea>
+                        </div>
+                     </div>
+                     <!-- Button -->
+                     <div class="form-group">
+                        <label class="col-md-2 control-label" for="send"></label>
+                        <div class="col-md-8">
+                           <button id="send" name="send" class="btn btn-primary">Send</button>
+                        </div>
+                     </div>
+                  </fieldset>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!-- end of modal -->
+      <hr>
+      <!-- FOOTER  --> 
+      <div class="footer">
+         <footer>
+            <div class="container">
+               <div class="row">
+                  <small>&copy; 2014. Bookndo</small>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <!-- Load JS here for greater good =============================-->
+      <script src="js/jquery-1.8.3.min.js"></script>
+      <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+      <script src="js/jquery.ui.touch-punch.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bootstrap-select.js"></script>
+      <script src="js/bootstrap-switch.js"></script>
+      <script src="js/flatui-checkbox.js"></script>
+      <script src="js/flatui-radio.js"></script>
+      <script src="js/jquery.tagsinput.js"></script>
+      <script src="js/jquery.placeholder.js"></script>
+      <script src="js/application.js"></script>
+      <script src="js/bookndo01.js"></script>
+      <script src="js/validator.js"></script>
+      <script src="js/map.js"></script>
+   </body>
+</html>

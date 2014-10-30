@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find activities and book them easily." />
+    <meta name="keywords" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+      SPProducts        
+    </title>
+    <link rel="shortcut icon" href="/img/icon-Bookndo.ico" type="image/x-icon">
+    <link rel="icon" href="/img/icon-Bookndo.ico" type="image/x-icon">
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/bookndo01.css" />
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/rating.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/bookndo-slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>        
+    <![endif]-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+
+    <style type="text/css">
+    .list-group.panel > .list-group-item {
+          border-radius: 0;
+    }
+
+    .list-group-submenu {
+          margin-left:20px;
+    }
+    </style>
+  </head>
+  <body onload="load()">
+    <!-- HEADER -->
+    <div class="navbar nav navbar-default style_S"  role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+        <a class="img-responsive hidden-md hidden-lg" href="#"><img src="images/bookndo.png" alt="Bookndo" id="logo-top2"></a>
+      </div>
+      <div class="">
+     
+        <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="col-sm-offset-3 col-md-offset-4">
+     	
+     		<div class="col-md-offset-1">
+            <ul class="nav navbar-nav">
+              <li class=""><a href="index.html" title="Home">HOME</a></li>
+              <li class=""><a href="about_us.html" title="About Us">ABOUT US</a></li>
+              <li class=""><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+      		</div>
+          
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">EN</a></li>
+                  <li><a href="#">FIN</a></li>
+            </ul>
+              </li>
+
+              <li>
+                <a href="#" data-toggle="modal" data-target="#myModalSignUp">SIGN UP</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" data-toggle="modal" data-target="#myModal">LOG IN </a>
+              </li>
+            </ul>
+       
+          </div>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </div>
+    <!-- BLUE TAB -->
+    <!--  <div id="content-main">
+      <div id="searchAct">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-offset-2">
+                  <form action="/s_p_products/search_results" class="form-inline" role="form" controller="s_p_products" id="SPProductSearchResultsForm" method="get" accept-charset="utf-8">
+                     <div class="form-group">
+                        <label class="control-label" style="margin-left:6px;">
+                        <small class="text-white">Specify location</small>
+                        <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+                        </label>
+                        <input value='Helsinki, Finland' name="addressInput" id="addressInput" class="form-control" placeholder="Specify location" required="required" type="text" />
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label" style="margin-left:6px;">
+                        <small class="text-white">Select start date</small>
+                        <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+                        </label>
+                        <div class="input text"><input name="dpd1" id="dpd1" class="form-control" placeholder="Start date" required="required" type="text" value="10/09/2014"/></div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label" style="margin-left:6px;">
+                        <small class="text-white">Select finish date</small>
+                        <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+                        </label>
+                        <div class="input text"><input name="dpd2" id="dpd2" class="form-control" placeholder="Finish date" required="required" type="text" value="10/30/2014"/></div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label" style="margin-left:6px;">
+                        <small class="text-white">Number of people</small>
+                        </label>
+                        <select id="guestInput" name="data[SPProduct][guestInput]" class="form-control" required="required">
+                           <option value="1">1 Person</option>
+                           <option value="2">2 People</option>
+                           <option value="3">3 People</option>
+                           <option value="4">4 People</option>
+                           <option value="5">5 People</option>
+                           <option value="6">6 People</option>
+                           <option value="7">7 People</option>
+                           <option value="8">8 People</option>
+                           <option value="9">9 People</option>
+                           <option value="10">10 People</option>
+                           <option value="More than 10">10+ People</option>
+                        </select>
+                     </div>
+                     <div class="form-group ">
+                        <label class="control-label" style="margin-left:6px;">
+                        <small class="text-white">Select distance</small>
+                        </label>
+                        <select id="radiusSelect" class="form-control" name="data[SPProduct][radiusSelect]" required="required">
+                           <option value="5" selected="selected">5 km</option>
+                           <option value="10">10 km</option>
+                           <option value="20">20 km</option>
+                           <option value="50">50 km</option>
+                           <option value="100">100 km</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label invisible">
+                        <small class="text-info">Search </small>
+                        </label>
+                        <button class="btn btn-block btn-warning" id="searchicon" type="submit" value="Search" style="padding:6px;"><span class="glyphicon glyphicon-search"> Search</span>
+                        </button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div> -->
+    <!-- CONTENT APPEARS HERE    -->
+    <div id="content">
+      <link rel="stylesheet" type="text/css" href="/css/similar_listings_search_result.css" />
+      <style>
+        .infoWindow_style {
+        //line-height: 1.35;
+        height: 200px;
+        overflow:hidden!important;
+        white-space: nowrap;
+        }
+      </style>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="">
+            <div id="s_R_style_page">
+              <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
+                <li>
+                  <a href="#search_map_R" role="tab" data-toggle="tab">Map</a>
+                </li>
+                <li class="active">
+                  <a href="#search_R_L" role="tab" data-toggle="tab"><span class="badge">88</span> Results</a>
+                </li>
+                <li class="disabled">
+                  <a href="#filter_search" role="tab" data-toggle="tab">Filter</a>
+                </li>
+              </ul>
+            </div>
+
+     <div id="modifySearchMain">
+		  <div class="list-group">
+	     <a href="#modifySearch" class="list-group-item list-group-item-default center-block" data-toggle="collapse" data-parent="#modifySearchMain"><span class="glyphicon glyphicon-search" style="color:#d9534f;"></span> Modify search</a>
+		    <div class="collapse" id="modifySearch"> 
+		 		    <div id="content-main">
+		         <div id="searchAct">
+		            <div class="container">
+		               <div class="row">
+		                  <div class="col-md-offset-2">
+		                     <div class="">
+		                        <form class="form-inline" role="form">
+		                           <div class="form-group">
+		                              <label class="control-label" style="margin-left:6px;">
+		                              <small class="text-white">Specify location</small>
+		                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+		                              </label>
+		                              <div class="addressInputSty">
+		                              <input id="addressInput" type="search" class="form-control" placeholder="Specify location" value="">
+		                              <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+		                              </div>  
+
+		                           </div>
+
+
+		                           <div class="form-group">
+		                              <label class="control-label" style="margin-left:6px;">
+		                              <small class="text-white">Select start date</small>
+		                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+		                              </label>
+		                              <input type="text" class="form-control" id="dpd1" required="" placeholder="Start date">                  
+		                           </div>
+		                           <div class="form-group">
+		                              <label class="control-label" style="margin-left:6px;">
+		                              <small class="text-white">Select finish date</small>
+		                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+		                              </label>
+		                              <input type="text" class="form-control" id="dpd2" required="" placeholder="Finish date"> 
+		                           </div>
+		                           <div class="form-group">
+		                              <label class="control-label" style="margin-left:6px;">
+		                              <small class="text-white">Number of people</small>
+		                              </label>
+		                              <select id="guest" name="guest" class="form-control">
+		                                 <option value="1">1 Person</option>
+		                                 <option value="2">2 People</option>
+		                                 <option value="3">3 People</option>
+		                                 <option value="4">4 People</option>
+		                                 <option value="5">5 People</option>
+		                                 <option value="6">6 People</option>
+		                                 <option value="7">7 People</option>
+		                                 <option value="8">8 People</option>
+		                                 <option value="9">9 People</option>
+		                                 <option value="10">10 People</option>
+		                                 <option value="More than 10">10+ People</option>
+		                              </select>
+		                           </div>
+		                           <div class="form-group ">
+		                              <label class="control-label" style="margin-left:6px;">
+		                              <small class="text-white">Select distance</small>
+		                              </label>
+		                              <select id="radiusSelect" class="form-control">
+		                                 <option value="25" selected="">25mi</option>
+		                                 <option value="100">100mi</option>
+		                                 <option value="200">200mi</option>
+		                              </select>
+		                           </div>
+		                           <div class="form-group">
+		                              <label class="control-label invisible">
+		                              <small class="text-info">Search </small>
+		                              </label>
+		                              <button class="btn btn-warning" id="searchicon" type="button" onclick="searchLocations()" value="Search"><span class="glyphicon glyphicon-search"></span>
+		                              </button>
+		                           </div>
+		                        </form>
+		                     </div>
+		                  </div>
+		               </div>
+		            </div>
+		         </div>
+		        </div>
+		    </div>
+		  </div>
+    </div>
+
+
+<div class="well well-sm searchInfoCurrent center-block" style="padding: 2px;">
+  <div>
+    <h4>Helsinki, Finland</h4>
+    <p>Schedule: <small>12/10/2014 - 24/10/2014</small></p>
+  </div>  
+</div>
+
+  <div class="tab-content">
+              <!-- style="background-color: #e8e8e8 " -->
+              <div class="tab-pane fade" id="search_map_R">
+                <div id = "map" style = "width: 100%; height: 450px; background-color:#3f3f3f;">
+                </div>
+              </div>
+              <div class="tab-pane fade in active" id="search_R_L">
+                <div class="search">
+                  <div id="search_result_panel">
+                  <div class="container-fluid row">
+
+                  <div class="col-md-3 hidden-sm hidden-xs">
+                  
+                <div class="panel well">
+                
+                   <h4> Filter results </h4>
+                
+
+                <div class="panel-body"> 
+                    
+                <ul class="list-unstyled">
+
+                <!-- price -->
+                  <li>
+                   <h4 class="text-primary"> Price </h4>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="option1" id="optionRadio1" value="option1">
+                        &#8364; 0 - &#8364; 19 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        &#8364; 20 - &#8364; 39 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        &#8364; 40 - &#8364; 59 
+                      </label>
+                    </div>
+
+                 </li>
+
+                 <!-- rating -->
+                 <li>
+                   <h4 class="text-primary"> Rating </h4>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="option1" id="optionRadio1" value="option1">
+                        5 stars <span class="badge">10</span> 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        4 stars <span class="badge">12</span> 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        3 stars <span class="badge">4</span> 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        2 stars <span class="badge">6</span> 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        1 stars <span class="badge">2</span> 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        Unrated <span class="badge">36</span> 
+                      </label>
+                    </div>
+
+                 </li>
+
+                 <!-- distance -->
+                 <li>
+                   <h4 class="text-primary"> Distance </h4>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="option1" id="optionRadio1" value="option1">
+                         0 km - 10 km
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        10 km - 20 km 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ame="option2" id="optionRadio2" value="option2">
+                        20 km - 30 km
+                      </label>
+                    </div>
+
+                 </li>
+                 
+                </ul>
+                </div>
+
+                </div>
+
+                </div>
+
+                    <div class="col-xs-12 col-md-6">
+                      <div  class="" style="background-color:#fff;">
+                        <!--SEARCH LIST -->
+                        <div class="row">
+                          <div id="locationSelect">
+                            <div class="row search_result_panel_content_focus">
+                              <div id="property-listings">
+                                <!-- left side --> 
+                                <div class="col-sm-12 brdr">
+                                  <!-- First left--> 
+                                  <div class="bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                    <div class="media">
+                                      <a class="pull-left" href="#" target="_parent" style="padding:6px;">
+                                      <img alt="image" class="" src="" height="100" width="100" style="background-color:#9f9f9f;"></a>
+                                      <div class="clearfix visible-sm"></div>
+                                      <div class="media-body fnt-smaller s_R_marg">
+                                        <a href="#">
+                                        <button type="button" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Book now</button>
+                                        </a> 
+                                    
+                                        <a href="#" target="_parent"></a>
+                                        <div class="media-heading">
+                                          <h4 style="margin-bottom:6px;">Water skiing FL</h4>
+                                        </div>
+                                        <span class="fnt-smaller fnt-lighter fnt-arial">Arkadiankatu 4 C, Helsinki, Finland </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- other -->
+                            <div class="row search_result_panel_content_focus">
+                              <div id="property-listings">
+                                <!-- left side --> 
+                                <div class="col-sm-12 brdr">
+                                  <!-- First left--> 
+                                  <div class="bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                    <div class="media">
+                                      <a class="pull-left" href="#" target="_parent" style="padding:6px;">
+                                      <img alt="image" class="" src="" height="100" width="100" style="background-color:#9f9f9f;"></a>
+                                      <div class="clearfix visible-sm"></div>
+                                      <div class="media-body fnt-smaller s_R_marg">
+                                         <a href="#">
+                                        <button type="button" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Book now</button>
+                                        </a> 
+                                   
+                                        <a href="#" target="_parent"></a>
+                                        <div class="media-heading">
+                                          <h4 style="margin-bottom:6px;">Water skiing FL</h4>
+                                        </div>
+                                        <span class="fnt-smaller fnt-lighter fnt-arial">Arkadiankatu 4 C, Helsinki, Finland </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- other -->
+                            <div class="row search_result_panel_content_focus">
+                              <div id="property-listings">
+                                <!-- left side --> 
+                                <div class="col-sm-12 brdr">
+                                  <!-- First left--> 
+                                  <div class="bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                    <div class="media">
+                                      <a class="pull-left" href="#" target="_parent" style="padding:6px;">
+                                      <img alt="image" class="" src="" height="100" width="100" style="background-color:#9f9f9f;"></a>
+                                      <div class="clearfix visible-sm"></div>
+                                      <div class="media-body fnt-smaller s_R_marg">
+                                        <a href="#">
+                                        <button type="button" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Book now</button>
+                                        </a> 
+                                  
+                                        <a href="#" target="_parent"></a>
+                                        <div class="media-heading">
+                                          <h4 style="margin-bottom:6px;">Water skiing FL</h4>
+                                        </div>
+                                        <span class="fnt-smaller fnt-lighter fnt-arial">Arkadiankatu 4 C, Helsinki, Finland </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- other -->
+                            <div class="row search_result_panel_content_focus">
+                              <div id="property-listings">
+                                <!-- left side --> 
+                                <div class="col-sm-12 brdr">
+                                  <!-- First left--> 
+                                  <div class="bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                    <div class="media">
+                                      <a class="pull-left" href="#" target="_parent" style="padding:6px;">
+                                      <img alt="image" class="" src="" height="100" width="100" style="background-color:#9f9f9f;"></a>
+                                      <div class="clearfix visible-sm"></div>
+                                      <div class="media-body fnt-smaller s_R_marg">
+                                         <a href="#">
+                                        <button type="button" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Book now</button>
+                                        </a> 
+                                  
+                                        <a href="#" target="_parent"></a>
+                                        <div class="media-heading">
+                                          <h4 style="margin-bottom:6px;">Water skiing FL</h4>
+                                        </div>
+                                        <span class="fnt-smaller fnt-lighter fnt-arial">Arkadiankatu 4 C, Helsinki, Finland </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- other -->
+                            <div class="row search_result_panel_content_focus">
+                              <div id="property-listings">
+                                <!-- left side --> 
+                                <div class="col-sm-12 brdr">
+                                  <!-- First left--> 
+                                  <div class="bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                    <div class="media">
+                                      <a class="pull-left" href="#" target="_parent" style="padding:6px;">
+                                      <img alt="image" class="" src="" height="100" width="100" style="background-color:#9f9f9f;"></a>
+                                      <div class="clearfix visible-sm"></div>
+                                      <div class="media-body fnt-smaller s_R_marg">
+                                         <a href="#">
+                                        <button type="button" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Book now</button>
+                                        </a> 
+                                  
+                                        <a href="#" target="_parent"></a>
+                                        <div class="media-heading">
+                                          <h4 style="margin-bottom:6px;">Water skiing FL</h4>
+                                        </div>
+                                        <span class="fnt-smaller fnt-lighter fnt-arial">Arkadiankatu 4 C, Helsinki, Finland </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- other -->
+                            <div class="row search_result_panel_content_focus">
+                              <div id="property-listings">
+                                <!-- left side --> 
+                                <div class="col-sm-12 brdr">
+                                  <!-- First left--> 
+                                  <div class="bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                    <div class="media">
+                                      <a class="pull-left" href="#" target="_parent" style="padding:6px;">
+                                      <img alt="image" class="" src="" height="100" width="100" style="background-color:#9f9f9f;"></a>
+                                      <div class="clearfix visible-sm"></div>
+                                      <div class="media-body fnt-smaller s_R_marg">
+                                         <a href="#">
+                                        <button type="button" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Book now</button>
+                                        </a> 
+                                  
+                                        <a href="#" target="_parent"></a>
+                                        <div class="media-heading">
+                                          <h4 style="margin-bottom:6px;">Water skiing FL</h4>
+                                        </div>
+                                        <span class="fnt-smaller fnt-lighter fnt-arial">Arkadiankatu 4 C, Helsinki, Finland </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <img src="#" width="320" height="480" style="background-color: grey;" class="img-responsive">
+                    </div>
+                    
+                    </div>
+                  </div>
+
+                  <!--end of row-->
+                </div>
+              </div>
+              <div class="invisible">
+                  <div class="tab-pane fade" id="filter_search">
+            
+                <!--end of row -->
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/js/jquery.timepicker.js"></script>
+      <script type="text/javascript" src="/js/bookndo01.js"></script>
+      <script type="text/javascript" src="/js/validator.js"></script>
+      <script type="text/javascript" src="/js/bootstrap-slider.js"></script>       
+      <script type="text/javascript">
+
+
+    //this is for the clear icon on location search input field
+    $("#addressInput").keyup(function() {
+        $("#searchclear").toggle(Boolean($(this).val()));
+    });
+    $("#searchclear").toggle(Boolean($("#addressInput").val()));
+    $("#searchclear").click(function() {
+        $("#addressInput").val('').focus();
+        $(this).hide();
+    });
+
+    </script>
+      <!-- 2. BUILD JS FILE -->
+      <script type="text/javascript">
+        var map;     var markers = [];
+                var infoWindow; // VARIABLE FOR INFO WINDOW
+                var locationSelect;
+        var autocomplete;
+        
+                var customIcons = {// TO SHOW THE TYPES OF MARKER IMAGE
+            1: {
+                        icon: new google.maps.MarkerImage('/img/markers/marker1.png', null, null, null)
+            },
+            2: {
+                icon: new google.maps.MarkerImage('/img/markers/marker2.png', null, null, null)
+                }
+        };
+         var initialLocation;
+                var helsinki = new google.maps.LatLng(60.171438, 24.921081);
+        var browserSupportFlag = new Boolean();
+        
+        
+        $(document).ready(function() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                center: helsinki,
+                zoom: 13,
+                mapTypeId: 'roadmap',
+                mapTypeControl: true,
+                mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR},
+                navigationControl: true,
+                panControl: false,
+                zoomControl: true, // Hide zoom control
+                scaleControl: true,
+                scrollwheel: false,
+                styles: [
+                    {
+                        "featureType": "water",
+                        "stylers": [
+                            {
+                        "hue": "#008BFF"
+                        },
+                        {                              "saturation": -50
+                        },
+                            {
+                        "lightness": -37
+                        },
+                        {
+                        "gamma": 1
+                }
+                ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "stylers": [
+                            {
+                        "hue": "#FF0000"
+                        },
+                        {                              "saturation": -100
+                        },
+                            {
+                        "lightness": 156
+                        },
+                        {
+                        "gamma": 1
+                }
+                ]
+                    }
+                ],
+                streetViewControl: false // Hide street view control
+            });
+        
+                infoWindow = new google.maps.InfoWindow();
+        
+        
+                // TO SHOW THE LOCATION SELECT LIST
+                locationSelect = document.getElementById("locationSelect");
+        
+                // start searching products
+            searchLocations();
+        });
+                 /*************************************************************************************
+                        * @function to clear on the location, when research
+                        * 
+         */
+                                function clearLocations() {
+            infoWindow.close();
+        
+                        for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(null);
+                        }
+                                // set the markers array empty
+                        markers.length = 0;
+        
+                locationSelect.innerHTML = "";
+        }
+                 /**************************************************************************************
+                * @function to search the location
+                * 
+         */
+        function searchLocations() {
+                        var address = document.getElementById("addressInput").value;
+                        var geocoder = new google.maps.Geocoder();
+                        geocoder.geocode({address: address}, function(results, status) {
+                        if (status === google.maps.GeocoderStatus.OK) {
+                        searchLocationsNear(results[0].geometry.location);
+                } else {
+                        alert('Address ' + address + ' not found');
+                }
+            });
+        }
+        
+        /*********************************************************************************************
+         * @function TO SEARCH ALL THE LOCATION ON THE LIST, WITH THE SPECIFIC DISTANCE
+         * @param {google latlng} center
+         */
+        function searchLocationsNear(center) {
+            clearLocations();
+        
+            var event = ["center_changed", "bounds_changed", "zoom_changed"];
+            // FUNCTION TO ADD EVENT WHEN MAP IS MOVE
+            for (var i = 0; i < event.length; ++i) {
+                google.maps.event.addListener(map, event[i], function() {
+                    var swLat = map.getBounds().getSouthWest().lat();
+                    var swLng = map.getBounds().getSouthWest().lng();
+                    var neLat = map.getBounds().getNorthEast().lat();
+                    var neLng = map.getBounds().getNorthEast().lng();
+        
+                    var searchUrl = '/s_p_products/phpsqlsearch_genxml_lat?swLat=' + swLat + '&swLng=' + swLng + '&neLat=' + neLat + '&neLng=' + neLng;
+                    downloadUrl(searchUrl, function(data) {
+                        var xml = parseXml(data);
+                        var markerNodes = xml.documentElement.getElementsByTagName("marker");
+        
+                        for (var i = 0; i < markerNodes.length; i++) {
+                            var name = markerNodes[i].getAttribute("name");
+                            var address = markerNodes[i].getAttribute("address");
+                            //var type = parseInt(markerNodes[i].getAttribute("type"));
+                            //var distance = parseFloat(markerNodes[i].getAttribute("distance"));
+                            var latlng = new google.maps.LatLng(
+                                    parseFloat(markerNodes[i].getAttribute("lat")),
+                                    parseFloat(markerNodes[i].getAttribute("lng")));
+                            createMarker(latlng, name, address, 2); // +2 TO MAKE THE DISABLE COLOR
+                        }
+                    });
+                });
+            }
+        
+            var radius = document.getElementById('radiusSelect').value;
+            var searchUrl = '/s_p_products/phpsqlsearch_genxml_radius?lat=' + center.lat() + '&lng=' + center.lng() + '&radius=' + radius;
+            downloadUrl(searchUrl, function(data) {
+                var xml = parseXml(data);
+        
+                var markerNodes = xml.documentElement.getElementsByTagName("marker");
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < markerNodes.length; i++) {
+                    var name = markerNodes[i].getAttribute("name");
+                    var address = markerNodes[i].getAttribute("address");
+                    var image_url = markerNodes[i].getAttribute("image_url");
+                    var sp_id = markerNodes[i].getAttribute("id");
+                    // list of products name and id
+                    var products_name = '';
+                    var products_id = '';
+                    //var type = parseInt(markerNodes[i].getAttribute("type"));
+        
+                    // CALCULATE THE DISTANCE FROM THE DATABASE
+                    //var distance = parseFloat(markerNodes[i].getAttribute("distance"));
+        
+                    var products = markerNodes[i].getElementsByTagName("product");
+        
+                    for (var j = 0; j < products.length; j++) {
+                        var prod_id = products[j].getAttribute("prod_id");
+                        var prod_act_name = products[j].getAttribute("prod_act_name");
+        
+                        // show 1 activity only once
+                        var exist = false;
+        
+                        for (var k = 0; k < j; ++k)
+                        {
+                            if (prod_act_name == products[k].getAttribute("prod_act_name")) {
+                                exist = true;
+                                break;
+                            }
+                        }
+        
+                        if (exist == false) {
+                            if (products_name == '')
+                            {
+                                products_name += '<li style="list-style: none">' + prod_act_name + '</li>';
+                            }
+                            else
+                            {
+                                products_name += '<li style="list-style: none">|</li> <li>' + prod_act_name + '</li>';
+        
+                            }
+                        }
+        
+                        products_id += prod_id + ', ';
+                    }
+        
+                    // remove the ', ' at last
+                    var products_name_final = products_name.substring(0, products_name.length - 0);
+                    var image_url_final;
+                    
+                    if(!image_url){
+                        image_url_final = 'http://placehold.it/120x120';
+                    }
+                    else{
+                        var image_with_size = image_url.replace("image/upload", "image/upload/c_fill,h_120,w_120");
+                        image_url_final = 'http://res.cloudinary.com/hfmgdxcqz/' + image_with_size;
+                    }
+        
+                    var latlng = new google.maps.LatLng(
+                            parseFloat(markerNodes[i].getAttribute("lat")),
+                            parseFloat(markerNodes[i].getAttribute("lng")));
+        
+                    // CREATE THE OPTION (WITH THE INDEX IS THE INDEX OF THE RELATIVE MARKER)            
+                    createOption(name, products_name_final, products_id, i, address, image_url_final, sp_id);
+                    createMarker(latlng, name, address,1, image_url_final, sp_id );
+        
+                    bounds.extend(latlng);
+                }
+                // To check whether we have the service provider in the choosen distance or not
+                if (markerNodes.length === 0)
+                {
+                    //map.setZoom(5);
+                    //map.setCenter(center);
+        
+                    var searched_address = document.getElementById('addressInput').value;
+                    var mile_to_meter = 1609.34;
+                    var radius = document.getElementById('radiusSelect').value * mile_to_meter;
+                    var circle = new google.maps.Circle({radius: radius, center: center});
+        
+                    //createMarker(center, 'Your in put address', searched_address);
+                    map.fitBounds(circle.getBounds());
+        
+                    // print the error when result = 0
+                    document.getElementById('locationSelect').innerHTML = "<div class=\"fill_here\"><h3>There's no result in " + searched_address + " with the distance " + document.getElementById('radiusSelect').value + ' miles </h3>' + '<hr><h4><i>Hint: zoom out / move the map in order to find the nearest store</i></h4></div>';
+                }
+                else
+                {
+                    bounds.extend(center);
+                    map.fitBounds(bounds);
+                    locationSelect.style.visibility = "visible";
+        
+                    // add listener to open the info window
+                    var locationSelectValue = document.getElementById('locationSelect');
+                    locationSelectValue.onchange = function() {
+                        var markerNum = locationSelectValue.options[locationSelectValue.selectedIndex].value;
+                        google.maps.event.trigger(markers[markerNum], 'click');
+                    };
+                }
+            });
+        }
+        
+        /*****************************************************************************
+         * @function: createMarker
+         * @param {google LatLng} latlng : latitude, longtitude of the point
+         * @param {string} name : name of the company
+         * @param {string} address
+         * @param {int} type : the type of the marker, base on the category
+         * 
+         */
+        function createMarker(latlng, name, address, type, img_url, sp_id) {
+            var duplicated = false; // to check whether the marker exist or not
+            var show_avail_product_url = '/' + 's_p_products/show_avail_products/' + sp_id;
+            
+            for (var i = 0; i < markers.length; ++i)
+            {
+                if (latlng.lat() === markers[i].position.lat() && latlng.lng() === markers[i].position.lng())
+                {
+                    duplicated = true;
+                    break;
+                }
+            }
+        
+            if (duplicated === false)
+            {
+                // html to show how the windows look like
+                var html = "<div class='infoWindow_style'><div class='infoWindow_style_photo'><center><a href='" + show_avail_product_url +"'><img src='" + img_url + "'></a></center></div>" + "<br/>" + "<b><a href='" + show_avail_product_url +"'>" + name + "</a></b> <br/>" + address + "</div>";
+                var icon = customIcons[type] || {};
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: latlng,
+                    icon: icon.icon
+                });
+                var index = markers.length;
+        
+                var event = ['click']; // remove 'mouseover' 
+                // SHOW INFO WINDOW WHEN THE MOSE CLICK
+                for (var i = 0; i < event.length; ++i)
+                {
+                    google.maps.event.addListener(marker, event[i], function() {
+                        if (name !== undefined && address !== undefined)
+                        {
+                            infoWindow.setContent(html);
+                            infoWindow.open(map, marker);
+                            //document.getElementById('option-1').setAttribute("style","background-color: #e8e8e8");
+                            change_background_option(index);
+                        }
+                    });
+        
+                }
+        
+                // TO UNABLE SHOWING MARKER IF THE ZOOM IS SMALLER THAN 3
+                google.maps.event.addListener(map, 'zoom_changed', function() {
+                    var zoom = map.getZoom();
+        
+                    if (zoom <= 3) {
+                        marker.setMap(null);
+                    } else {
+                        marker.setMap(map);
+                    }
+                });
+                markers.push(marker);
+            }
+            else {/* do nothing */
+            }
+        }
+        
+        /*****************************************************************************************
+         * @function TO CREATE THE OPTION LIST
+         * @param {string} name : the name of company
+         * @param {string} distance : the distance (calculated by SQL FUNCTION)
+         * @param {int} num : to set the value of the option
+         */
+        function createOption(name, products_name, products_id, num, address, image_url, sp_id) {
+        
+            var show_avail_product_url = '/' + 's_p_products/show_avail_products/' + sp_id;
+            var option = document.createElement("div");
+                option.className = "row search_result_panel_content_focus";
+                //option.className = "row search_result_panel_content_focus visible-sm visible-xs";
+                option.id = "option-" + num;
+                option.value = num;
+                option.innerHTML = ' <div id="property-listings"> <!-- left side --> <div class="col-sm-12"> <!-- First left--> <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing"> <div class="media"> <a class="pull-left" href="'+ show_avail_product_url +'" target="_parent"> <img alt="image" class="" src="'+ image_url +'" ></a> <div class="clearfix visible-sm"></div> <div class="media-body fnt-smaller"> <a href="'+ show_avail_product_url +'" target="_parent"><h4 class="media-heading"> <p class="pull-right"><button class="btn btn-xs btn-success">Go to profile</button></p> </h4></a> <h4 style="margin-top:0px;"><a href="'+ show_avail_product_url +'">' + name + '</a></h4> <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">'+ products_name + '</ul> <span class="fnt-smaller fnt-lighter fnt-arial">' + address +'</span> </div> </div> </div> </div> 
+    </div>
+    ';
+    /*option.innerHTML += '<div class="row" style="border-bottom: 2px solid #e5e5e5">\n\
+    <div class="col-sm-1 col-xs-2 search_result_panel_content visible-xs visible-sm">\n\
+    <a href="#"><img src="/img/someimage.png" width="50" height="auto""></a>\n\
+    </div>\n\
+    <div class="col-sm-4 text-center hidden-md hidden-lg">\n\
+    <h4>' + name + '</h4>\n\
+    <p> Here goes rating maybe </p>\n\
+    <a href="#">6 Reviews <span class="glyphicon glyphicon-pencil"></span></a>\n\
+    </br>\n\
+    <button type="button" class="btn btn-xs btn-info" style="margin-top:6px; margin-bottom:12px;">Book now</button>\n\
+    </div>\n\
+    </div>';*/
+    locationSelect.appendChild(option);
+    // addDomListener to show the info window
+    google.maps.event.addDomListener(option, "click", function() {
+    google.maps.event.trigger(markers[num], "click");
+    });
+    }
+    /*****************************************************************************************
+    * @function to change_the background color of the div tag on the list when the user click on the marker
+    * @param {int} index
+    * @returns {NULL}
+    */
+    function change_background_option(index) {
+    var choosen_element;
+    for (var i = 0; i < markers.length; ++i)
+    {
+    choosen_element = document.getElementById('option-' + i);
+    if (choosen_element !== null)
+    {
+    choosen_element.setAttribute("style", "background-color: 'transparent'");
+    document.getElementById('option-' + index).setAttribute("style", "background-color: #e8e8e8 ");
+    // auto scroll down to see the list    
+    //document.getElementById('option-'+index).scrollIntoView();
+    scroll(index);
+    }
+    }
+    }
+    function scroll(index) {
+    $("#search_result_panel").scrollTop($("#search_result_panel").scrollTop() + $('#option-' + index).position().top);
+    //$("div.demo").scrollTop(700);
+    }
+    </script></div>
+    <!-- FOOTER  -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <small><a href="terms.html" target="_blank" >Terms</a> |
+            <a href="privacy_and_cookies.html" target="_blank" >Privacy and Cookies</a>
+            </small>
+          </div>
+          <div class="col-md-12">
+            <small>
+            <a href="/users/signup_service_provider">Sign up as a Service provider</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Load JS here for greater good =============================-->
+    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/js/search1.js"></script>
+    <!-- Modal --> 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+            </div>
+            <div class="modal-body">
+              <!-- INPUT FORM -->
+              <!-- to show the error message -->
+              <div id="errorLogin"></div>
+              <form action="/users/login" role="form" id="UserLoginForm" onsubmit="event.returnValue = false; return false;" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <div class="input email"><input name="data[User][email]" maxlength="100" class="form-control" placeholder="Enter email" required="required" id="inputEmail1" type="email"/></div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <div class="input password required"><input name="data[User][password]" data-minlength="6" class="form-control" placeholder="Password" required="required" id="inputPassword" type="password" required="required"/></div>
+                </div>
+                <div class="col-sm-offset-1">
+                  <div class="col-xs-6 col-md-6">
+                    <div class="form-group" >
+                      <div class="checkbox">
+                        <label>
+                        <input type="checkbox" name="data[User][rememberMe]" id="UserRememberMe">
+                        Remember me
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-6">
+                    <div class="form-group" style="margin-top:10px;">
+                      <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot password?</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group clearfix">
+                  <button type="submit" id="loading-btn" data-loading-text="Loading..." class="btn btn-primary btn-block">Login</button>
+                </div>
+              </form>
+              <p class="center-block text-uppercase">or</p>
+              <div class="form-group">
+                <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign in with Facebook</span></button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign in with Twitter</span></button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign in with Google&#43;</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      //<![CDATA[
+          $(document).ready(function() {
+              $("#UserLoginForm").bind("submit", function(event) {
+                  $.ajax({
+                      async: true,
+                      data: $("#UserLoginForm").serialize(),
+                      dataType: "html",
+                      beforeSend: function() {
+                          $("#errorLogin").html(null);
+                          $("#loading-btn").button('loading');
+                      },
+                      success: function(data, textStatus) {
+                          $("#errorLogin").html(data);
+                          $("#loading-btn").button('reset');
+                      },
+                      type: "POST",
+                      url: "\/users\/login"});
+                  return false;
+              });
+          });
+      //]]>
+    </script><!-- Sign up modal -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+            </div>
+            <div class="modal-body">
+              <div id="error_add"></div>
+              <form action="/users/add" data-toggle="validator" novalidate="novalidate" controller="users" id="UserAddForm" method="post" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>
+                <div class="form-group">
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon"> Full Name</span>
+                    <div class="input text required"><input name="data[User][full_name]" maxlength="20" class="form-control tooltip-hide" placeholder="Full name" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="What is your full name?" aria-describedby="name-format" type="text" id="UserFullName" required="required"/></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon"> Email </span>
+                    <div class="input email"><input name="data[User][email]" maxlength="100" class="form-control tooltip-hide" placeholder="example@example.com" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Enter your email address" type="email" id="UserEmail"/></div>
+                  </div>
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPasswordSignUp" class="control-label">Password</label>
+                  <div class="input password required"><input name="data[User][password]" data-toggle="validator" data-minlength="6" class="form-control" placeholder="Password" required="required" id="inputPasswordSignUp" type="password" required="required"/></div>
+                  <span class="help-block">Minimum of 6 characters</span>
+                </div>
+                <div class="form-group">
+                  <label for="confirmPassword" class="control-label">Confirm Password</label>
+                  <div class="input password"><input name="data[User][password-confirm]" data-match="#inputPasswordSignUp" data-match-error="Whoops, these don&#039;t match" class="form-control" placeholder="Confirm Password" required="required" id="confirmPasswordSignUp" type="password"/></div>
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                  <div class="input checkbox">
+                    <input type="checkbox" name="data[User][agree]"  value="1" id="UserAgree" required data-validation-required-message=
+                      "You must agree to the terms"/>                                    
+                    <label for="UserAgree">I Agree to the <a href="/terms_and_conditions">Terms</a> of Bookndo. 
+                    </label>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="form-group clearfix">
+                  <button type="submit" class="btn btn-success btn-block">Sign up</button>
+                </div>
+              </form>
+              <p class="center-block text-uppercase">or</p>
+              <div class="form-group">
+                <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign up with Facebook</span></button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign up with Twitter</span></button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign up with Google&#43;</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      //<![CDATA[
+          $(document).ready(function() {
+              $("#UserAddForm").bind("submit", function(event) {
+                  $.ajax({
+                      async: true,
+                      data: $("#UserAddForm").serialize(),
+                      dataType: "html",
+                      success: function(data, textStatus) {
+                          $("#error_add").html(data);
+                      },
+                      type: "POST",
+                      url: "\/users\/add"});
+                  return false;
+              });
+          });
+      //]]>
+    </script> 
+    <script>
+      $('#guestInput').val(1);
+      $('#radiusSelect').val(5);
+      $("#addressInput").blur().val('Helsinki, Finland');
+    </script>
+    <!-- 2. BUILD JS FILE -->
+    <script type="text/javascript">
+      var locationSelect;
+      var autocomplete;
+      
+      var initialLocation;
+      var helsinki = new google.maps.LatLng(60.171438, 24.921081);
+      var browserSupportFlag = new Boolean();
+      
+      function load() {
+          autocomplete = new google.maps.places.Autocomplete(
+                  /** @type {HTMLInputElement} */(document.getElementById('addressInput')),
+                  {types: ['geocode']});
+      
+          // Try W3C Geolocation (Preferred)
+          if (navigator.geolocation) {
+              browserSupportFlag = true;
+              navigator.geolocation.getCurrentPosition(function(position) {
+                  initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                  //map.setCenter(initialLocation);
+                  // to print the address to the input tag
+                  findAddress(initialLocation);
+              }, function() {
+                  handleNoGeolocation(browserSupportFlag);
+              });
+          }
+          // Browser doesn't support Geolocation
+          else {
+              browserSupportFlag = false;
+              //document.getElementById('getLocation').innerHTML = '<input type="text" id="addressInput" size="50"/>';
+              handleNoGeolocation(browserSupportFlag);
+          }
+      
+          function handleNoGeolocation(errorFlag) {
+              if (errorFlag === true) {
+                  // if the user doesnt allow to use gps
+                  // message = "Geolocation service failed.";
+                  initialLocation = helsinki;
+              } else {
+                  // if the browser doesnt support it
+                  message = "Your browser doesn't support geolocation";
+                  initialLocation = helsinki;
+              }
+              //map.setCenter(initialLocation);
+          }
+      }
+      
+      function findAddress(point)
+      {
+          var searchUrl = 'https://maps.googleapis.com/maps/api/geocode/xml?latlng=' + point.lat() + ',' + point.lng() + '&location_type=ROOFTOP&result_type=street_address&key=AIzaSyBw3Ng6a20nbcoRoISXuAq6k6VH6TF27Nw';
+          //var searchUrl = 'phpsqlsearch_genxml.php?lat=' + center.lat() + '&lng=' + center.lng() + '&radius=' + radius;
+      
+          country = "";
+          downloadUrl(searchUrl, function(data) {
+              var xml = parseXml(data);
+              var address_componentNodes = xml.documentElement.getElementsByTagName("address_component");
+              var typeNodes;
+              var country = '';
+      
+              for (var i = 0; i < address_componentNodes.length; i++) {
+                  typeNodes = address_componentNodes[i].getElementsByTagName('type');
+                  for (var j = 0; j < typeNodes.length; ++j)
+                  {
+                      if (typeNodes[j].innerHTML === 'street_number' || typeNodes[j].innerHTML === 'route' || typeNodes[j].innerHTML === 'postal_code')
+                      {
+                          // do nothing
+                          break;
+                      }
+                      else if (typeNodes[j].innerHTML === 'country')
+                      {
+                          country += address_componentNodes[i].getElementsByTagName('long_name')[0].textContent;
+                          break;
+                      }
+                      else
+                      {
+                          country += address_componentNodes[i].getElementsByTagName('long_name')[0].textContent + ', ';
+                          break;
+                      }
+                  }
+              }
+      
+      
+          });
+      }
+      
+      /*****************************************************************************************
+       * @function to download Url
+       * @param {url} url
+       * @param {function} callback
+       */
+      function downloadUrl(url, callback) {
+          var request = window.ActiveXObject ?
+                  new ActiveXObject('Microsoft.XMLHTTP') :
+                  new XMLHttpRequest;
+      
+          request.onreadystatechange = function() {
+              if (request.readyState === 4) {
+                  request.onreadystatechange = doNothing;
+                  callback(request.responseText, request.status);
+              }
+          };
+      
+          request.open('GET', url, true);
+          request.send(null);
+      }
+      
+      /*****************************************************************************************
+       * @function doNothing
+       */
+      function doNothing() {
+      }
+      
+      /******************************************************************************************
+       * @function to parseXml file
+       * @param {string} str
+       */
+      function parseXml(str) {
+          if (window.ActiveXObject) {
+              var doc = new ActiveXObject('Microsoft.XMLDOM');
+              doc.loadXML(str);
+              return doc;
+          } else if (window.DOMParser) {
+              return (new DOMParser).parseFromString(str, 'text/xml');
+          }
+      }
+    </script>
+  </body>
+</html>

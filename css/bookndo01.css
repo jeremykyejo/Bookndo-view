@@ -1,0 +1,898 @@
+/** 
+* www.bookndo.com 
+* Find sports activities and book them easily
+* Spend time doing, not booking
+* Gearent Oy 
+* 
+* 
+* 
+**/
+
+
+/* Move something 50% to the right */
+div.center {
+  margin-left: 50%; 
+}
+
+/*  carousel inside size  */
+#myCarousel .carousel-inner > .item > img, 
+#myCarousel .carousel-inner > .item > a > img { 
+  width: 100%; /* use this, or not */
+  margin: auto;
+}
+
+/* footer styles */
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 120px;
+  text-align:center;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  background-color: #ffffff;
+}
+
+/* remove/override border-radius from well */
+.well {
+  border-radius: 0px;
+}
+
+/* change the margin-bottom of h4 */
+h4 {
+  margin-bottom: 2px;
+}
+
+/* height of carousel image on medium and large screens */
+.spinner-height {
+  height: 553px; 
+  width: auto;
+  max-width: 100%;
+}
+
+/* height of carousel image on extral small and small screens */
+.spinner-height-mobile {
+  height: 300px;
+  width: 1200px;
+  max-width: 100%;
+}
+
+/*  */
+.spinner-width {
+  height: 250px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* this is the text with white background on mobile view */
+.remove-width {
+  display:inline-block;
+  position: relative;
+  top: 30px;
+  padding: 3px;
+  background-color: white;
+}
+
+/* style for main carousel/slideshow quote */
+.remove-width-quote {
+  display:inline-block;
+  position: relative;
+  top: 2px;
+  padding: 3px;
+  font-size: 4.0em;
+  text-align: center;
+  max-width: 50%;
+  color: #525252;
+  border: 1px solid #e5e5e5;
+  /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(255, 255, 255);
+    /* RGBa with 0.85 opacity */
+    background-color: rgba(255, 255, 255, 0.85);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+/* style for top menu quote and box */
+.topMenuQ {
+  max-width: 100%; 
+  font-size: 1.8em; 
+  margin-top: 8px;
+}
+
+/* style for photo credit at the bottom right */
+.carousel-info {
+  top: 400px;
+  position: relative;
+  right: 20px;
+  text-align: right;
+}
+
+/* style for carousel quote in the middle */
+.carousel-info-quote {
+  top: 300px;
+  position: relative;
+  padding: 12px;
+  z-index: 12;
+}
+
+/* style to move photo credit first text 4 px to the right */
+.carousel-info-top-style {
+  left: 4px;
+}
+
+.main-text {
+  position: absolute;
+  top: 200px;
+  width: 96.66666666666666%;
+  color: #000;
+}
+
+.btn-min-block {
+  min-width: 170px;
+  line-height: 26px;
+}
+
+/* navbar image size and style */
+.navbar-brand > img {
+  height: 24px;
+  width: auto;
+  margin-bottom: -12px;
+}
+
+/* carousel animation */
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+/*.carousel-fade .carousel-control {
+  z-index: 2;
+}*/
+
+/* hide the carousel controls */
+/*#myCarousel .carousel-indicators {
+  display: none;
+}*/
+
+/* style for carousel controls , left and right controls */
+#myCarousel .carousel-control {
+  position: absolute;
+  top: 44%;
+  z-index: 5;
+  display: inline-block;
+  width: 15%;
+}
+
+/* carousel text caption at the top */
+#myCarousel .carousel-caption {
+  top: 0px;
+}
+
+/* style for main blue menu */
+#content-main {
+  background-color: #5194cb;
+}
+
+/* remove border from navbar */
+.navbar{
+  /*padding-top: 6px;*/
+  border: 0px;
+}
+
+/* remove margins top and bottom from navbar */
+.navbar  {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 60px;
+  padding: 2px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  list-style: none;
+}
+
+/*  search activies on top of carousel */
+#searchAct {
+  padding: 8px 0px 2px 0px;
+}
+
+/* this is logo image size for desktop version */
+#logo-top{
+  position:relative;
+  height: 48px;
+  width: auto;
+}
+
+/* this is logo image size for mobile version */
+#logo-top2 {
+  position:relative;
+  margin-left: 10px;
+  margin-top: 6px;
+  height: 48px;
+  width: auto;
+}
+
+/* text center and capitalise */
+.caps-all{
+  text-transform:uppercase;
+  text-align: center;
+}
+
+/* remove dropdown border radius */
+.dropdown{
+  border-radius: 0px;
+  
+}
+
+/* remove jumbotron border radius */
+.container .jumbotron {
+  border-radius: 0px;
+
+}
+
+/* this is not used */
+.navbar-fixed-bottom {
+  background-color: #d4d8d9;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  text-align:center;
+}
+
+/*  */
+.input-group {
+  margin-bottom: 6px;
+}
+
+/* map size on contact page */
+#map-container { 
+  width: auto;
+  height: 480px;
+}
+
+/* map style on contact page */
+#map-container {  
+  margin-bottom: 20px; 
+  background-color:#FFF 
+}
+
+/* bs glyphicons for sports icons */
+.bs-glyphicons {
+  overflow: hidden;
+}
+.bs-glyphicons-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.bs-glyphicons li {
+  float: left;
+  width: 33.3333%;
+  width: calc(100% / 3);
+  padding: 24px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;  
+  border-right: 2px solid rgba(0,0,0,0.05); 
+}
+
+.bs-glyphicons .glyphicon {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 48px;
+  word-wrap: break-word;
+  height: 15px;
+}
+
+.bs-glyphicons .lead {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.bs-glyphicons .clear_wrap {
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  height: 15px;
+}
+
+.bs-glyphicons li:hover {
+  background-color: #f9f9f9;
+}
+
+.bs-glyphicons li:active {
+  opacity: 0.5; 
+  filter: alpha(opacity=50); 
+  background-color: #f9f9f9;
+}
+
+/* sports icon modal size */
+#all_year_sports .modal-dialog, 
+#summersports .modal-dialog,
+#wintersports .modal-dialog {
+  width: auto;
+}
+
+/* create scroll bar // this might not be used */
+div#Information {
+  height: 280px;
+  overflow: scroll;
+}
+
+/* scroll bar for search result list */
+#search_result_panel {
+  overflow-y: auto;
+  overflow-x: hidden; 
+  height: 480px;
+}
+
+/*  */
+.search {
+  margin-top: 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+/*  */
+.search .form-section{
+  border-radius: 5px;
+}
+
+/*  */
+.search_result_panel_content {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+}
+
+/* style for active selection on search list */
+.search_result_panel_content_focus img:active {
+  border: 1px solid rgba(82, 168, 236, 0.9);
+  -moz-box-shadow: 0 0 8px rgba(82, 168, 236, 0.7);
+  -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.7);
+  box-shadow: 0 0 8px rgba(82, 168, 236, 0.7);
+}
+
+/* style for pseudo class hover ans focus on search list */
+.search_result_panel_content_focus:hover {
+  background-color:#e0e0e0;
+}
+
+.search_result_panel_content_focus {
+  background-color:#e8e8e8;
+}
+
+
+.search_result_panel_content_focus:focus {
+  background-color:#e8e8e8;
+}
+
+ /* remove border radius for search button */  
+.form-group input, .form-group select, #searchicon, .form-group span {
+  border-radius: 0px; 
+}
+
+/* remove border radius on select options */
+.form-group #guest, .form-group #radiusSelect {
+  border-radius: 0px; 
+  -webkit-appearance: none;
+}
+    
+/* add margin bottom to all form groups */
+.form-group > * {
+  margin-bottom: 12px;
+}
+    
+/* this is not used */
+#addressInput {
+  /*margin-right: 12px; */
+}
+
+/* this makes the width of input group addon similar */
+#content .input-group-addon {
+  min-width:110px;
+  text-align:left;
+}
+
+/* this makes the width of input group addon similar on another page */
+.tab-content .input-group-addon {
+  min-width:110px;
+  text-align:left;
+}
+
+/*  */
+.form-control-feedback {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  z-index: 100;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+/* style for text white */
+.text-white {
+  color: #fff;
+}
+
+/* size of image of media object // this is on top of carousel */
+.media-object {
+  width: 48px;
+  height: auto;
+}
+
+/*  */
+input, label {
+  display:block;
+}
+
+/*  */
+.form-group input, .form-group select, #searchicon, .form-group span {
+  border-radius: 0px; 
+}
+
+.form-group #guest, .form-group #radiusSelect {
+  -webkit-appearance: none;
+  border-radius:0px; 
+}
+
+.form-group label span {
+  margin-top: -5px;
+  border-radius: 3px;
+}
+
+/*  */      
+.form-group #radiusSelect {
+  width: 100%;
+}
+  
+/*  */
+.form-group #guest {
+  width: 100%;
+}
+
+/*  */
+.glyphicon:empty {
+ width: auto; 
+}
+
+/*  */
+.fileupload .thumbnail {
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 3px;
+  vertical-align: middle;
+  text-align: center;
+  background-color: red;
+} 
+
+/*  */
+.fileupload .thumbnail > img {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 100%;
+}
+
+/*  */
+.col-md-4:nth-child(3n+1){
+  clear: left;
+}
+
+/* box shadow style for the navigation with tabs */
+.style_S {
+  -moz-box-shadow: 0 2px 20px -11px rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow:  0 2px 20px -11px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 2px 20px -11px rgba(0, 0, 0, 0.65);
+  z-index: 12;
+}
+
+/** style for navigation with tabs
+*   on the part of the search result page 
+*   service provider profile page and user profile page
+**/
+
+/*  */
+.nav-tabs > li > a {
+  line-height: 1.42857143;
+  border: 0;
+  background-color: #e8e8e8;
+  border-radius: 0px;
+}
+
+.nav-tabs.nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.nav-tabs.nav-justified > .active > a, 
+.nav-tabs.nav-justified > .active > a:hover, 
+.nav-tabs.nav-justified > .active > a:focus {
+  border: 0;
+}
+
+
+.nav > li > a:focus, 
+.nav > li > a:hover  {
+  text-decoration: none;
+  background-color: #f3f3f3;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+  color: #fff;
+  background-color: #1B7ABE;
+}
+
+/*  */
+.nav-tabs.nav-justified > li > a {
+  border-radius: 0px;
+  margin-right: 0px;
+  margin-top: 0;
+}
+
+/*  */
+.nav-tabs.nav-justified > li > a:first-child {
+  margin-right: 2px;
+}
+
+/************************************/
+
+/* search result margin space, above the Go to Profile */
+.s_R_marg {
+  margin-top:8px;
+}
+
+/* style for required field with *sign */
+.requiredFields {
+  color: #d9534f;
+  font-size: 24px;
+}
+
+/*  */
+.form-horizontal .has-feedback .requiredFields {
+  position: absolute;
+  top: -3px;
+  right: 8px;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+/* style for required field with *sign */
+.requiredFields_searchIcn {
+  color: #d9534f;
+  font-size: 18px;
+}
+
+/* main search small search bar */
+.form-horizontal .has-feedback .requiredFields_searchIcn {
+  position: absolute;
+  top: 0px;
+  right: 8px;
+  display: block;
+  line-height: 34px;
+  text-align: center;
+}
+
+/*  */
+.form-horizontal .alignCorrect {
+  padding-top: 0px;
+}
+
+/*  */
+.exceptionStyle .control-label {
+  text-align: left;
+  margin-bottom: 6px;
+  margin-top: 8px;
+}
+
+/* move something to the center of page */
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/*  */
+.termsStyle li {
+  margin-bottom: 12px;
+}
+
+/* this makes the bullet points into disc */
+.discStyle li {
+  list-style-type: disc;
+}
+
+/* this makes the bullet points into circles */
+.circleStyle li {
+ list-style-type: circle;
+}
+
+/* style for size of the images on about page */
+.img-responsive-about {
+  display: block;
+  max-width: 80%;
+  height: auto;
+}
+
+/* text truncate lead style */
+/* used mostly on terms and policy page */
+.nBStyle dt {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* text truncate lead */
+/* used mostly on terms and policy page */
+.nBStyleB dt {
+  width: 40px; 
+}
+
+/* text truncating */
+/* used mostly on terms and policy page */
+.nBStyleB dd {
+  margin-left: 60px; 
+}
+
+/* this add margin bottom for the lists */
+/* used mostly on terms and policy page */
+.nBStyleC dd {
+  margin-bottom: 6px; 
+}
+
+/*  style for making text uppercase*/
+/* used mostly on terms and policy page */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/* style for making text lowercase */
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+/* style for making text capitalized */
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+
+/* style for facebook login button 
+** reason for changing the selector 
+** is so that blockers on websites won't hide the social icons */
+
+.btn-surakitabu {
+  background-color:#3b5998; 
+  color:#fff;
+}
+
+.btn-surakitabu:hover,
+.btn-surakitabu:focus,
+.btn-surakitabu:active,
+.btn-surakitabu.active,
+.open .dropdown-toggle.btn-surakitabu {
+  background-color: #324b81;
+  color:#fff;
+}
+
+/* style for twitter login button */
+.btn-tuiti {
+  background-color:#00aced; 
+  color:#fff;
+}
+
+.btn-tuiti:hover,
+.btn-tuiti:focus,
+.btn-tuiti:active,
+.btn-tuiti.active,
+.open .dropdown-toggle.btn-tuiti {
+  background-color: #0083b3;
+  color:#fff;
+}
+
+/* style for google plus login button */
+.btn-gugo-jumlisha {
+  background-color:#dd4b39; 
+  color:#fff;
+}
+
+.btn-gugo-jumlisha:hover,
+.btn-gugo-jumlisha:focus,
+.btn-gugo-jumlisha:active,
+.btn-gugo-jumlisha.active,
+.open .dropdown-toggle.btn-gugo-jumlisha {
+  background-color: #ae2e1e;
+  color:#fff;
+}
+
+/* */
+form .has-feedback .requiredFields {
+    position: absolute;
+    top: -1px;
+    right: -6px;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+
+
+/* clear search icon all together */
+.addressInputSty {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* clear search icon */
+.form-inline .form-group #searchclear {
+    position:absolute;
+    right:8px;
+    top:-4px;
+    bottom:0;
+    height:14px;
+    margin:auto;
+    font-size:18px;
+    cursor:pointer;
+    color:#ccc;
+}
+
+#modifySearchMain .list-group {
+    margin-bottom: 0;
+}
+
+.searchInfoCurrent {
+    margin-bottom: 0;
+}
+
+
+/* anything below 992px falls into this */
+@media (max-width: 992px) {
+/* google maps in the contact page */
+  #map-container { 
+    width: 100%;
+    height: 480px;
+}
+
+/* this the size of the photo in the about page */
+  .img-responsive-about {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+}
+
+/* anything below 767px falls into this */
+@media(max-width:767px){
+/* text truncate ead */
+  .nBStyleB dt {
+    width: 10px; 
+    height: 0;
+}
+
+/* text truncate */
+  .nBStyleB dd {
+    margin-left: 30px; 
+}
+
+/* modal dialog size for sign in form */
+  .modal-dialog {
+    position: relative;
+    width: auto;
+    margin-top: 8px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+  /* search bar padding for mobile */
+  #searchAct {
+    padding: 24px 12px 12px 12px;
+  }
+
+  /* navbar link paddings */
+  .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* navbar link paddings and margins */
+  .navbar-nav {
+    margin: 10px 7.5px 7.5px 0px;
+    padding-right: 6px;
+  }
+
+  /* search result margin space, above the Go to Profile */
+  .s_R_marg {
+    margin-top:0px;
+  }
+}
+
+
+@media(min-width:768px){
+  #logo-top2 {
+    margin-top: 0px;
+  }
+}
+
+/* search result page navigation style */
+#s_R_style_page .nav-justified {
+  width: 100%;
+}
+
+/* search result page navigation style */
+#s_R_style_page .nav-justified > li {
+  float: none;
+}
+
+/* search result page navigation style */
+#s_R_style_page .nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* search result page navigation style */
+#s_R_style_page .nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+
+
+@media (max-width: 768px) { 
+/* search result page navigation style */
+  #s_R_style_page .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+
+/* search result page navigation style */
+  #s_R_style_page .nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+
+
+/*@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}*/

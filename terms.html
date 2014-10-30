@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookndo</title>
+    <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/theme.css" rel="stylesheet">
+    <link href="css/bookndo01.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="navbar nav navbar-default"  role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+      </button>
+      <a class="img-responsive hidden-md hidden-lg" href="#"><img src="images/bookndo.png" alt="Bookndo" id="logo-top2"></a>
+   </div>
+
+   <div class="">
+      <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div class="col-sm-offset-3 col-md-offset-4">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="index.html" title="Home">HOME</a></li>
+               <li class="first"><a href="about_us.html" title="About Us">ABOUT US</a></li>
+               <li class="last"><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">EN</a></li>
+                     <li><a href="#">FIN</a></li>
+                  </ul>
+               </li>
+              <li>
+                <a href="#" data-toggle="modal" data-target="#myModalSignUp">SIGN UP</a>
+                </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="modal" data-target="#myModal">LOG IN </a>
+               </li>
+            </ul>
+         </div>
+   </div>
+   <!-- /.navbar-collapse -->
+</div>
+
+
+</div>
+
+<!-- <div class="hidden-md hidden-lg">
+ <div class="col-md-12 center-block">
+ <h2 class="remove-width-quote topMenuQ">
+  Find sports activities and book them easily.
+  </h2>
+  </div>
+  </div>
+
+
+ <div id="content-main">
+         <div id="searchAct">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-offset-2">
+                     <div class="">
+                        <form class="form-inline" role="form">
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Specify location</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+                              </label>
+                              <input type="text" class="form-control" id="addressInput" placeholder="Specify location" value="">                    
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select start date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd1" required="" placeholder="Start date">                  
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select finish date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd2" required="" placeholder="Finish date"> 
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Number of people</small>
+                              </label>
+                              <select id="guest" name="guest" class="form-control">
+                                 <option value="1">1 Person</option>
+                                 <option value="2">2 People</option>
+                                 <option value="3">3 People</option>
+                                 <option value="4">4 People</option>
+                                 <option value="5">5 People</option>
+                                 <option value="6">6 People</option>
+                                 <option value="7">7 People</option>
+                                 <option value="8">8 People</option>
+                                 <option value="9">9 People</option>
+                                 <option value="10">10 People</option>
+                                 <option value="More than 10">10+ People</option>
+                              </select>
+                           </div>
+                           <div class="form-group ">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select distance</small>
+                              </label>
+                              <select id="radiusSelect" class="form-control">
+                                 <option value="25" selected="">25mi</option>
+                                 <option value="100">100mi</option>
+                                 <option value="200">200mi</option>
+                              </select>
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label invisible">
+                              <small class="text-info">Search </small>
+                              </label>
+                              <button class="btn btn-warning" id="searchicon" type="button" onclick="searchLocations()" value="Search"><span class="glyphicon glyphicon-search"></span>
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+ -->
+       <div class="container">
+      <div class="row" style="padding-top:48px; padding-bottom:48px; background-color:#f5f5f5;">
+         <h3 class="center-block">Terms</h3>
+         <div class="col-md-10 col-md-offset-1">
+            <h4 class="">1. Bookings and website use governed by these terms</h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt>1.1.</dt>
+               <dd>
+                  <p>The terminology used in this document are presented below: </p>
+                  <p>Gearent Oy: registered company name in Finland</p>
+                  <p> The Website: www.bookndo.com</p>
+                  <p>Service Provider: A company or organization that provides Services</p>
+                  <p>Services: The Services can be either</p>
+                  <ul class="discStyle">
+                     <li>sports activities (horse riding, sky diving etc.), </li>
+                     <li>sports equipment rentals (renting a bicycle, a boat, tour skates etc.), </li>
+                     <li>sports facility rentals (renting a tennis court, a badminton court etc.), </li>
+                     <li>lessons and courses (a yoga lesson, a Pilates course, a personal trainer session etc.), </li>
+                     <li>guides (a mountain guide, a guided bike tour etc.) or </li>
+                     <li>sports equipment repairs (bike repairs, ice-skate sharpening etc.). </li>
+                  </ul>
+                  <p>End User:</p>
+                  <ul class="discStyle">
+                     <li>An independent traveler or a local person who wants to engage in sports activities. </li>
+                     <li>A business user (e.g. an assistant booking a recreational activity for a team of colleagues)</li>
+                     <li>A hotel receptionist, hostel receptionist, tourist information receptionist, a travel agent or alike 
+                        booking a recreational activity for his/her customer.
+                     </li>
+                  </ul>
+               <dt>1.2.</dt>
+               <dd>
+                  <p>Your use of this website and any bookings you make via this website are subject to these terms of use (the 'Terms'). You agree to use this website in accordance with and subject to these Terms. The Terms constitute the entire agreement between you and Gearent Oy (the Website: www.bookndo.com).</p>
+                  <p>If you do not accept these Terms, do not use this website and do not make a booking via the Website. </p>
+               </dd>
+               <dt>1.3.</dt>
+               <dd>
+                  <p>We facilitate the processing and booking of the services. We do not provide, own or run any sports gear rental services.</p>
+               </dd>
+               <dt>1.4.</dt>
+               <dd>
+                  <p>You confirm that you are of sufficient age to lawfully use the Website, enter into a contract and to create binding legal obligations for any liability you may incur as a result of the use of this website. You understand that you are financially responsible for all uses of this website by you and those using your log-in information.</p>
+               <dd>
+               <dt>1.5.</dt>
+               <dd>
+                  <p>When you make a booking on the Website, you agree to enter into a contract for the Services reservation with Service Providers, not with our Website. We only act as a platform provider for booking service. It is the Services Provider's responsibility to provide you with the services. We are not responsible for the fulfillment of any booking made through our website or for the quality of service that are booked.</p>
+               </dd>
+               <dt>1.6.</dt>
+               <dd>
+                  <p>You may be asked to review the Services that you have received. We appreciate all feedback, but please note that we may share your review with the services provider in question so that they can act on your feedback and make any necessary improvements. The Services Providers will have your contact details and may contact you to ask further questions about your experiences in order to help them to make further improvements.</p>
+               </dd>
+            </dl>
+            <br />
+            <h4 class="">2. Making and cancelling a booking </h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt>2.1</dt>
+               <dd>
+                  <p>You will also be required to pay a non-refundable booking fee, which is our fee for making the booking and this is non-refundable in all circumstances. The booking fee is a fixed percentage of the total value of your booking: 15%. We collect this deposit for and on behalf of the relevant services provider.
+                  </p>
+                  <p>
+                     You will be responsible to the Services Provider on arrival for payment of the balance of the cost of the booking made by you, together with any other payments for any additional services subsequently agreed with the Services provider and, where applicable, payment of the Services Provider's service charges and taxes, pursuant to the terms and conditions of trade applied by such Services Provider. 
+                  </p>
+               </dd>
+               <dt>2.2</dt>
+               <dd>
+                  <p>You must use a credit card or debit card to guarantee a booking. <span class="text-uppercase">BY MAKING A BOOKING WITH YOUR CREDIT CARD OR DEBIT CARD, YOU AGREE TO ACCEPT THE RELEVANT CANCELLATION AND NO-SHOW POLICY OF SERVICES PROVIDER AS SET OUT IN ITS TERMS AND CONDITIONS. IN THE EVENT THAT YOU CANCEL YOUR BOOKING OUTSIDE THE PERMITTED TIMEFRAME SPECIFIED IN THIS POLICY (OR THAT YOU FAIL TO ARRIVE BY YOUR AGREED TIME), YOU AUTHORISE THE SERVICES PROVIDER TO CHARGE YOUR CREDIT CARD OR DEBIT CARD THE TOTAL BOOKING FEE WITHOUT FURTHER REFERENCE TO YOU. </span>
+                  </p>
+               </dd>
+               <dt>2.3</dt>
+               <dd>
+                  <p>
+                     Your non-arrival by the agreed time may result in the cancellation of your entire booking. Any amendments to your booking must be notified to and agreed with the Services Provider directly (but no refund of all or any part of the deposit will be made). In making a booking, it shall be your responsibility to disclose to the Services Provider any requirements or special facilities that you or a member of your group may need as a result of any medical & unsafe conditions. 
+                  </p>
+               </dd>
+               <dt>2.4</dt>
+               <dd>
+                  <p> When a booking is confirmed we will issue the booking confirmation on behalf of the Services Provider for each booking, but will not provide information about any charges for additional services or details of the service charge or taxes charged by the sports services provider. We strongly recommend you to check and confirm with the Services Provider the precise terms and conditions upon which the Services Provider makes the reserved service available to you upon receipt of the booking confirmation. The reference numbers included on the booking confirmation should be quoted in all enquiries, cancellation or modification of the booking.</p>
+               </dd>
+               <dt>2.5</dt>
+               <dd>
+                  <p>You may cancel your booking in accordance with the cancellation policy of the provider as disclosed on the booking confirmation and detailed property description page; this is normally at least 24 hours before your agreed arriving time and date. Please cancel via your "My Account" by logging in at <a href="http://www.bookndo.com">www.bookndo.com.</a> 
+                  </p>
+               </dd>
+               <dt>2.6</dt>
+               <dd>
+                  <p>Only the non-refundable booking deposit will be charged when you cancel your booking on time.</p>
+               </dd>
+            </dl>
+            <br />
+            <h4 class="">3. Liability and disclaimers </h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt>3.1</dt>
+               <dd>
+                  <p>In the event of a problem arising with the Services, you should contact the Services Provider. If you have a problem with the booking that you have made via our website please contact us directly via <a href="mailto:info@bookndo.com">info@bookndo.com.</a></p>
+               </dd>
+               <dt>3.2</dt>
+               <dd>
+                  <p>We are only a platform provider for the booking service; it is not the right party to make the contract between you and the sports service providers and has no responsibility or liability to you in respect of the terms of that contract. In detail we are not responsible for </p>
+                  <dl class="dl-horizontal nBStyleB nBStyleC">
+                     <dt>a.</dt>
+                     <dd>the accuracy or completeness of the descriptions of the Services that are displayed on our Website or Service Providers’ website;</dd>
+                     <dt>b.</dt>
+                     <dd>the fulfillment of a booking made through the website;</dd>
+                     <dt>c.</dt>
+                     <dd> the quality of the services that are or may be booked through the Website; </dd>
+                     <dt>d.</dt>
+                     <dd>any difficulty, accident, illness or any other problem which is caused by using the Services which is suffered by you or any of your group members during the use of the Service; 
+                     </dd>
+                     <dt>e.</dt>
+                     <dd>the ratings and reviews displayed on the website (the ratings are partly based on the opinions and reviews of people who have booked and experienced the relevant services); 
+                     </dd>
+                     <dt>f.</dt>
+                     <dd>any error or failure in the making or recording of a booking which is due to your error or which is due to any other circumstances that are outside our control (such as a power failure) or 
+                     </dd>
+                     <dt>g.</dt>
+                     <dd>any cancellation of a booking by the Services Provider for any reason whatsoever or any failure to provide all or any part of the booked Service by that Service Provider (and we strongly recommend that you take out an appropriate sports insurance policy to cover (amongst other things) unexpected cancellations. 
+                     </dd>
+                  </dl>
+               <dt>3.3</dt>
+               <dd>
+                  <p class="text-uppercase">NEITHER WE NOR ANY OF OUR DIRECTORS, EMPLOYEES, AFFILIATES OR OTHER REPRESENTATIVES WILL BE LIABLE TO YOU (OR ANY PARTY WHO HAS AN INTEREST IN THE BOOKING) FOR: (i) INDIRECT, SPECIAL OR CONSEQUENTIAL LOSS OR DAMAGES, (ii) LOSS OF DATA, INCOME, PROFITS, BUSINESS OR OPPORTUNITY OR (iii) LOSS OF OR DAMAGE TO PROPERTY, IN EACH CASE ARISING OUT OF OR IN CONNECTION WITH THE USE OF ANY INFORMATION, PRODUCTS, SERVICES, FACILITIES AND/OR THE MATERIALS OFFERED THROUGH THIS WEBSITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS OR DAMAGE, OR SUCH LOSS OR DAMAGES WERE REASONABLY FORESEEABLE.</p>
+               </dd>
+               <dt>3.4</dt>
+               <dd>
+                  <p>Our maximum aggregate liability to you (or any party who has an interest in the booking) related to the booking made through us shall be limited solely to the value of the booking fee that has been paid for that booking. Prior to making a booking, you should ensure that you have reviewed the Services Provider's terms and conditions and that they are acceptable to you. </p>
+               </dd>
+               <dt>3.5</dt>
+               <dd>
+                  <p>The whole listing of Service Providers and Services on the Website is not and should not be taken as a specific recommendation from us except the ones we promote specifically in the map.</p>
+               </dd>
+               <dt>3.6</dt>
+               <dd>
+                  <p class="text-uppercase">TO THE GREATEST EXTENT PERMITTED BY APPLICABLE LAW, ALL REPRESENTATIONS, WARRANTIES AND CONDITIONS, WHETHER EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE ARE HEREBY EXCLUDED, INCLUDING WITHOUT LIMITATION REPRESENTATIONS, WARRANTIES OR UNDERTAKINGS ABOUT ANY OF THE SERVICES, FACILITIES, INFORMATION AND/OR MATERIALS ON THIS WEBSITE, INCLUDING WITHOUT LIMITATION, THEIR ACCURACY, THEIR COMPLETENESS OR THEIR MERCHANTABILITY, QUALITY OR FITNESS FOR A PARTICULAR PURPOSE. THIS WEBSITE IS PROVIDED STRICTLY ON AN "AS IS" BASIS AND, IN PARTICULAR, WE DO NOT WARRANT THAT THE INFORMATION PUBLISHED ON THE WEBSITE WILL BE ERROR-FREE OR THAT THE WEBSITE WILL BE VIRUS OR BUG-FREE.</p>
+               </dd>
+               <dt>3.7</dt>
+               <dd>
+                  <p>Nothing in these Terms shall exclude or limit liability arising out of: (i) fraud or fraudulent misrepresentation or (ii) death or personal injury resulting from the negligence of the party seeking to rely on the exclusion or limitation. </p>
+               </dd>
+            </dl>
+            <br />
+            <h4 class="">4. Restricted conditions</h4>
+            <dl class="dl-horizontal nBStyleB">
+            <dt>
+            <dt>
+            <dd>
+               <p>You hereby confirm to us that you will not use this website for any purpose that is unlawful or prohibited by these Terms.</p>
+            </dd>
+            </dt><br />
+            <h4 class="">5. Credit and debit card security </h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt></dt>
+               <dd>
+                  <p>We make reasonable efforts to ensure that all credit card and debit card transactions carried out via this Website are secure. <span class="text-uppercase">HOWEVER</span>, if unauthorized charges appear on your credit card or debit card statement for any card used on this website at any time during or after you make your booking, conduct your transaction or disclose your card details on this website,bookndo.com shall not be liable or responsible in any way in respect of any damage or loss of whatsoever nature suffered by you arising from or in any way connected with said use, transaction or disclosure, save where such unauthorized charges appear as a direct result of our negligence and subject to any statutory rights which you may have.</p>
+               </dd>
+            </dl>
+            <br />
+            <h4 class="">6. Intellectual property rights and web-links</h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt>6.1</dt>
+               <dd>
+                  <p>The information, content, software, graphics, text, sounds, images, buttons, trademarks, service marks, trade names and logos ("Materials") contained in this website are protected by the laws of copyright, trademarks, database rights and other intellectual property rights under national laws and international treaties. The parties hereby agree that we retain all right, title, interest and intellectual property rights in and to the Materials. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any Materials. Nothing in these Terms shall be construed as transferring or granting (by implication or otherwise) to you any licence or right in or to the Website content.</p>
+               </dd>
+               <dt>6.2</dt>
+               <dd>
+                  <p>This website may contain hyperlinks to websites operated by parties other than us. Such hyperlinks are provided for your reference only. We do not control such websites and are not responsible for their contents. The inclusion of hyperlinks on this website to such other websites does not imply any endorsement of the material on such websites or any association with their operators.</p>
+               </dd>
+               <dt>6.3</dt>
+               <dd>
+                  <p>Our website is made available for personal use. You may not copy, monitor, screen-scrape, spider, deep-link or reproduce any content, information or software displayed on this site for any commercial or competitive purpose.</p>
+               </dd>
+            </dl>
+            <br />
+            <h4 class="">7. Indemnity </h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt></dt>
+               <dd>
+                  <p>You agree to indemnify and hold us, officers and other partners and employees, harmless from any loss, liability, claim or demand, including reasonable legal fees, made by any third party due to or arising out of your use of the website in contravention of these Terms.</p>
+               </dd>
+            </dl>
+            <br />
+            <h4 class="">8. General</h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt>8.1</dt>
+               <dd>
+                  <p>Our failure to enforce at any time or for any period any one or more of the Terms shall not be construed as a waiver of them or the rights attaching to any of them.</p>
+               </dd>
+               <dt>8.2</dt>
+               <dd>
+                  <p>The headings used in these Terms are for convenience only and shall not affect the meaning or scope of these Terms or otherwise be given other legal effect.</p>
+               </dd>
+               <dt>8.3</dt>
+               <dd>
+                  <p>We reserve the right to change these Terms as well as the contents of the Website for any reason and without liability to you, any other user or any third party. This right shall not affect the Terms accepted by you upon making a legitimate booking or purchase using the Website. You should check these Terms for any changes each time you access the Website.</p>
+               </dd>
+               <dt>8.4</dt>
+               <dd>
+                  <p>These Terms and your use of the Website are governed by the laws of the Republic of Finland. You hereby consent to the exclusive jurisdiction of the Republic of Finland’s courts in all disputes arising out of or relating to the use of the Website each time you access the Website. Use of the Website is not authorized in any jurisdiction that does not give effect to all provisions of these Terms including, without limitation, this paragraph.</p>
+               </dd>
+               <dt>8.5</dt>
+               <dd>
+                  <p> You agree that no joint venture, partnership, employment, or agency relationship exists between you and us as a result of these Terms or your use of the Website. Our performance of these Terms is subject to existing laws and legal process and nothing contained in this agreement is in derogation of our right to comply with law enforcement requests or requirements relating to your use of the Website or information provided to or gathered by us with respect to such use. If any part of these Terms is determined to be invalid or unenforceable, including but not limited to the "Liability and Disclaimers" section, then the invalid or unenforceable provision shall be deemed to be superseded by any such valid, enforceable provision that most closely matches the intent of the original provision and the remainder of these Terms shall continue in effect. A printed version of these Terms and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form. Although we cannot monitor the conduct of its user’s offsite, it shall be a violation of these Terms to use any information obtained from the Website in order to harass, abuse or harm other persons, or in order to contact, advertise to, solicit or sell to any user or person without their prior express consent.</p>
+               </dd>
+               <dt>8.6</dt>
+               <dd>
+                  <p>While our Terms require that Service Providers display prices which are inclusive of all value 
+                     added and other additional taxes, the price displayed is ultimately the responsibility of the Service 
+                     Provider rather than ours. The Website end user acknowledges that we shall not have liability to 
+                     the End Users in respect of any attempt by a Service Provider to levy additional value added or 
+                     other taxes on the End Users at the point of payment as a supplement to the price displayed and 
+                     the end users’ sole recourses in this regard will be against the Services Provider.
+                  </p>
+               </dd>
+            </dl>
+            <br />  
+            <h4 class="">9. Privacy policy</h4>
+            <dl class="dl-horizontal nBStyleB">
+               <dt></dt>
+               <dd>
+                  <p>We operate the Website by the following principles:</p>
+                  <p>
+                     We provide your information to the necessary third party Service Providers when you reserve, purchase or review Services through the Website. We also use your details to operate our website and, occasionally, to inform you of new features, services and products from us (subject to the preferences you have expressed to us). On occasion, we may supply statistics about our customers to third parties such as Services Providers or other agents. These statistics never contain personal identifying information.
+                  </p>
+                  <p>
+                     If at any time you believe that we have not adhered to these principles, please notify us via the Contact Form in Bookndo.com and we will use all reasonable efforts to determine and correct the problem promptly. If you have any questions, please contact us via email at: <a href="mailto:info@bookndo.com">info@bookndo.com</a>.
+                  </p>
+               </dd>
+            </dl>
+         </div>
+      </div>
+      </div>
+
+
+      <!-- opens sign up as a modal -->
+
+<div class="modal" id="myModalSignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+   <div class="modal-dialog">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form">
+               <div class="form-group">
+                     <label for="exampleInputEmail1">Full name</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Full name">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Your Email</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Your password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Confirm your password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
+                  </div>
+                  <div class="form-group clearfix">
+                     <button type="submit" class="btn btn-warning btn-block">Sign up</button>
+                  </div>
+                 
+               </form>
+               <p class="center-block text-uppercase">or</p>
+               <div class="form-group">
+                  <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign up with Facebook</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign up with Twitter</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign up with Google&#43;</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+  
+        <!-- Modal --> 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form">
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Email</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="col-sm-offset-1">
+                     <div class="col-xs-6 col-md-6">
+                        <div class="form-group" >
+                           <div class="checkbox">
+                              <label>
+                              <input type="checkbox"> Remember me
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-md-6">
+                        <div class="form-group" style="margin-top:10px;">
+                           <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot password?</a>
+                        </div>
+                     </div>
+                  </div>
+                
+                  <div class="form-group clearfix">
+                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                  </div>
+                 
+               </form>
+               <p class="center-block text-uppercase">or</p>
+               <div class="form-group">
+                  <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign in with Facebook</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign in with Twitter</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign in with Google&#43;</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+          <div class="footer">
+    <div class="container">      
+      <div class="row">
+        <div class="col-md-12">
+          <small>&copy; 2014. Bookndo &nbsp;<a href="terms_and_conditions.html">Terms</a></small>
+        </div>
+     
+     <div class="col-md-12">
+        <small>
+        <a href="service_provider_page.html">Sign up as a Service provider</a>
+        </small>
+        </div>
+</div>
+</div>
+</div>
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bookndo01.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/map.js"></script>
+     
+  </body>
+</html>

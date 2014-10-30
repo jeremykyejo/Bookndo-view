@@ -1,0 +1,96 @@
+/* CSS used here will be applied after bootstrap.css */
+
+.btn-file {
+  overflow: hidden;
+  position: relative;
+}
+.btn-file > input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+  width: 100%;
+}
+.fileinput {
+  margin-bottom: 9px;
+  display: block;
+}
+.fileinput .fileinput-filename {
+  font-size: 15px;
+}
+.fileinput .uneditable-input {
+  display: inline-block;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  cursor: text;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fileinput .uneditable-input [class^="fui-"] {
+  margin-right: .3em;
+}
+.fileinput .fileinput-preview {
+  cursor: pointer;
+}
+.fileinput .thumbnail {
+  overflow: hidden;
+  display: inline-block;
+}
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+  display: none;
+}
+.fileinput-inline .fileinput-controls {
+  display: inline;
+}
+.fileinput-new .input-group .btn-file {
+  border-radius: 0 4px 4px 0;
+}
+.fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-sm {
+  border-radius: 0 3px 3px 0;
+}
+.fileinput-new .input-group .btn-file.btn-lg {
+  border-radius: 0 6px 6px 0;
+}
+.form-group.has-warning .fileinput .uneditable-input {
+  color: #f1c40f;
+  border-color: #faebcc;
+}
+.form-group.has-warning .fileinput .fileinput-preview {
+  color: #f1c40f;
+}
+.form-group.has-warning .fileinput .thumbnail {
+  border-color: #faebcc;
+}
+.form-group.has-error .fileinput .uneditable-input {
+  color: #e74c3c;
+  border-color: #ebccd1;
+}
+.form-group.has-error .fileinput .fileinput-preview {
+  color: #e74c3c;
+}
+.form-group.has-error .fileinput .thumbnail {
+  border-color: #ebccd1;
+}
+.form-group.has-success .fileinput .uneditable-input {
+  color: #2ecc71;
+  border-color: #d6e9c6;
+}
+.form-group.has-success .fileinput .fileinput-preview {
+  color: #2ecc71;
+}
+.form-group.has-success .fileinput .thumbnail {
+  border-color: #d6e9c6;
+}
+.input-group-addon:not(:first-child) {
+  border-left: 0;
+}

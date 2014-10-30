@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#datetimepicker1").datetimepicker({lang:"de",i18n:{de:{months:["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],dayOfWeek:["So.","Mo","Di","Mi","Do","Fr","Sa."]}},timepicker:!1,format:"d.m.Y"})});

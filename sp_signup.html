@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Find activities and book them easily." />
+        <meta name="keywords" content="" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        <title>
+            Users        </title>
+        <link rel="shortcut icon" href="/images/icon-Bookndo.ico" type="image/x-icon">
+        <link rel="icon" href="/images/icon-Bookndo.ico" type="image/x-icon">
+        <!-- Loading Bootstrap -->
+
+        
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/bookndo01.css" />
+	<link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
+	<link rel="stylesheet" type="text/css" href="css/rating.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>        
+        <![endif]-->
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    </head>
+    <body onload="load()">
+        <!-- HEADER -->
+        <div class="navbar nav navbar-default"  role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+                </button>
+                <a class="img-responsive hidden-md hidden-lg" href="#"><img src="images/bookndo.png" alt="Bookndo" id="logo-top2"></a>
+            </div>
+
+            <div class="">
+                <a href="/index.php"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-offset-3 col-md-offset-4">
+                        <div class="col-md-offset-1"> 
+                            <ul class="nav navbar-nav">
+                                <li >
+                                    <a href="/">HOME</a>
+                                </li>
+                                <li >
+                                    <a href="/about_us">ABOUT US</a>
+                                </li>
+
+                                <li > 
+                                    <a href="/contact">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">EN</a></li>
+                                    <li><a href="#">FIN</a></li>
+                                </ul>
+                            </li>
+                            
+                                <li>
+                                    <a class="modalButton" data-toggle="modal" data-src="/users/add" data-target="#SignUpModal">SIGN UP</a>                                 
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="modal" data-target="#myModal">SIGN IN </a>
+
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </div>
+        <div class="hidden-md hidden-lg">
+            <div class="col-md-12 center-block">
+                <h2 class="remove-width-quote topMenuQ">
+                    Find sports activities and book them easily.
+                </h2>
+            </div>
+        </div>
+        <!-- BLUE TAB -->
+        <div id="content-main">
+            <div id="searchAct">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2">
+                            <form action="/s_p_products/search_results" class="form-inline" role="form" controller="s_p_products" id="SPProductSearchResultsForm" method="get" accept-charset="utf-8">                            <div class="form-group">
+                                <label class="control-label" style="margin-left:6px;">
+                                    <small class="text-white">Specify location</small>
+                                    <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+                                </label>
+                                <input  name="addressInput" id="addressInput" class="form-control" placeholder="Specify location" required="required" type="text" />
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="control-label" style="margin-left:6px;">
+                                    <small class="text-white">Select start date</small>
+
+                                    <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+
+                                </label>
+                                <div class="input text"><input name="dpd1" id="dpd1" class="form-control" placeholder="Start date" required="required" type="text"/></div>                            </div>
+
+                            <div class="form-group">
+
+                                <label class="control-label" style="margin-left:6px;">
+                                    <small class="text-white">Select finish date</small>
+
+                                    <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+
+                                </label>
+                                <div class="input text"><input name="dpd2" id="dpd2" class="form-control" placeholder="Finish date" required="required" type="text"/></div>                            </div>
+
+
+                            <div class="form-group">
+
+                                <label class="control-label" style="margin-left:6px;">
+                                    <small class="text-white">Number of people</small>
+                                </label>
+                                <select id="guestInput" name="data[SPProduct][guestInput]" class="form-control" required="required">
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                    <option value="9">9 People</option>
+                                    <option value="10">10 People</option>
+                                    <option value="More than 10">10+ People</option>
+                                </select>               
+                            </div>
+
+
+                            <div class="form-group ">
+
+                                <label class="control-label" style="margin-left:6px;">
+
+                                    <small class="text-white">Select distance</small>
+                                </label>
+
+                                <select id="radiusSelect" class="form-control" name="data[SPProduct][radiusSelect]" required="required">
+                                    <option value="5" selected="selected">5 km</option>
+                                    <option value="10">10 km</option>
+                                    <option value="20">20 km</option>
+                                    <option value="50">50 km</option>
+                                    <option value="100">100 km</option>
+                                </select>       
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label invisible">
+                                    <small class="text-info">Search </small>
+                                </label>
+                                <button class="btn btn-warning" id="searchicon" type="submit" value="Search"><span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+
+
+                            </form>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT APPEARS HERE    -->
+        <div id="content">
+                        <style>
+    body,html,#map_canvas{height:100%;margin:0;}
+    #map_canvas .centerMarker{
+        position:absolute;
+        /*url of the marker*/
+        background:url(/img/markers/off1.png) no-repeat;
+        /*center the marker*/
+        top:50%;left:50%;
+        z-index:1;
+        /*fix offset when needed*/
+        margin-left:-34px;
+        margin-top:-56px;
+        /*size of the image*/
+        height:56px;
+        width:68px;
+        cursor:pointer;
+    }
+
+
+    #map_canvas .centerMarker2{
+        position:absolute;
+        /*url of the marker*/
+        background:url(/img/markers/off2.png) no-repeat;
+        /*center the marker*/
+        top:50%;left:50%;
+        z-index:1;
+        /*fix offset when needed*/
+        margin-left:-18px;
+        margin-top:-80px;
+        /*size of the image*/
+        height:80px;
+        width:36px;
+        cursor:pointer;
+    }
+
+    .pac-container {
+        background-color: #FFF;
+        z-index: 20;
+        position: fixed;
+        display: inline-block;
+        float: left;
+    }
+    .modal{
+        z-index: 20;   
+    }
+    .modal-backdrop{
+        z-index: 10;        
+    }​
+</style>
+<div>
+    <!-- Modal -->
+    <div class="content">
+        <h3 class="text-warning caps-all">
+            Service provider registration
+        </h3>
+        <div class="container">
+            <div class="row well">
+                <div class="col-md-6 col-md-offset-3">
+                                                            <form action="/users/signup_service_provider" data-toggle="validator" novalidate="novalidate" id="UserSignupServiceProviderForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Company Name</span>
+                            <div class="input text required"><input name="data[User][full_name]" maxlength="20" class="form-control tooltip-hide" placeholder="Company name" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="What is your company name?" aria-describedby="name-format" type="text" id="UserFullName" required="required"/></div>                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Business Id</span>
+                            <div class="input text"><input name="data[User][business_id]" required="required" pattern="([0-9]){7}[-]([0-9]){1}" maxlength="9" class="form-control tooltip-hide" placeholder="1234567-8" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Your Business Id" type="text" id="UserBusinessId"/></div>                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Address line 1 </span>
+                            <div class="input text"><input name="data[User][street]" id="route" maxlength="40" class="form-control tooltip-hide" placeholder="Street/ road" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Fill the street address" aria-describedby="name-format" type="text"/></div>                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Address line 2 </span>
+                            <div class="input text"><input name="data[User][house_apt_no]" id="street_number" maxlength="30" class="form-control tooltip-hide" placeholder="House/Apartment number" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Fill the house number" aria-describedby="name-format" type="text"/></div>                            <span class="requiredFields">&#42;</span> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Zip Code </span>
+                            <div class="input text"><input name="data[User][zip_code]" id="postal_code" pattern="^([_0-9]){1,}$" maxlength="6" class="form-control tooltip-hide" placeholder="01234" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Your Zip Code" type="text"/></div>                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> City / Province </span>
+                            <div class="input text"><input name="data[User][city]" id="locality" class="form-control tooltip-hide" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Select your city" aria-describedby="name-format" type="text"/></div>                     
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Town / District</span>
+                            <div class="input text"><input name="data[User][addr_admin_lv_2]" id="administrative_area_level_2" maxlength="30" class="form-control tooltip-hide" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Fill the district name" aria-describedby="name-format" type="text"/></div>                            <span class="requiredFields">&#42;</span> 
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> State / County / Region</span>
+                            <div class="input text"><input name="data[User][addr_admin_lv_2]" id="administrative_area_level_1" class="form-control tooltip-hide" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Fill the state" aria-describedby="name-format" type="text"/></div>                     
+                            <span class="requiredFields">&#42;</span> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Country </span>
+                            <div class="input select"><select name="data[User][country]" id="country" class="form-control tooltip-hide" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Select your country" aria-describedby="name-format">
+<option value="AM">Armenia</option>
+<option value="AN">Andorra</option>
+</select></div>                     
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Email </span>
+                            <div class="input email"><input name="data[User][email]" maxlength="100" class="form-control tooltip-hide" placeholder="example@example.com" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Enter your email address" type="email" id="UserEmail"/></div>                     
+                        </div>
+
+                        <div class="help-block with-errors"></div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Phone number </span>
+                            <div class="input tel"><input name="data[User][phone]" pattern="^[\+]\([0-9]){3,+}$" maxlength="13" class="form-control tooltip-hide" placeholder="+358 123 456 789" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Fill in your phone number" type="tel" id="UserPhone"/></div>                        </div>
+                    </div>
+
+                    <!-- Add location -->
+                    <div class="form-group row">
+                        <div class="form-inline">
+
+                            <label class="col-md-10">Add business location</label>  
+
+                            <div class="col-md-10" id="addLocationError"></div>
+                            <a href="#" class="col-md-3 col-sm-6 col-xs-8">
+                                <button onclick="searchLocationsByInput()" type="button" name="SpLocation" class="btn btn-block btn-warning">Location</button>
+                            </a>
+                            <a style="display: none" href="#" id="linkAddLocation" class="col-md-3 col-sm-6 col-xs-8" data-toggle="modal" data-target="#addLocation"></a>
+
+                        </div>
+                        <div style="display: none">
+                            <table>
+                                <tr><td>LATITUDE:</td><td>
+                                        <div class="input text"><input name="data[User][addr_latitude]" id="lat1" required="required" type="text"/></div>                                    </td></tr>
+                                <tr><td>LONGITUDE:</td><td>
+                                        <div class="input text"><input name="data[User][addr_longitude]" id="lng1" required="required" type="text"/></div>                                    </td></tr>        
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword" class="control-label">Password</label>
+                        <div class="form-inline row">
+                            <div class="form-group col-sm-6">
+                                <div class="input password required"><input name="data[User][password]" data-toggle="validator" data-minlength="6" class="form-control" placeholder="Password" required="required" id="inputPassword" type="password" required="required"/></div>                     
+
+                                <span class="help-block">Minimum of 6 characters</span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <div class="input password"><input name="data[User][password-confirm]" data-match="#inputPassword" data-match-error="Whoops, these don&#039;t match" class="form-control" placeholder="Confirm Password" required="required" id="confirmPassword" type="password"/></div>                     
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <div class="input checkbox">
+                                <input type="hidden" name="data[User][agree]" id="UserAgree_" value="0"/>
+                                <input type="checkbox" name="data[User][agree]"  value="1" id="UserAgree" required data-validation-required-message=
+                                       "You must agree to the terms"/>                                    
+                                <label for="UserAgree">I Agree to the <a href="/terms_and_conditions">Terms</a> of Bookndo. 
+                                </label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" onclick="check_validation()">Submit</button>
+                        <div class="submit"><input  id="submit_sp_sign_up" style="display: none" type="submit" value="Submit"/></div></form>        
+                    </div>
+                    </form>
+                </div> 
+            </div>
+            <!-- end of row well -->
+        </div>
+
+    </div>
+</div>
+<!-- Confirm modal -->
+<div class="modal fade" id="confirm_alert_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Location Confirm</h4>
+            </div>
+            <div class="modal-body">
+                <h5>
+                    Do you want to keep your saved location?<br>
+                    OR update a new location, according to your input address?
+                </h5>
+            </div> <!-- end of modal body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="keep_location_button">Keep Saved Location</button>
+                <button type="button" class="btn btn-default" id="update_location_button">Update New Location</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- Add location modal -->
+<div class="modal fade" id="addLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add business location</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>Move the map to pin your address's exact location.</p>
+                <div class="form-inline" id="formInputAddLocation">
+                    <div class="form-group">
+                        <input id="addressInputAddLocation" type="text" name="address" class="form-control" placeholder="Search location"/>
+                        <button id="searchInsideMap" class="btn btn-primary" type="button" onclick="searchLocations()" value="Search">Search</button>
+                    </div>
+                </div>
+                <div style="width:100%; height:400px;" id="map_canvas"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+                            $(document).ready(function() {
+                                initialize_sign_up();
+                            });
+                            // This example displays an address form, using the autocomplete feature
+                            // of the Google Places API to help users fill in the information.
+
+                            var placeSearch, autocomplete_sign_up;
+                            var componentForm = {
+                                street_number: 'short_name',
+                                route: 'long_name',
+                                locality: 'long_name',
+                                administrative_area_level_1: 'short_name',
+                                administrative_area_level_2: 'short_name',
+                                //administrative_area_level_3: 'short_name',
+                                //neighborhood: 'short_name',
+                                //sublocality_level_1: 'short_name',
+                                country: 'short_name',
+                                postal_code: 'short_name'
+                            };
+
+                            function initialize_sign_up() {
+                                //geolocate();
+                                // Create the autocomplete object, restricting the search
+                                // to geographical location types.
+                                autocomplete_sign_up = new google.maps.places.Autocomplete(
+                                        /** @type {HTMLInputElement} */(document.getElementById('route')),
+                                        {types: ['geocode']});
+                                // When the user selects an address from the dropdown,
+                                // populate the address fields in the form.
+                                google.maps.event.addListener(autocomplete_sign_up, 'place_changed', function() {
+                                    fillInAddress();
+                                });
+                            }
+
+                            // [START region_fillform]
+                            function fillInAddress() {
+                                // Get the place details from the autocomplete object.
+                                var place = autocomplete_sign_up.getPlace();
+
+                                for (var component in componentForm) {
+                                    document.getElementById(component).value = '';
+                                }
+
+                                document.getElementById('street_number').value = '';
+                                document.getElementById('route').value = '';
+                                document.getElementById('locality').value = '';
+                                document.getElementById('administrative_area_level_1').value = '';
+                                document.getElementById('administrative_area_level_2').value = '';
+                                document.getElementById('country').value = '';
+                                document.getElementById('postal_code').value = '';
+
+                                // Get each component of the address from the place details
+                                // and fill the corresponding field on the form.
+                                //console.log(place.address_components);
+                                for (var i = 0; i < place.address_components.length; i++) {
+                                    var addressType = place.address_components[i].types[0];
+                                    if (componentForm[addressType]) {
+                                        var val = place.address_components[i][componentForm[addressType]];
+
+                                        if (addressType === 'country') {
+                                            $('#country').val(val);
+                                        }
+                                        else {
+                                            document.getElementById(addressType).value = val;
+                                        }
+                                    }
+                                }
+                            }
+                            /*
+                             // [END region_fillform]
+                             
+                             // [START region_geolocation]
+                             // Bias the autocomplete object to the user's geographical location,
+                             // as supplied by the browser's 'navigator.geolocation' object.
+                             function geolocate() {
+                             if (navigator.geolocation) {
+                             navigator.geolocation.getCurrentPosition(function(position) {
+                             var geolocation = new google.maps.LatLng(
+                             position.coords.latitude, position.coords.longitude);
+                             autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
+                             geolocation));
+                             });
+                             }
+                             }
+                             // [END region_geolocation]*/
+
+</script>
+<script>
+    function check_validation() {
+        var lat_value = document.getElementById('lat1').value;
+        var lng_value = document.getElementById('lng1').value;
+
+        if (!lat_value || !lng_value) {
+            window.setTimeout(function() {
+                $("#myLocationError").fadeTo(500, 0).slideUp(500, function() {
+                    $(this).remove();
+                });
+            }, 4000);
+            document.getElementById('addLocationError').innerHTML = '<div id="myLocationError"><div class="text-danger">Please specify your business location</div></div>';
+            $('addLocationError').focus();
+        }
+        else {
+            document.getElementById('submit_sp_sign_up').click();
+        }
+    }
+</script>
+
+	<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.timepicker.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/bookndo01.js"></script>
+	<script type="text/javascript" src="/js/validator.js"></script>
+	<script type="text/javascript" src="/js/clone-form-td.js"></script>
+
+<!-- GOogle map part -->
+<script>
+    var map;
+    var marker;
+    var geocoder = new google.maps.Geocoder();
+    var autocomplete;
+    var latlng_default = new google.maps.LatLng('60.1708', '24.9375');
+
+
+    var formInput = document.getElementById('formInputAddLocation');
+    var input = document.getElementById('addressInputAddLocation');
+
+    function initialize() {
+
+        var mapOptions = {
+            zoom: 15,
+            center: latlng_default,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControl: false,
+            styles: [
+                {
+                    "featureType": "water",
+                    "stylers": [
+                        {
+                            "hue": "#008BFF"
+                        },
+                        {
+                            "saturation": -50
+                        },
+                        {
+                            "lightness": -37
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "stylers": [
+                        {
+                            "hue": "#FF0000"
+                        },
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": 156
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                }
+            ]
+        };
+
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+                mapOptions);
+        $('<div/>').addClass('centerMarker').appendTo(map.getDiv())
+                //do something onclick
+                ;
+        //map.setCenter(latlng);
+        // load auto complete
+        autocomplete = new google.maps.places.Autocomplete(
+                /** @type {HTMLInputElement} */(input),
+                {types: ['geocode']});
+        // set the default position on the map
+
+
+        //map.controls[google.maps.ControlPosition.TOP_CENTER].push(formInput);
+        //autocomplete.bindTo('bounds', map);
+
+        google.maps.event.addListener(map, 'center_changed', function() {
+            //geocodePosition(map.getCenter());
+            document.getElementById('lat1').value = map.getCenter().lat();
+            // set value of longitude
+            document.getElementById('lng1').value = map.getCenter().lng();
+        });
+    }
+
+    document.getElementById('map_canvas').onmousedown = function() {
+        $('.centerMarker').removeClass('centerMarker');
+        $('<div/>').addClass('centerMarker2').appendTo(map.getDiv())
+                ;
+
+    };
+
+    document.getElementById('map_canvas').onmouseup = function() {
+        $('.centerMarker2').removeClass('centerMarker2');
+        $('<div/>').addClass('centerMarker').appendTo(map.getDiv())
+                ;
+    };
+
+    document.getElementById('map_canvas').onmouseout = function() {
+        $('.centerMarker').removeClass('centerMarker');
+
+        $('.centerMarker2').removeClass('centerMarker2');
+        $('<div/>').addClass('centerMarker').appendTo(map.getDiv())
+                ;
+    };
+
+
+    $('#addLocation').on('shown.bs.modal', function() {
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(latlng_default);
+    });
+    //google.maps.event.addDomListener(window, 'load', initialize);
+
+    // this is use for the search button, which is inside 
+    function searchLocations() {
+        var address = document.getElementById("addressInputAddLocation").value;
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({address: address}, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                //searchLocationsNear(results[0].geometry.location);
+                document.getElementById('lat1').value = results[0].geometry.location.lat();
+                document.getElementById('lng1').value = results[0].geometry.location.lng();
+
+                map.setCenter(results[0].geometry.location);
+                map.setZoom(17);
+                //markers.push(marker);
+            } else {
+                alert('Address ' + address + ' not found');
+            }
+        });
+    }
+
+    // this is use for the add location button 
+    function searchLocationsByInput() {
+        var street = document.getElementById("route").value;
+        var house_apt_number = document.getElementById("street_number").value;
+        var addr_admin_lv_1 = document.getElementById("administrative_area_level_1").value;
+        var addr_admin_lv_2 = document.getElementById("administrative_area_level_2").value;
+        var city = document.getElementById("locality").value;
+        var country = document.getElementById("country");
+
+        if (!document.getElementById('lat1').value || !document.getElementById('lng1').value)
+        {
+            if (!country.value)
+            {
+                alert('Please choose country');
+            }
+            else if (!street)
+            {
+                alert('Please input street name');
+            }
+            else if (!city)
+            {
+                alert('Please choose city');
+            }
+            else {
+
+                var address = street;
+
+                if (house_apt_number) {
+                    address += ', ' + house_apt_number;
+                }
+                ;
+
+                address += ', ' + city;
+
+                if (addr_admin_lv_1) {
+                    address += ', ' + addr_admin_lv_1;
+                }
+                ;
+
+                if (addr_admin_lv_2) {
+                    address += ', ' + addr_admin_lv_2;
+                }
+                ;
+
+                address += ', ' + country.options[country.selectedIndex].text;
+
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({address: address}, function(results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        //searchLocationsNear(results[0].geometry.location);
+                        document.getElementById('lat1').value = results[0].geometry.location.lat();
+                        document.getElementById('lng1').value = results[0].geometry.location.lng();
+
+                        latlng_default = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+
+                        // open the modal
+                        document.getElementById('linkAddLocation').click();
+                        initialize();
+
+                        //document.getElementById()
+                        //map.setCenter(results[0].geometry.location);
+                        map.setCenter(results[0].geometry.location);
+                        //markers.push(marker);
+                    } else {
+                        alert('Address ' + address + ' not found');
+                    }
+                });
+            }
+
+        }
+        else {
+            // open the confirm box, either update new location or keep the saved location
+            $('#confirm_alert_box').modal('show');
+
+            // if the keep location clicked
+            $('#keep_location_button').click(function() {
+                // close the confirmation modal
+                $('#confirm_alert_box').modal('hide');
+
+                // set default latlng value
+                latlng_default = new google.maps.LatLng(document.getElementById('lat1').value, document.getElementById('lng1').value);
+
+                // open google map modal
+                document.getElementById('linkAddLocation').click();
+                initialize();
+            });
+
+            // if the update location clicked
+            $('#update_location_button').click(function() {
+                // close the confirmation modal
+                $('#confirm_alert_box').modal('hide');
+
+                // clear the previous lat, lng
+                $('#lng1').val('');
+                $('#lat1').val('');
+
+                if (!country.value)
+                {
+                    alert('Please choose country');
+                }
+                else if (!street)
+                {
+                    alert('Please input street name');
+                }
+                else if (!city)
+                {
+                    alert('Please choose city');
+                }
+                else {
+                    // set the address
+                    var address = street;
+
+                    if (house_apt_number) {
+                        address += ', ' + house_apt_number;
+                    }
+                    ;
+
+                    address += ', ' + city;
+
+                    if (addr_admin_lv_1) {
+                        address += ', ' + addr_admin_lv_1;
+                    }
+                    ;
+
+                    if (addr_admin_lv_2) {
+                        address += ', ' + addr_admin_lv_2;
+                    }
+                    ;
+
+                    address += ', ' + country.options[country.selectedIndex].text;
+                    // end set the address
+
+                    var geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({address: address}, function(results, status) {
+                        if (status === google.maps.GeocoderStatus.OK) {
+                            //searchLocationsNear(results[0].geometry.location);
+                            document.getElementById('lat1').value = results[0].geometry.location.lat();
+                            document.getElementById('lng1').value = results[0].geometry.location.lng();
+
+                            latlng_default = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+
+                            // open the modal
+                            document.getElementById('linkAddLocation').click();
+                            initialize();
+
+                            //document.getElementById()
+                            //map.setCenter(results[0].geometry.location);
+                            map.setCenter(results[0].geometry.location);
+                            //markers.push(marker);
+                        } else {
+                            alert('Address ' + address + ' not found');
+                        }
+                    });
+                }
+            });
+        }
+    }
+</script>
+
+<script>
+    // set the default selected is empty
+    $(document).ready(function() {
+        $("#country").prop("selectedIndex", -1);
+    });
+</script>        </div>
+        <!-- FOOTER  -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <small>
+                            <a href="/terms_and_conditions/terms" target="_blank" >Terms</a> |
+                            <a href="/terms_and_conditions/privacy_and_cookies" target="_blank" >Privacy and Cookies</a>
+                        </small>
+                    </div>
+                                            <div class="col-md-12">
+                            <small>
+                                <a href="/users/signup_service_provider">Sign up as a Service provider</a>
+                            </small>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        <!-- Load JS here for greater good =============================-->
+        
+	
+	
+	
+	
+	<script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="/js/search1.js"></script>
+        <!-- Modal --> 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- INPUT FORM -->
+                    <!-- to show the error message -->
+                    <div id="errorLogin"></div>
+
+                    <form action="/users/login" role="form" id="UserLoginForm" onsubmit="event.returnValue = false; return false;" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <div class="input email"><input name="data[User][email]" maxlength="100" class="form-control" placeholder="Enter email" required="required" id="inputEmail1" type="email"/></div>                     
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <div class="input password required"><input name="data[User][password]" data-minlength="6" class="form-control" placeholder="Password" required="required" id="inputPassword" type="password" required="required"/></div>                     
+                    </div>
+                    <div class="col-sm-offset-1">
+                        <div class="col-xs-6 col-md-6">
+                            <div class="form-group" >
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="data[User][rememberMe]" id="UserRememberMe">
+                                         Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <div class="form-group" style="margin-top:10px;">
+                                <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <button type="submit" id="loading-btn" data-loading-text="Loading..." class="btn btn-primary btn-block">Login</button>
+                    </div>
+                    </form>                    <p class="center-block text-uppercase">or</p>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign in with Facebook</span></button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign in with Twitter</span></button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign in with Google&#43;</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function() {
+        $("#UserLoginForm").bind("submit", function(event) {
+            $.ajax({
+                async: true,
+                data: $("#UserLoginForm").serialize(),
+                dataType: "html",
+                beforeSend: function() {
+                    $("#errorLogin").html(null);
+                    $("#loading-btn").button('loading');
+                },
+                success: function(data, textStatus) {
+                    $("#errorLogin").html(data);
+                    $("#loading-btn").button('reset');
+                },
+                type: "POST",
+                url: "\/users\/login"});
+            return false;
+        });
+    });
+//]]>
+</script><!-- Sign up modal -->
+<div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="error_add"></div>
+                    <form action="/users/add" data-toggle="validator" novalidate="novalidate" controller="users" id="UserAddForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Full Name</span>
+                            <div class="input text required"><input name="data[User][full_name]" maxlength="20" class="form-control tooltip-hide" placeholder="Full name" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="What is your full name?" aria-describedby="name-format" type="text" id="UserFullName" required="required"/></div>                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon"> Email </span>
+                            <div class="input email"><input name="data[User][email]" maxlength="100" class="form-control tooltip-hide" placeholder="example@example.com" required="required" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Enter your email address" type="email" id="UserEmail"/></div>                     
+                        </div>
+
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPasswordSignUp" class="control-label">Password</label>
+                        <div class="input password required"><input name="data[User][password]" data-toggle="validator" data-minlength="6" class="form-control" placeholder="Password" required="required" id="inputPasswordSignUp" type="password" required="required"/></div>                     
+                        <span class="help-block">Minimum of 6 characters</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="control-label">Confirm Password</label>
+                        <div class="input password"><input name="data[User][password-confirm]" data-match="#inputPasswordSignUp" data-match-error="Whoops, these don&#039;t match" class="form-control" placeholder="Confirm Password" required="required" id="confirmPasswordSignUp" type="password"/></div>                     
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input checkbox">
+                            <input type="checkbox" name="data[User][agree]"  value="1" id="UserAgree" required data-validation-required-message=
+                                   "You must agree to the terms"/>                                    
+                            <label for="UserAgree">I Agree to the <a href="/terms_and_conditions">Terms</a> of Bookndo. 
+                            </label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <button type="submit" class="btn btn-success btn-block">Sign up</button>
+                    </div>
+                    </form>        
+                    <p class="center-block text-uppercase">or</p>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign up with Facebook</span></button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign up with Twitter</span></button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign up with Google&#43;</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function() {
+        $("#UserAddForm").bind("submit", function(event) {
+            $.ajax({
+                async: true,
+                data: $("#UserAddForm").serialize(),
+                dataType: "html",
+                success: function(data, textStatus) {
+                    $("#error_add").html(data);
+                },
+                type: "POST",
+                url: "\/users\/add"});
+            return false;
+        });
+    });
+//]]>
+</script>                <!-- 2. BUILD JS FILE -->
+        <script type="text/javascript">
+            var locationSelect;
+            var autocomplete;
+
+            var initialLocation;
+            var helsinki = new google.maps.LatLng(60.171438, 24.921081);
+            var browserSupportFlag = new Boolean();
+
+            function load() {
+                autocomplete = new google.maps.places.Autocomplete(
+                        /** @type {HTMLInputElement} */(document.getElementById('addressInput')),
+                        {types: ['geocode']});
+
+                // Try W3C Geolocation (Preferred)
+                if (navigator.geolocation) {
+                    browserSupportFlag = true;
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        //map.setCenter(initialLocation);
+                        // to print the address to the input tag
+                        findAddress(initialLocation);
+                    }, function() {
+                        handleNoGeolocation(browserSupportFlag);
+                    });
+                }
+                // Browser doesn't support Geolocation
+                else {
+                    browserSupportFlag = false;
+                    //document.getElementById('getLocation').innerHTML = '<input type="text" id="addressInput" size="50"/>';
+                    handleNoGeolocation(browserSupportFlag);
+                }
+
+                function handleNoGeolocation(errorFlag) {
+                    if (errorFlag === true) {
+                        // if the user doesnt allow to use gps
+                        // message = "Geolocation service failed.";
+                        initialLocation = helsinki;
+                    } else {
+                        // if the browser doesnt support it
+                        message = "Your browser doesn't support geolocation";
+                        initialLocation = helsinki;
+                    }
+                    //map.setCenter(initialLocation);
+                }
+            }
+
+            function findAddress(point)
+            {
+                var searchUrl = 'https://maps.googleapis.com/maps/api/geocode/xml?latlng=' + point.lat() + ',' + point.lng() + '&location_type=ROOFTOP&result_type=street_address&key=AIzaSyBw3Ng6a20nbcoRoISXuAq6k6VH6TF27Nw';
+                //var searchUrl = 'phpsqlsearch_genxml.php?lat=' + center.lat() + '&lng=' + center.lng() + '&radius=' + radius;
+
+                country = "";
+                downloadUrl(searchUrl, function(data) {
+                    var xml = parseXml(data);
+                    var address_componentNodes = xml.documentElement.getElementsByTagName("address_component");
+                    var typeNodes;
+                    var country = '';
+
+                    for (var i = 0; i < address_componentNodes.length; i++) {
+                        typeNodes = address_componentNodes[i].getElementsByTagName('type');
+                        for (var j = 0; j < typeNodes.length; ++j)
+                        {
+                            if (typeNodes[j].innerHTML === 'street_number' || typeNodes[j].innerHTML === 'route' || typeNodes[j].innerHTML === 'postal_code')
+                            {
+                                // do nothing
+                                break;
+                            }
+                            else if (typeNodes[j].innerHTML === 'country')
+                            {
+                                country += address_componentNodes[i].getElementsByTagName('long_name')[0].textContent;
+                                break;
+                            }
+                            else
+                            {
+                                country += address_componentNodes[i].getElementsByTagName('long_name')[0].textContent + ', ';
+                                break;
+                            }
+                        }
+                    }
+
+                        // Here, we got the name of the city
+                        $("#addressInput").blur().val(country);
+
+                });
+            }
+
+            /*****************************************************************************************
+             * @function to download Url
+             * @param {url} url
+             * @param {function} callback
+             */
+            function downloadUrl(url, callback) {
+                var request = window.ActiveXObject ?
+                        new ActiveXObject('Microsoft.XMLHTTP') :
+                        new XMLHttpRequest;
+
+                request.onreadystatechange = function() {
+                    if (request.readyState === 4) {
+                        request.onreadystatechange = doNothing;
+                        callback(request.responseText, request.status);
+                    }
+                };
+
+                request.open('GET', url, true);
+                request.send(null);
+            }
+
+            /*****************************************************************************************
+             * @function doNothing
+             */
+            function doNothing() {
+            }
+
+            /******************************************************************************************
+             * @function to parseXml file
+             * @param {string} str
+             */
+            function parseXml(str) {
+                if (window.ActiveXObject) {
+                    var doc = new ActiveXObject('Microsoft.XMLDOM');
+                    doc.loadXML(str);
+                    return doc;
+                } else if (window.DOMParser) {
+                    return (new DOMParser).parseFromString(str, 'text/xml');
+                }
+            }
+        </script>
+    </body>
+</html>

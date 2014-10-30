@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookndo</title>
+    <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/theme.css" rel="stylesheet">
+    <link href="css/bookndo01.css" rel="stylesheet">
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+       <!-- HEADER -->
+<div class="navbar nav navbar-default"  role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+      </button>
+      <a class="img-responsive hidden-md hidden-lg" href="#"><img src="images/bookndo.png" alt="Bookndo" id="logo-top2"></a>
+   </div>
+
+   <div class="">
+      <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div class="col-sm-offset-3 col-md-offset-4">
+
+         <div class="col-md-offset-1">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="index.html" title="Home">HOME</a></li>
+               <li class="first"><a href="about_us.html" title="About Us">ABOUT US</a></li>
+               <li class="last"><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">EN</a></li>
+                     <li><a href="#">FIN</a></li>
+                  </ul>
+               </li>
+               <li>
+                <a href="#" data-toggle="modal" data-target="#myModalSignUp">SIGN UP</a>
+                </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="modal" data-target="#myModal">LOG IN </a>
+               </li>
+            </ul>
+         </div>
+   </div>
+   <!-- /.navbar-collapse -->
+</div>
+
+
+</div>
+
+
+<div class="hidden-md hidden-lg">
+ <div class="col-md-12 center-block">
+ <h2 class="remove-width-quote topMenuQ">
+  Find sports activities and book them easily.
+  </h2>
+  </div>
+  </div>
+
+<!-- <div class="btn-group">
+  <input id="searchinput" type="search" class="form-control" placeholder="type something..." value="">
+  <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+</div> -->
+            
+
+
+<!--  <div id="content-main">
+         <div id="searchAct">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-offset-2">
+                     <div class="">
+                        <form class="form-inline" role="form">
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Specify location</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+                              </label>
+                              <div class="addressInputSty">
+                              <input id="addressInput" type="search" class="form-control" placeholder="Specify location" value="">
+                              <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+                              </div>  
+
+                           </div>
+
+
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select start date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd1" required="" placeholder="Start date">                  
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select finish date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd2" required="" placeholder="Finish date"> 
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Number of people</small>
+                              </label>
+                              <select id="guest" name="guest" class="form-control">
+                                 <option value="1">1 Person</option>
+                                 <option value="2">2 People</option>
+                                 <option value="3">3 People</option>
+                                 <option value="4">4 People</option>
+                                 <option value="5">5 People</option>
+                                 <option value="6">6 People</option>
+                                 <option value="7">7 People</option>
+                                 <option value="8">8 People</option>
+                                 <option value="9">9 People</option>
+                                 <option value="10">10 People</option>
+                                 <option value="More than 10">10+ People</option>
+                              </select>
+                           </div>
+                           <div class="form-group ">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select distance</small>
+                              </label>
+                              <select id="radiusSelect" class="form-control">
+                                 <option value="25" selected="">25mi</option>
+                                 <option value="100">100mi</option>
+                                 <option value="200">200mi</option>
+                              </select>
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label invisible">
+                              <small class="text-info">Search </small>
+                              </label>
+                              <button class="btn btn-warning" id="searchicon" type="button" onclick="searchLocations()" value="Search"><span class="glyphicon glyphicon-search"></span>
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> -->
+
+        
+        <!-- /.navbar-collapse -->
+        </nav>
+        
+      <div class="container-fluid">
+         <div class="row">
+             <div class="col-sm-2" style="margin-top: 42px; margin-bottom: 24px;">
+               <ul class="nav nav-pills nav-stacked navbar-default">
+                  <li><a href="user_profile.html"><i class="glyphicon glyphicon-user"></i> Account</a></li>
+                  <li><a href="user_purchase.html"><i class="glyphicon glyphicon-calendar"></i> Purchase History</a></li>
+                  <li><a href="user_settings.html"><i class="glyphicon glyphicon-wrench"></i> Settings</a></li>
+                  <li class="active"><a href="user_faq.html"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
+                  <li><a href="user_feedback.html"><i class="glyphicon glyphicon-pencil"></i> Feedback</a></li>
+               </ul>
+            </div>
+            <!-- put tab content here -->
+            <div class="col-md-9 ">
+
+             <div class="panel panel-default">
+              <div class="panel-heading">
+                 <h3> Frequently Asked Questions (FAQ)</h3>
+              </div>
+              <div class="panel-body">
+
+
+              
+               <ol class="dl-horizontal">
+                  <li><b>Can we get a discount on the commission? </b><br />
+                      No. All of our clients pay the same price for our service. (Except a few 
+                            clients who piloted our service before launch.)
+                  </li>
+                  <hr>
+                  <li><b>Can we get a discount on the monthly fee?</b> <br />
+                      No. All of our clients pay the same price for our service. (Except a few clients who piloted our service before launch.) 
+
+                  </li>
+                  <hr>
+                  <li><b>Our business is seasonal. Can we pay only for those months in 
+                      which we operate? </b><br />
+                      No. Almost all sports and leisure activities are seasonal in nature, that is, they can be practiced either only in wintertime or only in summertime. However, end-users can for example plan their holidays or business recreational days at any time of the year. Therefore it is important that your company can be found in our service at all times.
+
+                  </li>
+                  <hr>
+                  <li><b>Out of which price is the commission calculated? </b><br />
+                      The commission is calculated of the price of your service paid by the end user.
+
+                  </li>
+                  <hr>
+                  <li><b>Which payment gateway does Bookndo use?</b><br />
+                      Bookndo uses Authorize.net payment gateway. 
+                  </li>
+                  <hr>
+                  <li><b>Does Bookndo pay the money transaction costs?</b><br />
+                      Yes. 
+
+                  </li>
+                  <hr>
+                  <li><b>If we make a booking for a customer of ours through Bookndo, do we have to pay commission for the booking?</b><br />
+ 
+                      No. Please, note that in this case the customer must pay for the booking straight to you at the moment he makes the booking.
+                  </li>
+                  <hr>
+                  <li><b>Can the Bookndo booking system be integrated to our company’s 
+                      website?</b><br /> 
+                      Yes, it is possible to integrate Bookndo booking service to your company’s 
+                      website at the price of 5200 Euros +  <span class="label label-warning"> VAT (24%) </span>. 
+                  </li>
+               </ol>
+            </div>
+            <!-- tab content ends here -->
+         </div>
+      </div>
+      </div>
+      </div>
+
+
+
+
+<div class="modal" id="myModalSignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+   <div class="modal-dialog">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form">
+               <div class="form-group">
+                     <label for="exampleInputEmail1">Full name</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Full name">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Your Email</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Your password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Confirm your password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
+                  </div>
+                  <div class="form-group clearfix">
+                     <button type="submit" class="btn btn-warning btn-block">Sign up</button>
+                  </div>
+                 
+               </form>
+               <p class="center-block text-uppercase">or</p>
+               <div class="form-group">
+                  <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign up with Facebook</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign up with Twitter</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign up with Google&#43;</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+    <!-- Opens sign in as a modal -->
+    
+     <!-- Modal --> 
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+   <div class="modal-dialog">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form">
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Email</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="col-sm-offset-1">
+                     <div class="col-xs-6 col-md-6">
+                        <div class="form-group" >
+                           <div class="checkbox">
+                              <label>
+                              <input type="checkbox"> Remember me
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-md-6">
+                        <div class="form-group" style="margin-top:10px;">
+                           <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot password?</a>
+                        </div>
+                     </div>
+                  </div>
+                
+                  <div class="form-group clearfix">
+                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                  </div>
+                 
+               </form>
+               <p class="center-block text-uppercase">or</p>
+               <div class="form-group">
+                  <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign in with Facebook</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign in with Twitter</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign in with Google&#43;</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+   <!-- end of modal -->
+     <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <small><a href="terms.html" target="_blank" >Terms</a> |
+            <a href="privacy_and_cookies.html" target="_blank" >Privacy and Cookies</a>
+            </small>
+          </div>
+          <div class="col-md-12">
+            <small>
+            <a href="sp_signup">Sign up as a Service provider</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Load JS here for greater good =============================-->
+  <script src="js/jquery-1.8.3.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bookndo01.js"></script>
+      <script src="js/image_slider.js"></script>
+      <script src="js/validator.js"></script>
+      <script src="js/map.js"></script>
+   </body>
+</html>

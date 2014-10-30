@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <title>Bookndo</title>
+      <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+      <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+      <!-- Loading Bootstrap -->
+      <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="bootstrap/css/theme.css" rel="stylesheet">
+      <link href="css/jquery.timepicker.css" rel="stylesheet">
+      <link href="css/bootstrapValidator.css" rel="stylesheet">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+      <link href="css/bookndo01.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- HEADER -->
+
+
+
+      <div class="navbar nav navbar-default"  role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+      </button>
+      <a class="img-responsive hidden-md hidden-lg" href="#"><img src="images/bookndo.png" alt="Bookndo" id="logo-top2"></a>
+   </div>
+
+   <div class="">
+      <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div class="col-sm-offset-3 col-md-offset-4">
+
+         <div class="col-md-offset-1">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="index.html" title="Home">HOME</a></li>
+               <li class="first"><a href="about_us.html" title="About Us">ABOUT US</a></li>
+               <li class="last"><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">EN</a></li>
+                     <li><a href="#">FIN</a></li>
+                  </ul>
+               </li>
+               <li>
+                <a href="#" data-toggle="modal" data-target="#myModalSignUp">SIGN UP</a>
+                </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="modal" data-target="#myModal">LOG IN </a>
+               </li>
+            </ul>
+         </div>
+   </div>
+   <!-- /.navbar-collapse -->
+</div>
+
+
+</div>
+
+
+<div class="hidden-md hidden-lg">
+ <div class="col-md-12 center-block">
+ <h2 class="remove-width-quote topMenuQ">
+  Find sports activities and book them easily.
+  </h2>
+  </div>
+  </div>
+
+<!-- <div class="btn-group">
+  <input id="searchinput" type="search" class="form-control" placeholder="type something..." value="">
+  <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+</div> -->
+            
+
+
+ <!-- <div id="content-main">
+         <div id="searchAct">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-offset-2">
+                     <div class="">
+                        <form class="form-inline" role="form">
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Specify location</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+                              </label>
+                              <div class="addressInputSty">
+                              <input id="addressInput" type="search" class="form-control" placeholder="Specify location" value="">
+                              <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+                              </div>  
+
+                           </div>
+
+
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select start date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd1" required="" placeholder="Start date">                  
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select finish date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd2" required="" placeholder="Finish date"> 
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Number of people</small>
+                              </label>
+                              <select id="guest" name="guest" class="form-control">
+                                 <option value="1">1 Person</option>
+                                 <option value="2">2 People</option>
+                                 <option value="3">3 People</option>
+                                 <option value="4">4 People</option>
+                                 <option value="5">5 People</option>
+                                 <option value="6">6 People</option>
+                                 <option value="7">7 People</option>
+                                 <option value="8">8 People</option>
+                                 <option value="9">9 People</option>
+                                 <option value="10">10 People</option>
+                                 <option value="More than 10">10+ People</option>
+                              </select>
+                           </div>
+                           <div class="form-group ">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select distance</small>
+                              </label>
+                              <select id="radiusSelect" class="form-control">
+                                 <option value="25" selected="">25mi</option>
+                                 <option value="100">100mi</option>
+                                 <option value="200">200mi</option>
+                              </select>
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label invisible">
+                              <small class="text-info">Search </small>
+                              </label>
+                              <button class="btn btn-warning" id="searchicon" type="button" onclick="searchLocations()" value="Search"><span class="glyphicon glyphicon-search"></span>
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+ </div> -->
+
+
+      <div class="container-fluid">
+         <!-- changed this from container-fluid -->
+         <div class="row">
+         <div class="col-sm-2" style="margin-top: 42px; margin-bottom: 24px;">
+               <ul class="nav nav-pills nav-stacked navbar-default">
+                  <li class="active"><a href="s_provider_profile.html"><i class="glyphicon glyphicon-user"></i> Account</a></li>
+                  <li><a href="s_purchase.html"><i class="glyphicon glyphicon-calendar"></i> Purchase History</a></li>
+                  <li><a href="s_settings.html"><i class="glyphicon glyphicon-wrench"></i> Settings</a></li>
+                  <li><a href="s_faq.html"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
+                  <li><a href="s_feedback.html"><i class="glyphicon glyphicon-pencil"></i> Feedback</a></li>
+               </ul>
+            </div>
+            <!--col-2 ends-->
+            <!-- form starts here -->
+            <div class="col-md-9">
+               <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
+                  <li class="active">
+                     <a href="#basic_info" role="tab" data-toggle="tab">Basic information</a>
+                  </li>
+                  <li class="">
+                     <a href="#opening_schedule" role="tab" data-toggle="tab">Opening Schedule </a>
+                  </li>
+                  <li class="">
+                     <a href="#product_type" role="tab" data-toggle="tab">Service</a>
+                  </li>
+                  <li class="">
+                     <a href="#Billing" role="tab" data-toggle="tab">Billing</a>
+                  </li>
+                  <li class="">
+                     <a href="#pass_word" role="tab" data-toggle="tab">Password</a>
+                  </li>
+               </ul>
+              
+
+
+               <div class="tab-content well well-sm">
+<!-- profile picture -->
+<div class="tab-pane active" id="basic_info">
+<div class="row" style="margin-top:12px;">
+   <!-- profile picture -->
+   <div class="col-md-2">
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+         <div id="profile_pic0">
+            <img src='http://res.cloudinary.com/hfmgdxcqz/image/upload/c_fill,h_140,w_140/v1410352074/uvqxtiog86ftofqpmbsh.jpg' class='img-rounded' height='140' width='140'/> 
+         </div>
+         
+
+         <!-- modal for change profile -->
+         <div class="modal fade" id="changeProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                     <h4 class="modal-title">Change photo</h4>
+                  </div>
+                  <form action="/photos/insert" id="imageForm0" method="post" accept-charset="utf-8">
+                     <div class="modal-body">
+                        <!-- The file upload form used as target for the file upload widget -->
+                        <!--<form id="fileupload" action="#" method="POST" enctype="multipart/form-data"> -->
+                        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+                        <noscript><input type="hidden" name="redirect" value="http://blueimp.github.io/jQuery-File-Upload/"></noscript>
+                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                        <div class="row fileupload-buttonbar">
+                           <div class="col-md-10">
+                              <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 200px;"></div>
+                              <!-- The fileinput-button span is used to style the file input field as button -->
+                              <div id='backend_upload'>
+                                 <div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>
+                                 <span class="btn btn-success fileinput-button">
+                                    <span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span>
+                                    <div class="input file"><input type="file" name="data[Photo][cloudinaryIdentifier]"  accept="image/gif, image/jpeg, image/png" id="PhotoCloudinaryIdentifier"/></div>
+                                 </span>
+                                 <a href="#" data-dismiss="fileinput">
+                                 <button type="reset" class="btn btn-warning cancel">
+                                 <i class="glyphicon glyphicon-ban-circle"></i>
+                                 <span>Remove</span>
+                                 </button>
+                                 </a>
+                              </div>
+                           </div>
+                           <!-- The global progress state -->
+                           <div class="col-md-5 fileupload-progress fade">
+                              <!-- The global progress bar -->
+                              <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                 <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                              </div>
+                              <!-- The extended global progress state -->
+                              <div class="progress-extended">&nbsp;</div>
+                           </div>
+                        </div>
+                        <!-- The table listing the files available for upload/download -->
+                        <table role="presentation" class="table table-striped">
+                           <tbody class="files"></tbody>
+                        </table>
+                        <!--</form>-->
+                     </div>
+                     <!-- end of modal body -->
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="upload_profile" type="submit" class="btn btn-primary start">
+                        <i class="glyphicon glyphicon-upload"></i>
+                        <span>Start upload</span>
+                        </button>
+                     </div>
+                  </form>
+               </div>
+               <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+         </div>
+         <!-- end of modal for change profile -->
+
+
+
+
+         <!-- modal for sports photos -->
+         <div class="modal fade" id="changeCovers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                     <h4 class="modal-title">Add cover photos</h4>
+                  </div>
+                  <div class="modal-body">
+                     @Daniel: this part is for you, feel free to do it :D
+                  </div>
+                  <!-- end of modal body -->
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+               </div>
+               <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+         </div>
+         <!-- end of modal for sports photos -->
+
+         <!-- END OF ADD 10 PICTURES PROFILE -->
+      </div>
+   </div>
+
+   <div class="col-md-6">
+         
+          <!-- Button trigger modal -->
+         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changeProfile" style="margin-bottom:10px;"> 
+         Change profile
+         </button>
+
+         <br/>
+
+         <!-- ADD 10 PICTURES HERE -->
+         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changeCovers">
+         Upload sports photos
+         </button>
+
+   </div>
+</div>
+<!-- end of row -->
+
+
+                        <hr >
+                        <p>View and update your basic information testing</p>
+                        <!-- start of basic information -->
+                        <!-- form 1 company name details-->
+                        <form name="form1" id="form10" method="POST" action="welcome.php" data-toggle="validator" role="form">
+                           <div class="form-group">
+                              <div class="input-group input-group-sm " for="name">
+                                 <span class="input-group-addon "> Company Name</span>
+                                 <input type="text" id="companyname" name="companyName" aria-describedby="name-format" maxlength="20" class="form-control tooltip-hide" placeholder="Company Name" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Name of your company">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm" for="name">
+                                 <span class="input-group-addon"> First Name </span>
+                                 <input type="text" id="firstname" name="firstName" aria-describedby="name-format" maxlength="20" class="form-control tooltip-hide" placeholder="First Name" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="First name">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm" for="name">
+                                 <span class="input-group-addon"> Last Name </span>
+                                 <input type="text" id="lastname" name="lastName" aria-describedby="name-format" maxlength="20" class="form-control tooltip-hide" placeholder="Last name" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Last name">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm" for="name">
+                                 <span class="input-group-addon"> Street Address </span>
+                                 <input type="text" id="streetame" name="streetAddress" aria-describedby="name-format" maxlength="30" class="form-control tooltip-hide" placeholder="Address" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Street address for your service">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm" for="name">
+                                 <span class="input-group-addon"> Address Line 2</span>
+                                 <input type="text" id="addressline" name="addressLine" aria-describedby="name-format" maxlength="30" class="form-control tooltip-hide" placeholder="Address" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Second address">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm" for="name">
+                                 <span class="input-group-addon"> City </span>
+                                 <input type="text" id="city" name="city" aria-describedby="name-format" maxlength="10" class="form-control tooltip-hide" placeholder="City" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="City">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm">
+                                 <span class="input-group-addon"> Zip Code </span>
+                                 <input type="text" name="zipCode" pattern="^([_0-9]){3,}$" maxlength="6" class="form-control tooltip-hide" placeholder="01234" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Zip code">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm" for="name">
+                                 <span class="input-group-addon"> Country </span>
+                                 <input type="text" id="name" name="country" aria-describedby="name-format" maxlength="10" class="form-control tooltip-hide" placeholder="Country" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Country">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm">
+                                 <span class="input-group-addon"> Phone Number </span>
+                                 <input type="text" name="phoneNumber" pattern="" maxlength="13" class="form-control tooltip-hide" placeholder="+358 123 456 789" required data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Phone number">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="input-group input-group-sm">
+                                 <span class="input-group-addon"> Email </span>
+                                 <input type="email" name="email" class="form-control tooltip-hide" required placeholder="example@example.com" data-toggle="tooltip" data-placement="top" data-trigger="focus" title="Email">
+                                 <br/>
+                              </div>
+                           </div>
+                        
+                           <div class="form-group">
+                              <button type="submit" class="btn btn-success">Update information</button> 
+                           </div>
+                        </form>
+                        <!-- end of basic information -->
+                     </div>
+                     <!-- end of div id basic_info -->
+                     <!-- opening schedule tab -->
+                     <!-- end of pass opening Schedule --> 
+                     <div class="tab-pane" id="opening_schedule">
+                        <form name="form2" id="form11" method="POST" action="welcome.php" data-toggle="validator" role="form">
+                           <div class="form-horizontal" name="form2" id="form12" method="POST" action="welcome.php" data-toggle="validator" role="form">
+                              <div class="panel panel-success">
+                                 <!-- Default panel contents -->
+                                 <div class="panel-heading">
+                                    <strong>&#42;Opening season&#58;</strong>
+                                 </div>
+                                 <div class="panel-body">
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="checkboxes">&#42;Select opening season</label>
+                                       <div class="col-md-5">
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="highSeason" value="highSeason"> High season
+                                          </label>
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="midSeason" value="midSeason"> Mid season
+                                          </label>
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="lowSeason" value="lowSeason"> Low season
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="checkboxes">&#42;Bookings can be made by&#58;</label>
+                                       <div class="col-md-5">
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="Minute" value="Minute"> Minute
+                                          </label>
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="Hour" value="Hour"> Hour
+                                          </label>
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="Day" value="Day"> Day
+                                          </label>
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="Week" value="Week"> Week
+                                          </label>
+                                          <label class="checkbox-inline">
+                                          <input type="checkbox" id="Month" value="Month"> Month
+                                          </label>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="panel panel-info exceptionStyle">
+                                 <!-- Default panel contents -->
+                                 <div class="panel-heading">
+                                    <strong>&#42;Opening schedule&#58;</strong>
+                                 </div>
+                                 <div class="panel-body">
+                                    <div class="row">
+                                       <div class="col-sm-10">
+                                          <div class="col-sm-4">
+                                             <div class="form-group">
+                                                <label class="label_ttl control-label">
+                                                Start date
+                                                <a href="#" class="btn btn-xs btn-info" id="exceptionStartDate">Change</a>
+                                                </label>
+                                                <input type="text" name="exceptionStartDate" class="input_fn form-control" id="dpd1" placeholder="MM/DD/YYYY">    
+                                             </div>
+                                          </div>
+                                          <div class="col-sm-4 col-sm-offset-1">
+                                             <div class="form-group">
+                                                <label class="label_ttl control-label">
+                                                End date
+                                                <a href="#" class="btn btn-xs btn-info" id="exceptionStartDate">Change</a>
+                                                </label>
+                                                <input type="text" name="exceptionStartDate" class="input_fn form-control" id="dpd1" placeholder="MM/DD/YYYY">    
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                       <table class="table table-hover table-bordered table-condensed">
+                                          <thead>
+                                             <th>
+                                                <!-- -->
+                                             </th>
+                                             <th>
+                                                Opens at&#58;  
+                                                <i class="glyphicon glyphicon-time">
+                                                </i>
+                                             </th>
+                                             <th>
+                                                Closes at&#58;  
+                                                <i class="glyphicon glyphicon-time">
+                                                </i>
+                                             </th>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                <th>
+                                                   Weekdays
+                                                </th>
+                                                <td>
+                                                   <input class="hours_open" size="10" name="mondayOpen" />
+                                                </td>
+                                                <td>
+                                                   <input class="hours_close" size="10" name="mondayClose" />
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Saturdays
+                                                </th>
+                                                <td>
+                                                   <input class="hours_open" size="10" name="saturdayOpen" />
+                                                </td>
+                                                <td>
+                                                   <input class="hours_close" size="10" name="saturdayClose" />
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Sundays
+                                                </th>
+                                                <td>
+                                                   <input class="hours_open" size="10" name="sundayOpen" />
+                                                </td>
+                                                <td>
+                                                   <input class="hours_close" size="10" name="sundayClose" />
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                                 <!-- end of table responsive -->
+                                 <!-- end of for tablets and mobile -->
+                              </div>
+                              <div class="panel panel-danger exceptionStyle">
+                                 <div class="panel-heading">Exceptions to opening times:</div>
+                                 <!-- end of panel heading -->
+                                 <div class="panel-body">
+                                    
+                                       <fieldset>
+                                          <div class="row">
+                                             <div class="col-sm-10">
+                                                <div class="col-sm-4">
+                                                   <div class="form-group">
+                                                      <label class="control-label">
+                                                      Exception start date
+                                                      <a href="#" class="btn btn-xs btn-info" id="exceptionStartDate">Change</a>
+                                                      </label>
+                                                      <input type="text" name="exceptionStartDate" class="form-control" id="dpd1" placeholder="MM/DD/YYYY">    
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-4 col-sm-offset-1">
+                                                   <div class="form-group">
+                                                      <label for="exceptionTimeStart" class="control-label">From</label>
+                                                      <input class="hours_open form-control" id="exceptionTimeStart" size="10" name="exceptionTimeStart" placeholder="HH:MM">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <!-- end of first one -->
+                                             <div class="col-sm-10">
+                                                <div class="col-sm-4">
+                                                   <div class="form-group">
+                                                      <label class="control-label">
+                                                      Exception start date
+                                                      <a href="#" class="btn btn-xs btn-info" id="exceptionEndDate">Change</a>
+                                                      </label>
+                                                      <input type="text" name="exceptionEndDate" class="form-control" id="dpd2" placeholder="MM/DD/YYYY">    
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-4 col-sm-offset-1">
+                                                   <div class="form-group">
+                                                      <label for="exceptionTimeStart" class="control-label">To</label>
+                                                      <input class="hours_close form-control" id="exceptionTimeEnd" size="10" name="exceptionTimeStart" placeholder="HH:MM">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row">
+                                             <div class="col-md-10">
+                                                <div class="col-sm-4">
+                                                   <div class="form-group">
+                                                      <label class="control-label" for="serviceDescr">Description</label>
+                                                      <textarea class="form-control" name="exceptionDesc" rows="2"></textarea>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                    
+                                       </fieldset>
+                                   
+                                    <!-- end of panel body -->
+                                 </div>
+                                 <!-- end of clonedInput -->
+                              </div>
+                              <!-- end of panel -->
+                              <hr>
+                              <div class="form-group">
+                                 <button type="submit" class="btn btn-success">Save information</button> 
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     <!-- end of pass opening Schedule --> 
+                     <!--  product_type starts --> 
+                     <div class="tab-pane" id="product_type">
+                        <div class="panel panel-default">
+                           <div class="panel-heading">
+                             <h3>Services</h3>
+                           </div>
+                           <div class="panel-body">
+                           
+                             
+                                 <!-- this is for the service tab -->
+                                 <div class="" id="">
+                                    <form name="form3" id="form13" method="post" role="form" class="form-horizontal">
+                                       <div id="entry1" class="clonedInput">
+                                          <fieldset>
+                                            <!--  <h2 id="reference" name="reference" class="heading-reference">Service</h2> -->
+                                             <!-- Form Name -->
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectActivity">
+                                                Select activity
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <select id="selectActivity" name="selectActivity" class="select_activity form-control">
+                                                      <option value="null">
+                                                         &#45;&#45;
+                                                      </option>
+                                                      <option value="Option one">
+                                                         Option one
+                                                      </option>
+                                                      <option value="Option two">
+                                                         Option two
+                                                      </option>
+                                                      <option value="Option three">
+                                                         Option three
+                                                      </option>
+                                                      <option value="Option four">
+                                                         Option four
+                                                      </option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectServiceType">
+                                                Select service type
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <select id="selectServiceType" name="selectServiceType" class="select_service_type form-control">
+                                                      <option value="null">
+                                                         &#45;&#45;
+                                                      </option>
+                                                      <option value="Option one">
+                                                         Option one
+                                                      </option>
+                                                      <option value="Option two">
+                                                         Option two
+                                                      </option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectCategory">
+                                                Select category
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <select id="selectCategory" name="selectCategory" class="select_category form-control">
+                                                      <option value="null">
+                                                         &#45;&#45;
+                                                      </option>
+                                                      <option value="Option one">
+                                                         Option one
+                                                      </option>
+                                                      <option value="Option two">
+                                                         Option two
+                                                      </option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectSubCat">
+                                                Select sub-category of service
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <select id="selectSubCat" name="selectSubCat" class="select_sub_cat_prod form-control">
+                                                      <option value="null">
+                                                         &#45;&#45;
+                                                      </option>
+                                                      <option value="Option one">
+                                                         Option one
+                                                      </option>
+                                                      <option value="Option two">
+                                                         Option two
+                                                      </option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectNumber">
+                                                Number of items, slots etc. of this type
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <input type="text" class="form-control" placeholder="&#45;&#45;" name="numberSlots" />
+                                                </div>
+                                             </div>
+                                             <div class="form-group has-feedback">
+                                                <label class="col-md-4 control-label alignCorrect" for="numberOfItems">
+                                                Number of items / slots that must be booked for the service to take place </label>  
+                                                <div class="col-md-4">
+                                                   <input id="numberOfItems" name="numberOfItems" type="text" placeholder="&#45;&#45;" class="form-control">
+                                                   <span class="requiredFields">&#42;</span>
+                                                </div>
+                                             </div>
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label alignCorrect" for="daysInAdvance">
+                                                How many days in advance must the bookings be made for the service to take place</label>  
+                                                <div class="col-md-4">
+                                                   <input id="daysInAdvance" name="daysInAdvance" type="text" placeholder="&#45;&#45;" value="2" class="input_fn form-control input-md" required>
+                                                </div>
+                                             </div>
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label alignCorrect" for="daysToCancel">
+                                                How many days in advance can a booking be cancelled at no cost</label>  
+                                                <div class="col-md-4">
+                                                   <input id="daysToCancel" name="daysToCancel" type="text" placeholder="&#45;&#45;" value="2" class="input_fn form-control input-md" required>
+                                                </div>
+                                             </div>
+                                             <!-- File Button --> 
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label alignCorrect" for="imageProduct">Add product image</label>
+                                                <div class="col-md-4">
+                                                   <input id="imageProduct" name="imageProduct" class="input-file" type="file">
+                                                </div>
+                                             </div>
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectSeason">
+                                                Select season for this service
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <select id="selectSeason" name="selectSeason" class="select-season-service form-control">
+                                                      <option value="null">
+                                                         &#45;&#45;
+                                                      </option>
+                                                      <option value="Option one">
+                                                         Summer
+                                                      </option>
+                                                      <option value="Option two">
+                                                         Winter
+                                                      </option>
+                                                      <option value="Option two">
+                                                         All year
+                                                      </option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <!-- Select Basic -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="selectSeason">
+                                                Select VAT
+                                                </label>
+                                                <div class="col-md-4">
+                                                   <select id="selectVat" name="selectVat" class="select-season-service form-control">
+                                                      <option value="24">
+                                                         24&#37;
+                                                      </option>
+                                                      <option value="14">
+                                                         14&#37;
+                                                      </option>
+                                                      <option value="10">
+                                                         10&#37;
+                                                      </option>
+                                                      <option value="0">
+                                                         0&#37;
+                                                      </option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="priceBooking">Price</label>  
+                                                <div class="col-md-4">
+                                                   <input id="priceBooking" name="priceBooking" type="text" placeholder="0,00 &#8364;" pattern="[0-9]*[\.,][0-9]{2,}?" class="input_fn form-control input-md" required>
+                                                </div>
+                                             </div>
+                                             <!-- Text input-->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="serviceName">Service name</label>  
+                                                <div class="col-md-4">
+                                                   <input id="serviceName" name="serviceName" type="text" placeholder="" class="form-control input-md" required="">
+                                                </div>
+                                             </div>
+                                             <!-- Textarea -->
+                                             <div class="form-group">
+                                                <label class="col-md-4 control-label" for="serviceDescr">Description</label>
+                                                <div class="col-md-4">                     
+                                                   <textarea class="form-control" id="serviceDescr" name="serviceDescr">This is ....</textarea>
+                                                </div>
+                                             </div>
+                                             <div class="form-group">
+                                                <div class="col-md-4 col-md-offset-4">
+                                                   <button type="submit" class="btn btn-sm btn-primary">Submit service</button>
+                                                </div>
+                                             </div>
+                                          </fieldset>
+                                       </div>
+                                       <!-- end of entry1 -->
+                                    </form>
+                                 </div>
+
+                                 <hr>
+
+                                 <div class="" id="">
+                                    <table class="table table-striped table-condensed" id="mytable">
+                                       <thead>
+                                          <tr>
+                                             <th><input type="checkbox" id="checkall" /></th>
+                                             <th>Activity</th>
+                                             <th>Date added</th>
+                                             <th>Service name</th>
+                                             <th class="col-sm-2">Edit or remove</th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          <tr>
+                                             <td><input type="checkbox" class="checkthis" /></td>
+                                             <td>Surfing</td>
+                                             <td>2014/04/11</td>
+                                             <td>Surf surf</td>
+                                             <td><a class="modalButton" data-toggle="modal" data-src="/s_p_products/edit/11" data-target="#myEditModal"><button class="btn btn-primary btn-xs modalButton" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"> Edit</span></button></a>
+                                                <a id="trash11" class="trash delButton"><button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"> Delete</span></button></a>
+                                             </td>
+                                          </tr>
+                                          <tr>
+                                             <td><input type="checkbox" class="checkthis" /></td>
+                                             <td>Fitness</td>
+                                             <td>2014/02/01</td>
+                                             <td>Fitness fitness</td>
+                                             <td><a class="modalButton" data-toggle="modal" data-src="/s_p_products/edit/11" data-target="#myEditModal"><button class="btn btn-primary btn-xs modalButton" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"> Edit</span></button></a>
+                                                <a id="trash11" class="trash delButton"><button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"> Delete</span></button></a>
+                                             </td>
+                                          </tr>
+                                          <tr>
+                                             <td><input type="checkbox" class="checkthis" /></td>
+                                             <td>Fitness</td>
+                                             <td>2014/02/01</td>
+                                             <td>Fitness fitness</td>
+                                             <td><a class="modalButton" data-toggle="modal" data-src="/s_p_products/edit/11" data-target="#myEditModal"><button class="btn btn-primary btn-xs modalButton" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"> Edit</span></button></a>
+                                                <a id="trash11" class="trash delButton"><button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"> Delete</span></button></a>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                           
+                              <!-- end of this is for the service tab -->
+                           </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                           <button type="submit" class="btn btn-success">Save information</button> 
+                        </div>
+                     </div>
+                     <!-- end of product_type--> 
+                     <!--  Billing starts --> 
+                     <div class="tab-pane" id="Billing">
+                        
+                        <div class="panel panel-default">
+                           <div class="panel-heading">
+                              <h3>Payment and billing</h3>
+                           </div>
+                           <div class="panel-body">
+                              <form name="form6" id="form16" method="POST" action="welcome.php" data-toggle="validator" role="form" class="form-horizontal">
+                                 <fieldset>
+                                    <!-- Form Name -->
+                                    <div class="col-md-offset-4">
+                                       <div class="radio">
+                                          <label for="radios-0">
+                                          <input type="radio" name="radios" id="radios-0" value="1">
+                                          Paypal
+                                          </label>
+                                       </div>
+                                       <div class="radio">
+                                          <label for="radios-1">
+                                          <input type="radio" name="radios" id="radios-1" value="2">
+                                          Credit card
+                                          </label>
+                                       </div>
+                                       <div class="radio">
+                                          <label for="radios-2">
+                                          <input type="radio" name="radios" id="radios-2" value="3">
+                                          Wire Transfer
+                                          </label>
+                                       </div>
+                                    </div>
+                                 </fieldset>
+                              </form>
+                        <hr>
+
+                              <form name="form7" id="form17" data-toggle="validator" role="form" class="form-horizontal">
+                                 <fieldset>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="accountNumber">Account number</label>  
+                                       <div class="col-md-5">
+                                          <input id="accountNumber" name="accountNumber" type="text" placeholder="0123 4567 8910 1112" class="form-control input-md" required="">
+                                       </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="paypalAccount">Pay pal Account</label>  
+                                       <div class="col-md-5">
+                                          <input id="paypalAccount" name="paypalAccount" type="text" placeholder="1234 5678 9012 3456" class="form-control input-md">
+                                       </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="cardName">Cardholder name</label>  
+                                       <div class="col-md-4">
+                                          <input id="cardName" name="cardName" type="text" placeholder="Name " class="form-control input-md">
+                                       </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="expireDate">Expiration date</label>  
+                                       <div class="col-md-4">
+                                          <input id="expireDate" name="expireDate" type="text" placeholder="MM/YYYY" class="form-control input-md" required="">
+                                       </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                       <label class="col-md-4 control-label" for="cvc">CVC</label>  
+                                       <div class="col-md-2">
+                                          <input id="cvc" name="cvc" type="text" placeholder="123" class="form-control input-md" required="">
+                                       </div>
+                                    </div>
+                                 </fieldset>
+                              </form>
+                           </div>
+                        </div>
+                        <!-- end of billing tab pane -->
+                  
+                        <div class="form-group">
+                           <button type="submit" class="btn btn-success">Update information</button> 
+                        </div>
+                     </div>
+                     <!-- pass tab -->
+                     <div class="tab-pane" id="pass_word">
+                      
+                          
+
+                               <div class="panel panel-default">
+              <div class="panel-heading">
+                 <h3> Password settings</h3>
+              </div>
+              <div class="panel-body">
+
+                          <div class="row">
+                               <div class="col-md-11 col-md-offset-1">
+                              <form class="form-horizontal" role="form">
+                                 <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-2 control-label">Old password</label>
+                                    <div class="col-sm-6">
+                                       <input type="password" class="form-control" id="inputPassword" placeholder="&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;">
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="newPassword" class="col-sm-2 control-label">New password</label>
+                                    <div class="col-sm-6">
+                                       <input type="password" class="form-control" id="newPassword" placeholder="&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;">
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="newPassword" class="col-sm-2 control-label">Confirm password</label>
+                                    <div class="col-sm-6">
+                                       <input type="password" class="form-control" id="newPassword" placeholder="&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;">
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                       <button type="submit" class="btn btn-success">Save password</button> 
+                                    </div>
+                                 </div>
+                              </form>
+                              </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- end of pass tab pane -->
+                  </div>
+               </div>
+               <!-- tab content end here -->
+            </div>
+            <!-- col-md-8 end here -->
+         </div>
+         <!-- end of row well -->
+      </div>
+      <!-- end of container -->
+      <!-- Opens sign up as a modal -->
+      <div class="container" >
+         <!-- Modal --> 
+         <div class="modal fade" id="addLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+                     <h4 class="modal-title" id="myModalLabel">Add product location</h4>
+                  </div>
+                  <div class="modal-body">
+                     <div class="row">
+                        <p>Drag the red marker to add location by coordinates.</p>
+                        <form id="mapForm" role="form" class="form-inline">
+                           <div class="form-group">
+                              <input type="text" name="address" class="form-control" placeholder="Search location"/>
+                           </div>
+                           <div class="form-group">
+                              <input type="submit" value="Search" class="btn btn-primary"/>
+                           </div>
+                        </form>
+                        <div>
+                           <div style="width:100%; height: 300px"  id="addLocation_canvas"></div>
+                           <br/><br/>
+                           <div id="error"></div>
+                           <div>
+                              <table>
+                                 <tr>
+                                    <td>LATITUDE:</td>
+                                    <td><input id="lat" type="text"/></td>
+                                 </tr>
+                                 <tr>
+                                    <td>LONGITUDE:</td>
+                                    <td><input id="lng" type="text"/></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end of modal -->
+        <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <small><a href="terms.html" target="_blank" >Terms</a> |
+            <a href="privacy_and_cookies.html" target="_blank" >Privacy and Cookies</a>
+            </small>
+          </div>
+          <div class="col-md-12">
+            <small>
+            <a href="sp_signup">Sign up as a Service provider</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Load JS here for greater good =============================-->
+      <script src="js/jquery-1.8.3.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bootstrap-datepicker.js"></script>
+      <script src="js/jquery.timepicker.js">  </script>
+      <script src="js/clone-form-td.js">  </script>
+      <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
+      <script type="text/javascript" src="js/validator_bookndo.js"></script>
+      <script src="js/bookndo01.js"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript">
+         var map;
+          var marker;
+          var geocoder = new google.maps.Geocoder();
+         
+          function geocodePosition(pos) {
+              var msg = "";
+              geocoder.geocode({
+                  latLng: pos
+              }, function(responses) {
+                  if (responses && responses.length > 0) {
+                      /*msg = 'Location : ' + responses[0].formatted_address + '<br/> ';
+                       msg = msg + 'Latitude : ' + pos.lat() + '<br/> ';
+                       msg = msg + 'Longitude : ' + pos.lng() + '<br/> ';
+                       attachMessage(marker, msg);*/
+         
+                      // clear error window
+                      document.getElementById('error').innerHTML = "";
+                      // set value of latitude
+                      document.getElementById('lat').value = pos.lat();
+                      // set value of longitude
+                      document.getElementById('lng').value = pos.lng();
+                  } else {
+                      msg = 'Cannot determine address at this location.';
+                      document.getElementById('error').innerHTML = msg;
+                  }
+              });
+         
+          }
+         
+          $(document).ready(function() {
+         
+         //                $("#addLocation").on("shown.bs.modal", function () {
+         //     google.maps.event.trigger(map, "resize");
+         // });
+         
+             $('#addLocation').on('shown.bs.modal', function() {
+         var currentCenter = map.getCenter();  // Get current center before resizing
+         google.maps.event.trigger(map, "resize");
+         map.setCenter(currentCenter); // Re-set previous center
+         
+         });
+         
+              // set the default position on the map
+              var latlng = new google.maps.LatLng(65.17217, 24.93935);
+              
+              // set the default value to the input boxes
+              document.getElementById('lat').value = latlng.lat();
+              document.getElementById('lng').value = latlng.lng();
+              var myOptions = {
+                  zoom: 10,
+                  center: latlng,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              map = new google.maps.Map(document.getElementById("addLocation_canvas"), myOptions);
+         
+         
+              //form id
+         var mapForm = document.getElementById('mapForm');
+         
+         //event we are listening for
+         //second is the function that's happening
+         mapForm.addEventListener('submit', formSubmitted);
+         
+         var geocoder = new google.maps.Geocoder();
+         
+         function formSubmitted(event){
+         
+         //so that it does not refresh the page
+         event.preventDefault();
+         
+         //searching for the address
+         //second par 
+         geocoder.geocode({'address': mapForm.address.value}, queryResult);
+         };
+         
+         function queryResult(results, status){
+         if (status == google.maps.GeocoderStatus.OK) {
+         map.setCenter(results[0].geometry.location);
+         }else {
+         alert("Please search again.");
+         
+         }
+         };  
+         
+         
+              marker = new google.maps.Marker({
+                  position: latlng,
+                  map: map,
+                  draggable: true,
+         
+              });
+         
+         
+              google.maps.event.addListener(marker, 'dragend', function() {
+                  geocodePosition(marker.getPosition());
+                 
+              });
+         
+         
+         
+          });
+         
+          /*function attachMessage(marker, msg) {
+           var infowindow = new google.maps.InfoWindow({
+           content: msg,
+           size: new google.maps.Size(120, 150)
+           });
+           google.maps.event.clearListeners(marker, 'click');
+           google.maps.event.addListener(marker, 'click', function() {
+           infowindow.open(map, marker);
+           });
+           }*/
+         
+      </script>
+   </body>
+</html>

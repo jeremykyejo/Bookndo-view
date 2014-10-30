@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookndo</title>
+    <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/theme.css" rel="stylesheet">
+    <link href="css/bookndo01.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+     <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<!-- HEADER -->
+
+<div class="navbar nav navbar-default"  role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+      </button>
+      <a class="img-responsive hidden-md hidden-lg" href="#"><img src="images/bookndo.png" alt="Bookndo" id="logo-top2"></a>
+   </div>
+
+   <div class="">
+      <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div class="col-sm-offset-3 col-md-offset-4">
+
+         <div class="col-md-offset-1">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="index.html" title="Home">HOME</a></li>
+               <li class="first"><a href="about_us.html" title="About Us">ABOUT US</a></li>
+               <li class="last"><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">EN</a></li>
+                     <li><a href="#">FIN</a></li>
+                  </ul>
+               </li>
+               <li>
+                <a href="#" data-toggle="modal" data-target="#myModalSignUp">SIGN UP</a>
+                </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="modal" data-target="#myModal">LOG IN </a>
+               </li>
+            </ul>
+         </div>
+   </div>
+   <!-- /.navbar-collapse -->
+</div>
+
+
+</div>
+
+
+<div class="hidden-md hidden-lg">
+ <div class="col-md-12 center-block">
+ <h2 class="remove-width-quote topMenuQ">
+  Find sports activities and book them easily.
+  </h2>
+  </div>
+  </div>
+
+<!-- <div class="btn-group">
+  <input id="searchinput" type="search" class="form-control" placeholder="type something..." value="">
+  <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+</div> -->
+            
+
+
+ <div id="content-main">
+         <div id="searchAct">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-offset-2">
+                     <div class="">
+                        <form class="form-inline" role="form">
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Specify location</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Where do you want to do sports?"></span>
+                              </label>
+                              <div class="addressInputSty">
+                              <input id="addressInput" type="search" class="form-control" placeholder="Specify location" value="">
+                              <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+                              </div>  
+
+                           </div>
+
+
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select start date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the start date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd1" required="" placeholder="Start date">                  
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select finish date</small>
+                              <span class="glyphicon glyphicon-info-sign text-white popover-dismiss" data-toggle="popover" data-content="Select the end date for which you wish to browse the available activities."></span>
+                              </label>
+                              <input type="text" class="form-control" id="dpd2" required="" placeholder="Finish date"> 
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Number of people</small>
+                              </label>
+                              <select id="guest" name="guest" class="form-control">
+                                 <option value="1">1 Person</option>
+                                 <option value="2">2 People</option>
+                                 <option value="3">3 People</option>
+                                 <option value="4">4 People</option>
+                                 <option value="5">5 People</option>
+                                 <option value="6">6 People</option>
+                                 <option value="7">7 People</option>
+                                 <option value="8">8 People</option>
+                                 <option value="9">9 People</option>
+                                 <option value="10">10 People</option>
+                                 <option value="More than 10">10+ People</option>
+                              </select>
+                           </div>
+                           <div class="form-group ">
+                              <label class="control-label" style="margin-left:6px;">
+                              <small class="text-white">Select distance</small>
+                              </label>
+                              <select id="radiusSelect" class="form-control">
+                                 <option value="25" selected="">25mi</option>
+                                 <option value="100">100mi</option>
+                                 <option value="200">200mi</option>
+                              </select>
+                           </div>
+                           <div class="form-group">
+                              <label class="control-label invisible">
+                              <small class="text-info">Search </small>
+                              </label>
+                              <button class="btn btn-warning" id="searchicon" type="button" onclick="searchLocations()" value="Search"><span class="glyphicon glyphicon-search"></span>
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+<div class="">
+<div class="container-fluid">
+<div class="row">
+   <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+   <ol class="carousel-indicators hidden-xs hidden-sm">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+
+      <div class="carousel-inner ">
+         <div class="active item">
+            <div style="background:url(images/Bike.jpg); background-size:cover; background-repeat:no-repeat;" class="spinner-height img-responsive">
+               <div class="carousel-info">
+                  <h3 class="remove-width text-capitilize carousel-info-top-style">Biking</h3>
+                  <br />
+                  <p class="remove-width">Copyright Jo&atilde;o Trindade</p>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div style="background:url(images/flyboard.jpg); 
+               background-size:cover; background-repeat:no-repeat;" class="spinner-height">
+               <div class="carousel-info">
+                  <h3 class="remove-width text-capitilize carousel-info-top-style">Flyboarding</h3>
+                  <br />
+                  <p class="remove-width">Copyright Port Maguide Biscarrosse</p>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div style="background:url(images/horses.jpg); 
+               background-size:cover; background-repeat:no-repeat;" class="spinner-height">
+               <div class="carousel-info">
+                  <h3 class="remove-width text-capitilize carousel-info-top-style">Horse Riding</h3>
+                  <br />
+                  <p class="remove-width">Copyright Mike Baird</p>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div style="background:url(images/wakeboard.jpg); 
+               background-size:cover; background-repeat:no-repeat;" class="spinner-height">
+               <div class="carousel-info">
+                  <h3 class="remove-width text-capitilize carousel-info-top-style">Wakeboard</h3>
+                  <br />
+                  <p class="remove-width">Copyright Boost Kiteboarding</p>
+               </div>
+            </div>
+         </div>
+
+
+
+
+      </div>
+
+
+         <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" >
+    <i class="fa fa-angle-left"></i>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <i class="fa fa-angle-right"></i>
+  </a>
+
+      <div class="main-text hidden-xs hidden-sm">
+          <div class="col-md-12 text-center">
+            <h2 class="remove-width-quote">
+               Find sports activities and book them easily.
+            </h2>
+            </div>
+      </div>
+      </div>
+   </div>
+</div>
+</div>
+
+
+
+
+<!-- 
+<div class="hidden-md hidden-lg">
+
+       <div class="center-block">
+      <div style="background:url(images/Bike.jpg) center center; 
+         background-size:cover;" class="spinner-width">
+         <div class="col-sm-6">
+            <h3 class="remove-width">Biking</h3>
+            <br />
+            <p class="remove-width">Copyright Jo&atilde;o Trindade</p>
+         </div>
+      </div>
+      <div style="background:url(images/flyboard.jpg) center center; 
+         background-size:cover;" class="spinner-width">
+         <div class="col-sm-6">
+         
+            <h3 class="remove-width">Flyboarding</h3>
+            <br />
+            <p class="remove-width">Copyright Port Maguide Biscarrosse</p>
+            </div>
+         
+      </div>
+      <div style="background:url(images/wakeboard.jpg) center center; 
+         background-size:cover;" class="spinner-width">
+         <div class="col-sm-6">
+            <h3 class="remove-width">Wakeboard</h3>
+            <br />
+            <p class="remove-width">Copyright Boost Kiteboarding</p>
+         </div>
+      </div>
+   </div>
+
+
+</div> -->
+
+
+<!-- sports icon maybe here -->
+
+          <div class="bs-glyphicons">
+            <ul class="bs-glyphicons-list all_year">
+                <li class="img-square">
+                    <!-- airsoft -->
+                     <p class="lead">All year</p>
+                  <a href="#" data-toggle="modal" data-target="#all_year_sports"><img src="images/sports/All-year-sports_2.png" class="img-responsive center-block" alt="All year"></a>
+
+               
+
+                </li>            
+                <li class="img-square">
+                  <!-- badminton -->
+                   <p class="lead">Summer</p>
+
+                    <a href="#" data-toggle="modal" data-target="#summersports"><img src="images/sports/summer_2.png" class="img-responsive center-block" alt="Summer"></a>
+                  
+                </li>
+                <li class="img-square">
+                  <!-- basketball -->
+                   <p class="lead">Winter</p>
+                     <a href="#" data-toggle="modal" data-target="#wintersports"><img src="images/sports/winter_2.png" class="img-responsive center-block" alt="Winter"></a>
+                    
+                </li>     
+   
+                </ul>
+
+                </div>
+          
+
+
+
+   <!-- all year sports-->
+ <div class="modal fade" id="all_year_sports" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+              <p class="lead" style="text-align:center;">All year</p>
+
+            </div>
+            <div class="modal-body" style="padding:0px;">
+      <div class="">    
+   <div class="">
+          <div class="bs-glyphicons">
+            <ul class="bs-glyphicons-list all_year">
+                <li class="img-square col-md-4">
+                    <!-- airsoft -->
+                  <img src="images/sports/all_year/1.-airsoft.png" class="img-responsive center-block" alt="airsoft">
+                   <p>Airsoft</p>
+                </li>            
+                <li class="img-square col-md-4">
+                  <!-- badminton -->
+                   <img src="images/sports/all_year/2.-badminton.png" class="img-responsive center-block" alt="badminton">
+                   <p>Badminton</p>
+                </li>
+                <li class="img-square col-md-4">
+                  <!-- basketball -->
+                    <img src="images/sports/all_year/3.-basketball.png" class="img-responsive center-block" alt="basketball">
+                     <p>Basketball</p>
+                </li>     
+                <li class="img-square col-md-4">
+                    <!-- bowling -->
+                  <img src="images/sports/all_year/4.-bowling.png" class="img-responsive center-block" alt="bowling" title="bowling" />
+                <p>Bowling</p>
+                </li>            
+                <li class="img-square col-md-4">
+                  <!-- chess -->
+                   <img src="images/sports/all_year/5.-chess.png" class="img-responsive center-block" alt="chess">
+                    <p>Chess</p>
+                </li>
+                <li class="img-square col-md-4">
+                  <!-- dancing -->
+                    <img src="images/sports/all_year/6.-dancing.png" class="img-responsive center-block" alt="dancing">
+                     <p>Dancing</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- darts -->
+                  <img src="images/sports/all_year/7.-darts.png" class="img-responsive center-block" alt="darts">
+                <p>Darts</p>
+                </li>            
+                <li class="img-square col-md-4">
+                  <!-- fitness center -->
+                   <img src="images/sports/all_year/8.-fitness-centers.png" class="img-responsive center-block" alt="fitness-centers">
+                    <p class="clear_wrap">Fitness-centers</p>
+                </li>
+                <li class="img-square col-md-4">
+                  <!-- gyms -->
+                    <img src="images/sports/all_year/9.-gyms.png" class="img-responsive center-block" alt="gyms">
+                    <p>Gym</p>
+                </li>    
+                <li class="img-square col-md-4">
+                  <!-- hiking -->
+                    <img src="images/sports/all_year/10.-hiking.png" class="img-responsive center-block" alt="hiking">
+                     <p>Hiking</p>
+                </li>   
+                 <li class="img-square col-md-4">
+                  <!-- hunting -->
+                    <img src="images/sports/all_year/11.-hunting.png" class="img-responsive center-block" alt="hunting">
+                     <p>Hunting</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- karting -->
+                    <img src="images/sports/all_year/12.-karting.png" class="img-responsive center-block" alt="karting">
+                     <p>Karting</p>
+                </li>  
+                 <li class="img-square col-md-4">
+                  <!-- laser tag -->
+                    <img src="images/sports/all_year/13.-laser-tag.png" class="img-responsive center-block" alt="laser tag">
+                     <p>Laser tag</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- martial arts -->
+                    <img src="images/sports/all_year/14.-martial-arts-and-combat-sports.png" class="img-responsive center-block" alt="martial arts and combat sports">
+                     <p class="clear_wrap">Combat sports</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- parkour centers -->
+                    <img src="images/sports/all_year/15.-parkour-centers.png" class="img-responsive center-block" alt="parkour centers">
+                     <p class="clear_wrap">Parkour centers</p>
+                </li>   
+                 <li class="img-square col-md-4">
+                  <!-- pilates -->
+                    <img src="images/sports/all_year/16.-pilates.png" class="img-responsive center-block" alt="pilates">
+                     <p>Pilates</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- tennis -->
+                    <img src="images/sports/all_year/17.-tennis.png" class="img-responsive center-block" alt="tennis">
+                     <p>Tennis</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- swimming -->
+                    <img src="images/sports/all_year/18.-swimming.png" class="img-responsive center-block" alt="swimming">
+                     <p>Swimming</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- racquetball -->
+                    <img src="images/sports/all_year/19.-racquetball.png" class="img-responsive center-block" alt="racquetball">
+                     <p>Racquetball</p>
+                </li>   
+                 <li class="img-square col-md-4">
+                  <!-- squash -->
+                    <img src="images/sports/all_year/20.-squash.png" class="img-responsive center-block" alt="squash">
+                     <p>Squash</p>
+                </li>   
+                 <li class="img-square col-md-4">
+                  <!-- snooker -->
+                    <img src="images/sports/all_year/21.-snooker.png" class="img-responsive center-block" alt="snooker">
+                     <p>Snooker</p>
+                </li>  
+                 <li class="img-square col-md-4">
+                  <!-- table tennis -->
+                    <img src="images/sports/all_year/22.-table-tennis.png" class="img-responsive center-block" alt="table-tennis">
+                     <p>Table tennis</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                  <!-- wall climbing centers -->
+                    <img src="images/sports/all_year/23.-wall-climbing-centers.png" class="img-responsive center-block" alt="wall climbing centers">
+                     <p class="clear_wrap">Wall climbing</p>
+                </li>  
+                 <li class="img-square col-md-4">
+                  <!-- yoga -->
+                    <img src="images/sports/all_year/24.-yoga.png" class="img-responsive center-block" alt="yoga">
+                     <p>Yoga</p>
+                </li>  
+                 <li class="img-square col-md-4">
+                  <!-- 8 ball pool -->
+                    <img src="images/sports/all_year/25.-8-ball-pool.png" class="img-responsive center-block" alt="8 ball pool">
+                     <p>8 Ball pool</p>
+                </li>   
+                 <li class="img-square col-md-4">
+                  <!-- nordic walking -->
+                    <img src="images/sports/all_year/26.-nordic-walking.png" class="img-responsive center-block" alt="nordic walking">
+                     <p class="clear_wrap">Nordic walking</p>
+                </li>         
+                </ul>
+                </div>
+   </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ <!-- summer-->
+ <div class="modal fade" id="summersports" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+              <p class="lead" style="text-align:center;">Summer sports</p>
+
+            </div>
+            <div class="modal-body" style="padding:0px;">
+         
+   
+          <div class="bs-glyphicons">
+            <ul class="bs-glyphicons-list summer_sports">
+            
+              
+                <li class="img-square col-md-4">
+                    <!-- aviation -->
+                  <img src="images/sports/summer/1.-aviation.png" class="img-responsive center-block" alt="Aviation">
+                   <p>Aviation</p>
+                </li>  
+                
+                
+                 <li class="img-square col-md-4">
+                    <!-- beach volleyball -->
+                  <img src="images/sports/summer/2.-beach-volleyball.png" class="img-responsive center-block" alt="Beach volleyball">
+                   <p class="clear_wrap">Beach volleyball</p>
+                </li>
+                    
+                  <li class="img-square col-md-4">
+                    <!-- bicyling -->
+                  <img src="images/sports/summer/3.-bicycling.png" class="img-responsive center-block" alt="Bicyling">
+                   <p>Bicyling</p>
+                </li>  
+                        
+               <li class="img-square col-md-4">
+                    <!-- bmx -->
+                  <img src="images/sports/summer/4.-bmx.png" class="img-responsive center-block" alt="bmx">
+                   <p>BMX</p>
+                </li> 
+                
+                <li class="img-square col-md-4">
+                    <!-- bungee jumping -->
+                  <img src="images/sports/summer/5.-bungee-jumping.png" class="img-responsive center-block" alt="Bungee jumping">
+                   <p class="clear_wrap">Bungee jumping</p>
+                </li> 
+                
+                <li class="img-square col-md-4">
+                    <!-- canoeing -->
+                  <img src="images/sports/summer/6.-canoeing.png" class="img-responsive center-block" alt="Canoeing">
+                   <p>Canoeing</p>
+                </li> 
+                
+                 <li class="img-square col-md-4">
+                    <!-- canyoning -->
+                  <img src="images/sports/summer/7.-canyoning.png" class="img-responsive center-block" alt="Canyoning">
+                   <p>Canyoning</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- caving -->
+                  <img src="images/sports/summer/8.-caving.png" class="img-responsive center-block" alt="Caving">
+                   <p>Caving</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- climbing -->
+                  <img src="images/sports/summer/9.-climbing.png" class="img-responsive center-block" alt="Climbing">
+                   <p>Climbing</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- croquet -->
+                  <img src="images/sports/summer/10.-croquet.png" class="img-responsive center-block" alt="Croquet">
+                   <p>Croquet</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- downhill biking -->
+                  <img src="images/sports/summer/11.-downhill-biking.png" class="img-responsive center-block" alt="Downhill biking">
+                   <p class="clear_wrap">Downhill biking</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- enduro -->
+                  <img src="images/sports/summer/12.-enduro.png" class="img-responsive center-block" alt="Enduro">
+                   <p>Enduro</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- fishing -->
+                  <img src="images/sports/summer/13.-fishing.png" class="img-responsive center-block" alt="Fishing">
+                   <p>Fishing</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- flyboarding -->
+                  <img src="images/sports/summer/14.-flyboarding.png" class="img-responsive center-block" alt="Flyboarding">
+                   <p>Flyboarding</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- frisbee golf -->
+                  <img src="images/sports/summer/15.-frisbee-golf.png" class="img-responsive center-block" alt="Frisbee golf">
+                   <p class="clear_wrap">Frisbee golf</p>
+                </li> 
+                   <li class="img-square col-md-4">
+                    <!-- golf -->
+                  <img src="images/sports/summer/16.-golf.png" class="img-responsive center-block" alt="Golf">
+                   <p>Golf</p>
+                </li> 
+                   <li class="img-square col-md-4">
+                    <!-- hang gliding -->
+                  <img src="images/sports/summer/17.-hang-gliding.png" class="img-responsive center-block" alt="Hang gliding">
+                   <p class="clear_wrap">Hang gliding </p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- horse riding -->
+                  <img src="images/sports/summer/18.-horse-riding.png" class="img-responsive center-block" alt="Horse riding">
+                   <p class="clear_wrap">Horse riding</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- javelin throw -->
+                  <img src="images/sports/summer/19.-javelin-throw.png" class="img-responsive center-block" alt="Javelin throw">
+                   <p class="clear_wrap">Javelin throw</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- jet-boarding -->
+                  <img src="images/sports/summer/20.-jet-boarding.png" class="img-responsive center-block" alt="Jet boarding">
+                   <p class="clear_wrap">Jet boarding</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- jet skiing -->
+                  <img src="images/sports/summer/21.-jet-skiing.png" class="img-responsive center-block" alt="Jet skiing">
+                   <p class="clear_wrap">Jet skiing</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- kayaking -->
+                  <img src="images/sports/summer/22.-kayaking.png" class="img-responsive center-block" alt="Kayaking">
+                   <p>Kayaking</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- kiteboarding -->
+                  <img src="images/sports/summer/23.-kiteboarding.png" class="img-responsive center-block" alt="Kiteboarding">
+                   <p>Kiteboarding</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- kite skiing -->
+                  <img src="images/sports/summer/24.-kite-skiing.png" class="img-responsive center-block" alt="Kite skiing">
+                   <p class="clear_wrap">Kite skiing</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- kite surfing -->
+                  <img src="images/sports/summer/25.-kite-surfing.png" class="img-responsive center-block" alt="Kite surfing">
+                   <p class="clear_wrap">Kite surfing</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- miniature golf -->
+                  <img src="images/sports/summer/26.-miniature-golf.png" class="img-responsive center-block" alt="Miniature golf">
+                   <p class="clear_wrap">Miniature golf</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- mölkky -->
+                  <img src="images/sports/summer/27.-mölkky.png" class="img-responsive center-block" alt="Mölkky">
+                   <p>Mölkky</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- motocross -->
+                  <img src="images/sports/summer/28.-motocross.png" class="img-responsive center-block" alt="Motocross">
+                   <p>Motocross</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- motor boats -->
+                  <img src="images/sports/summer/29.-motor-boats.png" class="img-responsive center-block" alt="Motor boats">
+                   <p class="clear_wrap">Motor boats</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- motorbikes -->
+                  <img src="images/sports/summer/30.-motorbikes.png" class="img-responsive center-block" alt="Motorbikes">
+                   <p>Motorbikes</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- motor race circuits -->
+                  <img src="images/sports/summer/31.-motor-race-circuits.png" class="img-responsive center-block" alt="Motor race circuits">
+                   <p class="clear_wrap">Motor race circuits</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- paintball -->
+                  <img src="images/sports/summer/32.-paintball.png" class="img-responsive center-block" alt="Paintball">
+                   <p>Paintball</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- paragliding -->
+                  <img src="images/sports/summer/33.-paragliding.png" class="img-responsive center-block" alt="Paragliding">
+                   <p>Paragliding</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- Petanque -->
+                  <img src="images/sports/summer/34.-petanque.png" class="img-responsive center-block" alt="Petanque">
+                   <p>Petangue</p>
+                </li> 
+                 <li class="img-square col-md-4">
+                    <!-- road cycling -->
+                  <img src="images/sports/summer/35.-road-cycling.png" class="img-responsive center-block" alt="Road cycling">
+                   <p class="clear_wrap">Road cycling</p>
+                </li> 
+                <!-- <li class="img-square col-md-4">
+                    road climbing
+                  <img src="images/sports/summer/36.-rock-climbing.png" class="img-responsive center-block" alt="Road climbing">
+                   <p class="clear_wrap">Road climbing</p>
+                </li>  -->
+                <li class="img-square col-md-4">
+                    <!-- roler skating -->
+                  <img src="images/sports/summer/37.-roller-skating.png" class="img-responsive center-block" alt="Roller skating">
+                   <p class="clear_wrap">Roler skating</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- rowing boats -->
+                  <img src="images/sports/summer/38.-rowing-boats.png" class="img-responsive center-block" alt="Rowing boats">
+                   <p class="clear_wrap">Rowing boats</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- sailing -->
+                  <img src="images/sports/summer/39.-sailing.png" class="img-responsive center-block" alt="Sailing">
+                   <p>Sailing</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- scooters -->
+                  <img src="images/sports/summer/40.-scooters.png" class="img-responsive center-block" alt="Scooters">
+                   <p>Scooters</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- scuba diving -->
+                  <img src="images/sports/summer/41.-scuba-diving.png" class="img-responsive center-block" alt="Scuba diving">
+                   <p class="clear_wrap">Scuba diving</p>
+                </li>
+                <li class="img-square col-md-4">
+                    <!-- shooting and acrhery -->
+                  <img src="images/sports/summer/42.-shooting-and-archery.png" class="img-responsive center-block" alt="Petanque">
+                   <p class="clear_wrap">Shooting and archery</p>
+                </li>  
+                <li class="img-square col-md-4">
+                    <!-- shot put -->
+                  <img src="images/sports/summer/43.-shot-put.png" class="img-responsive center-block" alt="Shot put">
+                   <p>Shot put</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- skydiving -->
+                  <img src="images/sports/summer/44.-skydiving.png" class="img-responsive center-block" alt="Skydiving">
+                   <p>Skydiving</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- snorkeling -->
+                  <img src="images/sports/summer/45.-snorkeling.png" class="img-responsive center-block" alt="Snorkeling">
+                   <p>Snorkeling</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- surfing -->
+                  <img src="images/sports/summer/46.-surfing.png" class="img-responsive center-block" alt="Surfing">
+                   <p>Surfing</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- ultimate frisbee -->
+                  <img src="images/sports/summer/47.-ultimate-frisbee.png" class="img-responsive center-block" alt="Ultimate frisbee">
+                   <p class="clear_wrap">Ultimate frisbee</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- wake boarding -->
+                  <img src="images/sports/summer/48.-wake-boarding.png" class="img-responsive center-block" alt="Wake boarding">
+                   <p class="clear_wrap">Wake boarding</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- wake skiing -->
+                  <img src="images/sports/summer/49.-water-skiing.png" class="img-responsive center-block" alt="Wake skiing">
+                   <p class="clear_wrap">Wake skiing</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- Wind surfing -->
+                  <img src="images/sports/summer/50.-windsurfing.png" class="img-responsive center-block" alt="Windsurfing">
+                   <p>Windsurfing</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- wingsuit flying -->
+                  <img src="images/sports/summer/51.-wingsuit-flying.png" class="img-responsive center-block" alt="Wingsuit flying">
+                   <p class="clear_wrap">Wingsuit flying</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- downhill skating -->
+                  <img src="images/sports/summer/52.-downhill-skating.png" class="img-responsive center-block" alt="Downhill skating">
+                   <p class="clear_wrap">Downhill skating</p>
+                </li> 
+                <li class="img-square col-md-4">
+                    <!-- downhill rollerblading -->
+                  <img src="images/sports/summer/53.-downhill-rollerblading.png" class="img-responsive center-block" alt="Downhill rollerblading">
+                   <p class="clear_wrap">Downhill rollerblading</p>
+                </li> 
+                </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<!-- winter -->
+ <div class="modal fade" id="wintersports" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+              <p class="lead" style="text-align:center;">Winter sports</p>
+
+            </div>
+            <div class="modal-body" style="padding:0px;">
+     <div class="">     
+   <div class="">
+          <div class="bs-glyphicons">
+            <ul class="bs-glyphicons-list winter_sports">
+                <li class="img-square col-md-4">
+                    <!-- Dog sledding mushing -->
+                  <img src="images/sports/winter/1.-dog-sledding_mushing.png" class="img-responsive center-block" alt="Dog sledding mushing">
+                   <p class="clear_wrap">Dog sledding</p>
+                </li>
+                 <li class="img-square col-md-4">
+                    <!-- ice cross downhill -->
+                  <img src="images/sports/winter/2.-ice-cross-downhill.png" class="img-responsive center-block" alt="Ice cross downhill">
+                   <p class="clear_wrap">Ice cross downhill</p>
+                </li>  
+                 <li class="img-square col-md-4">
+                    <!-- ice fishing -->
+                  <img src="images/sports/winter/3.-ice-fishing.png" class="img-responsive center-block" alt="Ice fishing">
+                   <p class="clear_wrap">Ice fishing</p>
+                </li>              
+                  <li class="img-square col-md-4">
+                    <!-- heliskiing -->
+                  <img src="images/sports/winter/4.-heliskiing.png" class="img-responsive center-block" alt="Heliskiing">
+                   <p>Heliskiing</p>
+                </li> 
+                   <li class="img-square col-md-4">
+                    <!-- reindeer sledge -->
+                  <img src="images/sports/winter/5.-reindeer-sledge.png" class="img-responsive center-block" alt="Reindeer sledge">
+                   <p class="clear_wrap">Reindeer sledge</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- ice skating -->
+                  <img src="images/sports/winter/6.-ice-skating.png" class="img-responsive center-block" alt="Ice skating">
+                   <p class="clear_wrap">Ice skating</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- ski rentals -->
+                  <img src="images/sports/winter/7.-ski-rentals.png" class="img-responsive center-block" alt="Ski rentals">
+                   <p class="clear_wrap">Ski rentals</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- snow mobiles -->
+                  <img src="images/sports/winter/8.-snow-mobiles.png" class="img-responsive center-block" alt="Snow mobiles">
+                   <p class="clear_wrap">Snow mobiles</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- snow shoeing -->
+                  <img src="images/sports/winter/9.-snow-shoeing.png" class="img-responsive center-block" alt="Snow shoeing">
+                   <p class="clear_wrap">Snow shoeing</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- snowboarding -->
+                  <img src="images/sports/winter/10.-snowboarding.png" class="img-responsive center-block" alt="Snowboarding">
+                   <p>Snowboarding</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- tour skating -->
+                  <img src="images/sports/winter/11.-tour-skating.png" class="img-responsive center-block" alt="Tour skating">
+                   <p class="clear_wrap">Tour skating</p>
+                </li> 
+                  <li class="img-square col-md-4">
+                    <!-- kite skiing -->
+                  <img src="images/sports/winter/12.-kite-skiing.png" class="img-responsive center-block" alt="Kite skiing">
+                   <p class="clear_wrap">Kite skiing</p>
+                </li> 
+                </ul>
+                </div>
+   </div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<!-- opens sign up as a modal -->
+
+<div class="modal" id="myModalSignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+   <div class="modal-dialog">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form">
+               <div class="form-group">
+                     <label for="exampleInputEmail1">Full name</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Full name">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Your Email</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Your password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Confirm your password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
+                  </div>
+                  <div class="form-group clearfix">
+                     <button type="submit" class="btn btn-warning btn-block">Sign up</button>
+                  </div>
+                 
+               </form>
+               <p class="center-block text-uppercase">or</p>
+               <div class="form-group">
+                  <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign up with Facebook</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign up with Twitter</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign up with Google&#43;</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+    <!-- Opens sign in as a modal -->
+    
+     <!-- Modal --> 
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+   <div class="modal-dialog">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form">
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Email</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="col-sm-offset-1">
+                     <div class="col-xs-6 col-md-6">
+                        <div class="form-group" >
+                           <div class="checkbox">
+                              <label>
+                              <input type="checkbox"> Remember me
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-md-6">
+                        <div class="form-group" style="margin-top:10px;">
+                           <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot password?</a>
+                        </div>
+                     </div>
+                  </div>
+                
+                  <div class="form-group clearfix">
+                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                  </div>
+                 
+               </form>
+               <p class="center-block text-uppercase">or</p>
+               <div class="form-group">
+                  <button class="btn btn-block btn-surakitabu" role="button"><span class="fa fa-surakitabu"> Sign in with Facebook</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-tuiti" role="button"><span class="fa fa-tuiti"> Sign in with Twitter</span></button>
+               </div>
+               <div class="form-group">
+                  <button class="btn btn-block btn-gugo-jumlisha" role="button"><span class="fa fa-gugo-jumlisha"> Sign in with Google&#43;</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+    <!-- end of modal -->
+     <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <small><a href="terms.html" target="_blank" >Terms</a> |
+            <a href="privacy_and_cookies.html" target="_blank" >Privacy and Cookies</a>
+            </small>
+          </div>
+          <div class="col-md-12">
+            <small>
+            <a href="/users/signup_service_provider">Sign up as a Service provider</a>
+            </small>
+            <br />
+             <small>&copy; 2014. Bookndo</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/search1.js"></script>
+    <script src="js/bookndo01.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/map.js"></script>
+    <script type="text/javascript">
+
+
+    //this is for the clear icon on location search input field
+    $("#addressInput").keyup(function() {
+        $("#searchclear").toggle(Boolean($(this).val()));
+    });
+    $("#searchclear").toggle(Boolean($("#addressInput").val()));
+    $("#searchclear").click(function() {
+        $("#addressInput").val('').focus();
+        $(this).hide();
+    });
+
+    </script>
+    
+    
+  </body>
+</html>

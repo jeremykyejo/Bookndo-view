@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookndo</title>
+    <link rel="shortcut icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <link rel="icon" href="images/icon-Bookndo.ico" type="image/x-icon">
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/theme.css" rel="stylesheet">
+    <link href="css/bookndo01.css" rel="stylesheet">
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+       <!-- HEADER -->
+<div class="navbar nav navbar-default"  role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="glyphicon glyphicon-align-justify"></i>
+      </button>
+      <a class="navbar-brand hidden-md hidden-lg" href="#"><img src="images/Bookndo_brand.png"></a>
+   </div>
+   <div class="container">
+   <div class="row">
+      <a href="index.html"><img class="img-responsive hidden-xs hidden-sm pull-left" src="images/bookndo.png" alt="Bookndo" id="logo-top"></a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div class="col-md-offset-5">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="index.html" title="Home">HOME</a></li>
+               <li class="first"><a href="about_us.html" title="About Us">ABOUT US</a></li>
+               <li class="last"><a href="contact.html" title="Contact">CONTACT</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">EN <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">EN</a></li>
+                     <li><a href="#">FIN</a></li>
+                  </ul>
+               </li>
+
+                <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="user_profile.html"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                  <li><a href="logout.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+              </li>
+
+            </ul>
+
+        </div>
+            </div>
+            </div>
+
+          
+   <!-- /.navbar-collapse -->
+</div>
+       <div id="content-main">
+   <div id="searchAct">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-offset-2">
+               <div class="col-md-5">
+                  <div class="input-group">
+                     <input type="text" class="form-control" placeholder="Search for activities, location etc">
+                     <span class="input-group-btn">
+                     <button class="btn btn-default" type="button">Find</button>
+                     </span>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <button type="button" class="btn btn-warning">Suggest me a Sport</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+   
+      <div class="container">
+         <div class="row well">
+       <div class="col-md-2">
+          <ul class="nav nav-list">
+            <li><a href="user_profile.html"><i class="glyphicon glyphicon-user"></i> Account</a></li>
+            <li class="active"><a href="purchase.html"><i class="glyphicon glyphicon-calendar"></i> Purchase History</a></li>
+            <li><a href="settings.html"><i class="glyphicon glyphicon-wrench"></i> Settings</a></li>
+            <li><a href="faq.html"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
+            <li><a href="feedback.html"><i class="glyphicon glyphicon-pencil"></i> Feedback</a></li>
+          </ul>
+        </div>
+            <!-- put tab content here -->
+            <div class="col-md-10 well">
+               <div class="tab-content">
+                  <div class="tab-pane active" id="inbox">
+                     <a type="button" data-toggle="collapse" data-target="#a1">
+                        <div class="btn-toolbar well well-sm" role="toolbar"  style="margin:0px;">
+                           <div class="btn-group"><input type="checkbox"></div>
+                           <div class="btn-group col-md-3">Admin Kumar</div>
+                           <div class="btn-group col-md-8">
+                              <b>Hi Check this new Bootstrap plugin</b> 
+                              <div class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:10 PM <button class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-share-square-o"> Reply</i></button></div>
+                           </div>
+                        </div>
+                     </a>
+                     <div id="a1" class="collapse out well">This is the message body1</div>
+                     <br>
+                     <button class="btn btn-primary btn-xs"><i class="fa fa-check-square-o"></i> Delete Checked Item's</button>
+                  </div>
+                  <div class="tab-pane" id="sent">
+                     <a type="button" data-toggle="collapse" data-target="#s1">
+                        <div class="btn-toolbar well well-sm" role="toolbar"  style="margin:0px;">
+                           <div class="btn-group"><input type="checkbox"></div>
+                           <div class="btn-group col-md-3">Kumar</div>
+                           <div class="btn-group col-md-8">
+                              <b>This is reply from Bootstrap plugin</b> 
+                              <div class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:30 AM</div>
+                           </div>
+                        </div>
+                     </a>
+                     <div id="s1" class="collapse out well">This is the message body1</div>
+                     <br>
+                     <button class="btn btn-primary btn-xs"><i class="fa fa-check-square-o"></i> Delete Checked Item's</button>
+                  </div>
+                  <div class="tab-pane" id="assignment">
+                     <a href="">
+                        <div class="well well-sm" style="margin:0px;">Open GL Assignments <span class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:20 AM 20 Dec 2014 </span></div>
+                     </a>
+                  </div>
+                  <div class="tab-pane" id="event">
+                     <div class="media">
+                        <a class="pull-left" href="#">
+                        <img class="media-object img-thumbnail" width="100" src="http://cfi-sinergia.epfl.ch/files/content/sites/cfi-sinergia/files/WORKSHOPS/Workshop1.jpg" alt="...">
+                        </a>
+                        <div class="media-body">
+                           <h4 class="media-heading">Animation Workshop</h4>
+                           2Days animation workshop to be conducted
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tab content ends here -->
+         </div>
+      </div>
+      
+     <div class="footer">
+     
+          
+        <div class="row">
+          <small>&copy; 2014. Bookndo &nbsp;<a href="terms_and_conditions.html">Terms and conditions</a></small>
+        </div>
+     
+     <div class="row">
+        <small>
+        <a href="service_provider_page.html">Sign up as a service provider</a>
+        </small>
+        </div>
+
+    </div>
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bookndo01.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/map.js"></script>
+     
+  </body>
+</html>
